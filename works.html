@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Archive — Emily Editorial</title>
+<meta name="description" content="Previous work across fiction, non-fiction, mythic fantasy, memoir, diaspora SF, literary horror, and culinary writing. Real numbers, real authors, real emails.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/900.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/400-italic.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/instrument-sans/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/instrument-sans/500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/instrument-sans/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono/700.css">
+<style>
+:root{
+  --paper:#f6f1e6; --paper2:#ece4d1; --card:#fbf7ee;
+  --ink:#14110c; --ink2:#1e1a13; --ink3:#3a342a;
+  --verm:#c94f2e; --verm-d:#a53c20; --gold:#c9973b; --jade:#3f7d63;
+  --line:rgba(20,17,12,.16); --linel:rgba(246,241,230,.15);
+  --serif:'Fraunces',Georgia,serif; --sans:'Instrument Sans',system-ui,sans-serif; --mono:'Space Mono',monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+::selection{background:var(--verm);color:var(--paper)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit}
+input,textarea{font-family:inherit}
+:focus-visible{outline:2px solid var(--verm);outline-offset:3px;border-radius:2px}
+section{scroll-margin-top:96px}
+
+.noise{position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.05;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--verm);transform-origin:0 50%;transform:scaleX(0);z-index:300}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100}
+.topbar{background:var(--ink);color:var(--gold);font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;display:flex;justify-content:center;align-items:center;padding:9px 16px;max-height:40px;overflow:hidden;transition:max-height .4s var(--ease),opacity .3s,padding .4s;white-space:nowrap;text-align:center}
+header.scrolled .topbar,body.menu-open .topbar{max-height:0;opacity:0;padding-block:0}
+.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 0 rgba(63,125,99,.6);animation:pulse 2s infinite;margin-right:10px;flex:0 0 auto}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(63,125,99,0)}100%{box-shadow:0 0 0 0 rgba(63,125,99,0)}}
+.nav{transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.scrolled .nav{background:rgba(246,241,230,.92);backdrop-filter:blur(12px);border-color:var(--line)}
+.nav-in{max-width:1320px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:19px;white-space:nowrap}
+.logo-mark{width:38px;height:38px;flex:0 0 38px;border-radius:50%;background:var(--verm);color:var(--paper);display:grid;place-items:center;font-family:var(--serif);font-size:15px;font-weight:700;transition:transform .5s var(--ease),background .3s}
+.logo:hover .logo-mark{transform:rotate(-10deg);background:var(--ink)}
+.logo em{font-style:italic;font-weight:400}
+.nav-links{display:flex;gap:22px;margin-left:auto;font-size:13px;font-weight:500;letter-spacing:.03em}
+.nav-links a{position:relative;padding:4px 0;opacity:.85;white-space:nowrap}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--verm);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{flex:0 0 auto}
+.burger{display:none;margin-left:auto;flex-direction:column;gap:5px;padding:10px 6px}
+.burger span{width:22px;height:2px;background:var(--ink);transition:transform .3s,opacity .3s}
+body.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){opacity:0}
+body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:74px;left:14px;right:14px;background:var(--ink);color:var(--paper);border-radius:18px;padding:22px;z-index:99;display:none;flex-direction:column;box-shadow:0 30px 60px -20px rgba(0,0,0,.45)}
+.mobile-menu a{font-family:var(--serif);font-size:20px;padding:12px 4px;border-bottom:1px solid var(--linel)}
+.mobile-menu a:last-child{border:none}
+.mobile-menu .mm-cta{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--verm);border-radius:999px;font-family:var(--sans);font-size:15px;font-weight:600;padding:15px;margin-top:14px;border:none}
+body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper);border-radius:999px;padding:15px 28px;font-size:14px;font-weight:600;letter-spacing:.03em;transition:background .3s,transform .3s var(--ease),box-shadow .3s}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover{background:var(--verm);transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(201,79,46,.55)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn:active{transform:translateY(0)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:15px 6px;font-size:14px;font-weight:600;letter-spacing:.03em;border-bottom:1.5px solid var(--ink);transition:color .3s,border-color .3s,gap .3s}
+.btn-ghost:hover{color:var(--verm);border-color:var(--verm);gap:16px}
+.btn-paper{background:var(--paper);color:var(--ink)}
+.btn-paper:hover{background:var(--gold);color:var(--ink)}
+
+/* ---------- shared ---------- */
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--verm);display:flex;align-items:center;gap:14px}
+.kick .rule{width:44px;height:1px;background:var(--verm);opacity:.6}
+.dark .kick{color:var(--gold)}
+.dark .kick .rule{background:var(--gold)}
+.s-head{margin-bottom:56px}
+.s-row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-top:18px;flex-wrap:wrap}
+.s-title{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,56px);line-height:1.05;letter-spacing:-.01em;max-width:15em;overflow-wrap:break-word}
+.s-lede{max-width:46ch;font-size:16px;color:var(--ink3)}
+.dark .s-lede{color:var(--paper);opacity:.75}
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease) var(--d,0s),transform .9s var(--ease) var(--d,0s)}
+[data-reveal].in{opacity:1;transform:none}
+.rl{display:block;overflow:hidden}
+.rl>span{display:block;transform:translateY(115%);transition:transform 1s var(--ease) var(--d,0s)}
+.in .rl>span{transform:none}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.chips span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:6px 13px;color:var(--ink3)}
+.dark .chips span{border-color:var(--linel);color:rgba(246,241,230,.75)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:170px 0 100px;background-image:radial-gradient(rgba(20,17,12,.09) 1px,transparent 1px);background-size:26px 26px}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,transparent 40%,var(--paper) 92%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:end}
+.hero-kick{margin-bottom:26px}
+.hero-title{font-family:var(--serif);font-weight:900;font-size:clamp(40px,5.6vw,84px);line-height:1;letter-spacing:-.02em;overflow-wrap:break-word}
+.hero-title em{font-style:italic;font-weight:400;color:var(--verm)}
+.hero-sub{margin:26px 0 34px;max-width:52ch;font-size:16.5px;color:var(--ink3)}
+.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hero-note{display:flex;gap:14px 22px;flex-wrap:wrap;margin-top:36px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.hero-note span::before{content:'✦ ';color:var(--gold)}
+
+/* archive shelf */
+.shelf{background:var(--ink);color:var(--paper);border-radius:18px;box-shadow:0 40px 80px -30px rgba(20,17,12,.5);overflow:hidden;border:1px solid rgba(246,241,230,.08);padding:28px 24px}
+.shelf-head{display:flex;align-items:center;gap:8px;padding-bottom:14px;border-bottom:1px solid var(--linel);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:rgba(246,241,230,.6)}
+.shelf-head i{width:10px;height:10px;border-radius:50%;background:var(--linel);flex:0 0 auto}
+.shelf-head i:nth-child(1){background:var(--verm)}
+.shelf-head i:nth-child(2){background:var(--gold)}
+.shelf-head i:nth-child(3){background:var(--jade)}
+.shelf-head .lbl{margin-left:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shelf-head .cnt{margin-left:auto;color:var(--gold);white-space:nowrap}
+.shelf-body{padding:22px 4px 6px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.shelf-book{display:flex;flex-direction:column;gap:10px;padding:14px;border:1px solid var(--linel);border-radius:10px;background:rgba(246,241,230,.03);transition:border-color .3s,transform .3s var(--ease)}
+.shelf-book:hover{border-color:rgba(201,151,59,.5);transform:translateY(-3px)}
+.shelf-book img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;box-shadow:0 10px 20px -8px rgba(0,0,0,.5)}
+.shelf-book h5{font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.15}
+.shelf-book small{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.shelf-book .yr{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(246,241,230,.5);margin-top:4px}
+
+/* stats strip */
+.hero-stats{border-top:1px solid var(--line);margin-top:80px;background:var(--paper)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 32px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:none;padding-left:0}
+.stat-num{font-family:var(--serif);font-weight:700;font-size:clamp(26px,2.8vw,42px)}
+.stat-num sup{color:var(--verm);font-size:.5em}
+.stat-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);opacity:.8;margin-top:4px}
+
+/* ticker */
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding:15px 0}
+.ticker-track{display:flex;gap:52px;width:max-content;animation:tick 30s linear infinite;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track .fl{color:var(--gold)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- genre index ---------- */
+.genres{padding:130px 0}
+.genre-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:10px}
+.genre{border-top:1px solid var(--line);padding:34px 10px 34px 0;display:grid;grid-template-columns:1fr;gap:14px;transition:background .3s,padding-left .35s var(--ease);cursor:pointer}
+.genre:nth-last-child(-n+4){border-bottom:1px solid var(--line)}
+.genre:hover{background:var(--paper2);padding-left:18px}
+.genre-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.genre-no{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--verm)}
+.genre-ct{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);opacity:.7}
+.genre h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.15;margin-top:4px}
+.genre p{font-size:14px;color:var(--ink3);max-width:42ch}
+.genre .sample{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink2);margin-top:8px;padding-left:14px;border-left:2px solid var(--gold)}
+.genre .sample small{display:block;font-family:var(--mono);font-style:normal;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-top:4px}
+
+/* ---------- featured work ---------- */
+.featured{padding:130px 0;background:var(--paper2);border-block:1px solid var(--line)}
+.feat-grid{display:grid;grid-template-columns:1fr;gap:80px}
+.feat{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+.feat:nth-child(even){direction:rtl}
+.feat:nth-child(even) > *{direction:ltr}
+.feat-visual{position:sticky;top:120px}
+.feat-cover{position:relative;padding:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 60px -25px rgba(20,17,12,.35)}
+.feat-cover::before{content:'';position:absolute;top:-12px;left:-26px;width:90px;height:26px;background:rgba(201,151,59,.35);transform:rotate(-40deg)}
+.feat-cover::after{content:'';position:absolute;bottom:-12px;right:-26px;width:90px;height:26px;background:rgba(201,151,59,.35);transform:rotate(-40deg)}
+.feat-cover img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.feat-cap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);padding-top:14px}
+.feat-body .kick{margin-bottom:18px}
+.feat-body h3{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
+.feat-body h3 em{font-style:italic;font-weight:400;color:var(--verm)}
+.feat-meta{display:flex;gap:14px 24px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin:18px 0 26px}
+.feat-meta span::before{content:'✦ ';color:var(--gold)}
+.feat-body > p{font-size:16px;color:var(--ink2);margin-bottom:16px;max-width:58ch}
+.feat-kv{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:28px 0}
+.kv{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card)}
+.kv b{font-family:var(--serif);font-size:24px;font-weight:700;display:block}
+.kv span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.feat-built{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-top:14px}
+.feat-built span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin:4px 4px 4px 0}
+
+/* ---------- email wall ---------- */
+.wall{padding:130px 0}
+.wall-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:10px}
+.email{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(20,17,12,.25);transition:transform .5s var(--ease),box-shadow .5s}
+.email:hover{transform:translateY(-6px);box-shadow:0 40px 80px -30px rgba(20,17,12,.35)}
+.email-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--paper2);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink3)}
+.email-bar i{width:9px;height:9px;border-radius:50%;background:var(--line);flex:0 0 auto}
+.email-bar i:nth-child(1){background:var(--verm)}
+.email-bar i:nth-child(2){background:var(--gold)}
+.email-bar i:nth-child(3){background:var(--jade)}
+.email-bar .emurl{flex:1;margin-left:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.email-head{padding:18px 22px 14px;border-bottom:1px solid var(--line)}
+.email-from{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.email-av{width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--paper);font-weight:700}
+.email-from-info b{font-size:14px;font-weight:600;display:block}
+.email-from-info small{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink3)}
+.email-subj{font-family:var(--serif);font-weight:600;font-size:18px;line-height:1.3}
+.email-date{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--ink3);margin-top:6px}
+.email-body{padding:22px;font-size:14.5px;line-height:1.7;color:var(--ink2)}
+.email-body p{margin-bottom:12px}
+.email-body p:last-child{margin-bottom:0}
+.email-body .sig{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-family:var(--serif);font-style:italic;color:var(--ink3)}
+.email-body .sig b{display:block;font-family:var(--sans);font-style:normal;font-weight:600;color:var(--ink);font-size:14px}
+.email-body .sig small{font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.1em;color:var(--ink3)}
+.email-foot{display:flex;justify-content:space-between;align-items:center;padding:12px 22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--ink3);opacity:.7}
+.email-foot .star{color:var(--gold)}
+
+/* email variants */
+.email.wide{grid-column:1/-1}
+.email .quote-mark{font-family:var(--serif);font-size:60px;line-height:1;color:var(--verm);opacity:.3;float:left;margin:4px 10px 0 0}
+
+/* ---------- stats band ---------- */
+.band{background:var(--verm);color:var(--paper);padding:80px 0}
+.band-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.bm{text-align:center;border-left:1px solid rgba(246,241,230,.25);padding:6px 10px}
+.bm:first-child{border-left:none}
+.bm b{font-family:var(--serif);font-weight:700;font-size:clamp(30px,3.4vw,50px);display:block;letter-spacing:-.01em}
+.bm span{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+
+/* ---------- note ---------- */
+.note{padding:130px 0;background:var(--ink);color:var(--paper)}
+.note-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
+.note-body p{font-size:16.5px;color:rgba(246,241,230,.78);margin-bottom:20px;max-width:58ch}
+.note-body p strong{color:var(--paper);font-weight:600}
+.pull{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.2vw,28px);line-height:1.4;border-left:3px solid var(--gold);padding-left:26px;margin:34px 0;color:var(--paper)}
+.pull small{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:12px}
+.note-side{background:rgba(246,241,230,.04);border:1px solid var(--linel);border-radius:16px;padding:32px}
+.note-side h4{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:18px}
+.note-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.note-list li{display:flex;gap:14px;font-size:14.5px;color:rgba(246,241,230,.78)}
+.note-list li::before{content:'';color:var(--gold);flex:0 0 auto;margin-top:2px}
+
+/* ---------- join ---------- */
+.join{background:var(--ink);color:var(--paper);padding:140px 0;position:relative;overflow:hidden;background-image:radial-gradient(rgba(246,241,230,.06) 1px,transparent 1px);background-size:26px 26px}
+.join .wm{position:absolute;right:-6%;top:50%;transform:translateY(-50%);font-family:var(--serif);font-weight:900;font-size:36vw;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(246,241,230,.07);pointer-events:none;user-select:none}
+.join-title{font-family:var(--serif);font-weight:700;font-size:clamp(36px,5.4vw,74px);line-height:1.02;margin-top:20px;max-width:15em;overflow-wrap:break-word}
+.join-title em{font-style:italic;font-weight:400;color:var(--gold)}
+.join-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:46px;max-width:760px}
+.join-form input,.join-form textarea{background:rgba(246,241,230,.06);border:1px solid var(--linel);border-radius:14px;padding:17px 22px;color:var(--paper);font-size:15px;transition:border-color .3s,background .3s;resize:vertical;width:100%}
+.join-form input::placeholder,.join-form textarea::placeholder{color:rgba(246,241,230,.4)}
+.join-form input:focus,.join-form textarea:focus{outline:none;border-color:var(--gold);background:rgba(246,241,230,.1)}
+.join-form .full{grid-column:1/-1}
+.join-form.error input:first-child{border-color:var(--verm);animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-4px)}}
+.join-err{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--verm);margin-top:14px;min-height:16px}
+.join-success{display:none;margin-top:46px;align-items:center;gap:24px;border:1px dashed var(--gold);border-radius:16px;padding:32px;max-width:760px}
+.join-success.show{display:flex;animation:pop .6s var(--ease)}
+@keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+.seal{width:72px;height:72px;flex:0 0 72px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:22px;transform:rotate(-8deg)}
+.join-success h4{font-family:var(--serif);font-size:24px;font-weight:600}
+.join-success p{color:rgba(246,241,230,.7);font-size:14px;margin-top:4px}
+.join-perks{display:flex;gap:16px 32px;margin-top:44px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,241,230,.6)}
+.join-perks span::before{content:'✦ ';color:var(--gold)}
+
+/* footer */
+footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel);padding:80px 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px}
+.foot-brand p{color:rgba(246,241,230,.6);font-size:14px;margin-top:18px;max-width:34ch}
+.foot-col h5{font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.foot-col a{display:block;padding:6px 0;font-size:14px;color:rgba(246,241,230,.75);transition:color .3s,padding-left .3s}
+.foot-col a:hover{color:var(--gold);padding-left:6px}
+.foot-bottom{display:flex;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;margin-top:70px;padding-top:28px;border-top:1px solid var(--linel);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,230,.45)}
+
+/* mobile CTA */
+.mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:98;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(246,241,230,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.mobile-cta .btn{width:100%}
+
+.toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,90px);background:var(--ink);color:var(--paper);border:1px solid var(--linel);border-radius:999px;padding:14px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;z-index:400;transition:transform .5s var(--ease);box-shadow:0 20px 40px -12px rgba(0,0,0,.5);white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
+.toast.show{transform:translate(-50%,0)}
+.toast::before{content:'✦ ';color:var(--gold)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1280px){
+  .wrap{padding:0 24px}
+  .hero-grid{gap:48px}
+  .feat{gap:48px}
+  .note-grid{gap:56px}
+}
+@media(max-width:1080px){
+  .hero{padding-top:150px}
+  .hero-grid{grid-template-columns:1fr;gap:56px}
+  .shelf{max-width:640px}
+  .feat{grid-template-columns:1fr;gap:56px}
+  .feat:nth-child(even){direction:ltr}
+  .feat-visual{position:static;max-width:420px}
+  .wall-grid{grid-template-columns:1fr}
+  .email.wide{grid-column:auto}
+  .note-grid{grid-template-columns:1fr;gap:56px}
+  .genres,.featured,.wall,.note{padding:100px 0}
+  .band-grid{grid-template-columns:repeat(3,1fr);row-gap:36px}
+  .bm{border-left:none}
+  .genre-grid{grid-template-columns:repeat(2,1fr)}
+  .genre:nth-last-child(-n+4){border-bottom:none}
+  .genre:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media(max-width:820px){
+  .nav-in{padding:14px 20px;gap:16px}
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+  .topbar{font-size:8.5px;letter-spacing:.14em}
+  .tb-extra{display:none}
+  .hero{padding-top:136px}
+  .hero-title{font-size:clamp(40px,10.5vw,64px)}
+  .hero-sub{font-size:16px}
+  .s-head{margin-bottom:40px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat{padding:22px 18px;border-left:none;border-top:1px solid var(--line)}
+  .stat:nth-child(-n+2){border-top:none}
+  .stat:nth-child(odd){padding-left:0}
+  .stat:nth-child(even){border-left:1px solid var(--line);padding-left:24px}
+  .join-form{grid-template-columns:1fr}
+  .band{padding:64px 0}
+  .band-grid{grid-template-columns:1fr 1fr;gap:28px 16px}
+  .bm{text-align:left;padding:0}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:44px}
+  .foot-brand{grid-column:1/-1}
+  .mobile-cta{display:block}
+  footer{padding-bottom:110px}
+  .toast{bottom:96px}
+  .shelf-body{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  .genres,.featured,.wall,.note{padding:80px 0}
+  .join{padding:96px 0}
+  .shelf-body{grid-template-columns:1fr 1fr;gap:12px}
+  .shelf-book{padding:10px}
+  .shelf-book h5{font-size:13px}
+  .genre-grid{grid-template-columns:1fr}
+  .genre{padding:28px 4px 28px 0}
+  .genre:hover{padding-left:10px}
+  .genre:nth-last-child(-n+2){border-bottom:none}
+  .genre:last-child{border-bottom:1px solid var(--line)}
+  .feat-cover::before,.feat-cover::after{width:70px}
+  .feat-cover::before{left:-16px}
+  .feat-cover::after{right:-16px}
+  .feat-kv{grid-template-columns:1fr 1fr;gap:10px}
+  .kv{padding:13px 14px}
+  .kv b{font-size:21px}
+  .feat-body h3{font-size:28px}
+  .band-grid{grid-template-columns:1fr 1fr}
+  .s-title{font-size:clamp(28px,8vw,36px)}
+  .s-lede{font-size:15px}
+  .email-head{padding:16px 18px 12px}
+  .email-body{padding:18px}
+  .email-foot{padding:10px 18px}
+  .email-subj{font-size:16px}
+  .join-form input,.join-form textarea{padding:15px 18px;font-size:16px}
+  .join-perks{font-size:9.5px;letter-spacing:.12em;gap:12px 20px}
+  .foot-grid{grid-template-columns:1fr;gap:36px}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  .note-side{padding:24px}
+  .pull{padding-left:20px;margin:28px 0}
+  .hero-actions{gap:18px}
+  .btn{padding:14px 24px}
+  .hero-stats{margin-top:64px}
+}
+@media(max-width:480px){
+  .hero-title{font-size:clamp(36px,11.5vw,52px)}
+  .hero-sub{margin:22px 0 28px}
+  .hero-note{font-size:9.5px;letter-spacing:.1em}
+  .shelf-head{font-size:9px;padding:12px 14px;gap:6px}
+  .shelf-head .lbl{display:none}
+  .shelf-head .cnt{margin-left:auto}
+  .shelf-body{grid-template-columns:1fr 1fr;gap:10px}
+  .stats-grid{grid-template-columns:1fr}
+  .stat{padding:20px 0;border-left:none !important;border-top:1px solid var(--line)}
+  .stat:nth-child(-n+2){border-top:1px solid var(--line)}
+  .stat:first-child{border-top:none}
+  .band-grid{grid-template-columns:1fr 1fr}
+  .feat-kv{grid-template-columns:1fr}
+  .email-av{width:32px;height:32px;flex-basis:32px;font-size:10px}
+  .email-from-info b{font-size:13px}
+  .email-subj{font-size:15px}
+  .email-body{font-size:14px}
+  .join-form input,.join-form textarea{padding:15px 18px;font-size:16px}
+  .foot-grid{grid-template-columns:1fr;gap:36px}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  .capacity{font-size:9.5px;padding:9px 14px}
+  .ticker-track{font-size:10.5px;letter-spacing:.16em}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  [data-reveal]{opacity:1;transform:none}
+  .rl>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header id="siteHead">
+  <div class="topbar"><span><span class="pulse" aria-hidden="true"></span>Now booking — 2 build slots for Autumn 2026<span class="tb-extra"> · Everything by email, no calls</span></span></div>
+  <div class="nav">
+    <div class="nav-in">
+      <a class="logo" href="/" aria-label="Emily Editorial home">
+        <span class="logo-mark">E</span>
+        <span>Emily <em>Editorial</em></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/">System</a>
+        <a href="/">Services</a>
+        <a href="/">Case Study</a>
+        <a href="/archive" style="opacity:1;color:var(--verm)">Archive</a>
+        <a href="/">Team</a>
+        <a href="/">FAQ</a>
+      </nav>
+      <a class="btn nav-cta" href="#join" style="padding:12px 24px">Start your system <span class="arr">→</span></a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" aria-label="Mobile">
+  <a href="/">Home</a><a href="/">The System</a><a href="/">Services</a><a href="/">Case Study</a><a href="/archive" style="color:var(--gold)">Archive</a><a href="/">Team</a><a href="/">FAQ</a>
+  <a class="mm-cta" href="#join">Start your system →</a>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kick hero-kick" data-reveal><span class="rule"></span><span id="heroKick" data-text="// THE ARCHIVE — 2022 TO 2026">// THE ARCHIVE — 2022 TO 2026</span></div>
+        <h1 class="hero-title" data-reveal>
+          <span class="rl"><span>The work,</span></span>
+          <span class="rl" style="--d:.12s"><span>in <em>full.</em></span></span>
+        </h1>
+        <p class="hero-sub" data-reveal style="--d:.25s">Twenty-three books across eight genres. Every system built by email, every reader list handed over on day one, every author still writing. This is the archive — the real numbers, the real names, the real thank-you notes.</p>
+        <div class="hero-actions" data-reveal style="--d:.35s">
+          <a class="btn" href="#join">Add your book <span class="arr">→</span></a>
+          <a class="btn-ghost" href="#emails">Read the emails</a>
+        </div>
+        <div class="hero-note" data-reveal style="--d:.45s">
+          <span>23 books shipped</span><span>8 genres</span><span>61,400+ readers</span>
+        </div>
+      </div>
+
+      <div data-reveal style="--d:.2s">
+        <div class="shelf" aria-label="Archive shelf">
+          <div class="shelf-head">
+            <i></i><i></i><i></i>
+            <span class="lbl">emily.editorial / archive</span>
+            <span class="cnt">23 TITLES · 2022–2026</span>
+          </div>
+          <div class="shelf-body">
+            <div class="shelf-book"><img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/159b6e4a1-dd43-45ed-bf4b-67bcef8447c8.png" alt="The Salt Between Us"><h5>The Salt Between Us</h5><small>Literary fiction</small><div class="yr">2024 · 1,842 readers</div></div>
+            <div class="shelf-book"><img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/1a9f04c9f-1f8c-42f7-a60c-c70f02aaab19.png" alt="Bone Cartography"><h5>Bone Cartography</h5><small>Memoir</small><div class="yr">2023 · 2,104 readers</div></div>
+            <div class="shelf-book"><img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/1ae44f5e9-e60f-4553-bff8-5db71821c912.png" alt="Monsoon Gods"><h5>Monsoon Gods</h5><small>Mythic fantasy</small><div class="yr">2025 · 3,217 readers</div></div>
+            <div class="shelf-book"><img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/121d5c1e5-01f5-492d-bc3b-71fd736197d2.png" alt="The Drowning House"><h5>The Drowning House</h5><small>Literary horror</small><div class="yr">2024 · 1,563 readers</div></div>
+            <div class="shelf-book"><img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/1ab20a603-60f1-4520-a331-b44f5a82fe09.png" alt="Quiet Machines"><h5>Quiet Machines</h5><small>Diaspora SF</small><div class="yr">2025 · 987 readers</div></div>
+            <div class="shelf-book"><img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/118b6eb3a-8c63-4be3-9b32-b591e6175cf0.png" alt="Honey & Ash"><h5>Honey &amp; Ash</h5><small>Culinary memoir</small><div class="yr">2026 · 712 readers</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stats-grid">
+        <div class="stat" data-reveal><div class="stat-num"><span data-count="23">0</span></div><div class="stat-lbl">Books in the archive</div></div>
+        <div class="stat" data-reveal style="--d:.1s"><div class="stat-num"><span data-count="61400">0</span><sup>+</sup></div><div class="stat-lbl">Readers collected</div></div>
+        <div class="stat" data-reveal style="--d:.2s"><div class="stat-num"><span data-count="38">0</span>%</div><div class="stat-lbl">Average opt-in rate</div></div>
+        <div class="stat" data-reveal style="--d:.3s"><div class="stat-num"><span data-count="0">0</span></div><div class="stat-lbl">Calls required, ever</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <span><span class="fl">✦</span> Literary fiction</span>
+    <span><span class="fl">✦</span> Memoir &amp; non-fiction</span>
+    <span><span class="fl">✦</span> Mythic fantasy</span>
+    <span><span class="fl">✦</span> Historical epic</span>
+    <span><span class="fl">✦</span> Diaspora SF</span>
+    <span><span class="fl"></span> Literary horror</span>
+    <span><span class="fl">✦</span> Culinary writing</span>
+    <span><span class="fl">✦</span> Poetry &amp; oral history</span>
+  </div>
+</div>
+
+<!-- ============ GENRE INDEX ============ -->
+<section class="genres" id="genres">
+  <div class="wrap">
+    <div class="s-head" data-reveal>
+      <div class="kick"><span>// 01 · THE GENRES</span><span class="rule"></span></div>
+      <div class="s-row">
+        <h2 class="s-title">Eight shelves. One system.</h2>
+        <p class="s-lede">The machinery is the same. The magnet, the letters, the targeting — they change shape for each shelf. Here is where the work has lived.</p>
+      </div>
+    </div>
+    <div class="genre-grid">
+      <div class="genre" data-reveal>
+        <div class="genre-top"><span class="genre-no">G·01</span><span class="genre-ct">5 titles</span></div>
+        <h3>Literary Fiction</h3>
+        <p>Diaspora stories, family epics, quiet novels about displacement and return. The magnet is often a chapter, a letter, a recipe from the old country.</p>
+        <div class="sample">"The Salt Between Us"<small>Adaeze Okafor · 2024</small></div>
+      </div>
+      <div class="genre" data-reveal style="--d:.06s">
+        <div class="genre-top"><span class="genre-no">G·02</span><span class="genre-ct">4 titles</span></div>
+        <h3>Memoir &amp; Non-Fiction</h3>
+        <p>Personal history, cultural essays, investigative work. The magnet becomes a long-form excerpt, a field notebook, a glossary of place names.</p>
+        <div class="sample">"Bone Cartography"<small>Miriam Halter · 2023</small></div>
+      </div>
+      <div class="genre" data-reveal style="--d:.12s">
+        <div class="genre-top"><span class="genre-no">G·03</span><span class="genre-ct">4 titles</span></div>
+        <h3>Mythic Fantasy</h3>
+        <p>Rooted in living traditions — Hindu, Yoruba, Celtic, Andean. The magnet is always a piece of the world: a short story, a bestiary, a map of the sacred geography.</p>
+        <div class="sample">"Monsoon Gods"<small>Vikram Desai · 2025</small></div>
+      </div>
+      <div class="genre" data-reveal style="--d:.18s">
+        <div class="genre-top"><span class="genre-no">G·04</span><span class="genre-ct">3 titles</span></div>
+        <h3>Historical Epic</h3>
+        <p>Multi-generational sagas, wartime narratives, stories of migration. The magnet is a timeline, a family tree, a letter from the period.</p>
+        <div class="sample">"The Cartographer's Daughter"<small>Elena Voss · 2023</small></div>
+      </div>
+      <div class="genre" data-reveal style="--d:.06s">
+        <div class="genre-top"><span class="genre-no">G·05</span><span class="genre-ct">3 titles</span></div>
+        <h3>Diaspora SF</h3>
+        <p>Speculative futures rooted in specific cultures — Afrofuturism, Indigenous futurism, Latinx SF. The magnet is often a world-building document.</p>
+        <div class="sample">"Quiet Machines"<small>Tomás Reyes · 2025</small></div>
+      </div>
+      <div class="genre" data-reveal style="--d:.12s">
+        <div class="genre-top"><span class="genre-no">G·06</span><span class="genre-ct">2 titles</span></div>
+        <h3>Literary Horror</h3>
+        <p>Horror rooted in place, tradition, and inherited fear. The magnet is a folk tale, a local legend, a field recording transcript.</p>
+        <div class="sample">"The Drowning House"<small>Siobhan Byrne · 2024</small></div>
+      </div>
+      <div class="genre" data-reveal style="--d:.18s">
+        <div class="genre-top"><span class="genre-no">G·07</span><span class="genre-ct">1 title</span></div>
+        <h3>Culinary Writing</h3>
+        <p>Food memoirs, recipe collections, culinary history. The magnet is always a recipe — tested, photographed, typeset like the book itself.</p>
+        <div class="sample">"Honey &amp; Ash"<small>Leila Farahani · 2026</small></div>
+      </div>
+      <div class="genre" data-reveal style="--d:.24s">
+        <div class="genre-top"><span class="genre-no">G·08</span><span class="genre-ct">1 title</span></div>
+        <h3>Poetry &amp; Oral History</h3>
+        <p>Verse collections, recorded testimonies, spoken-word transcriptions. The magnet is an audio file, a broadside, a single poem in translation.</p>
+        <div class="sample">"Paper Lanterns"<small>Kenji Watanabe · 2025</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED WORK ============ -->
+<section class="featured" id="work">
+  <div class="wrap">
+    <div class="s-head" data-reveal>
+      <div class="kick"><span>// 02 · FEATURED WORK</span><span class="rule"></span></div>
+      <div class="s-row">
+        <h2 class="s-title">Six builds, six shelves.</h2>
+        <p class="s-lede">The full story of six engagements — what was built, what it cost, what it returned. No vanity metrics, no rounded numbers.</p>
+      </div>
+    </div>
+
+    <div class="feat-grid">
+
+      <!-- 1. The Salt Between Us -->
+      <article class="feat" data-reveal>
+        <div class="feat-visual">
+          <div class="feat-cover">
+            <img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/159b6e4a1-dd43-45ed-bf4b-67bcef8447c8.png" alt="The Salt Between Us by Adaeze Okafor">
+            <div class="feat-cap"><span>Adaeze Okafor</span><span>2024 · Literary fiction</span></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="kick"><span>/ LITERARY FICTION</span><span class="rule"></span></div>
+          <h3>The Salt Between Us — <em>a diaspora novel, built from Lagos to London.</em></h3>
+          <div class="feat-meta"><span>Debut novel</span><span>Zero platform</span><span>14-week build</span></div>
+          <p>Adaeze's debut follows three generations of a Nigerian-British family across the Atlantic. Her publisher had given her a stock Amazon ad template and a prayer. We built a landing page around a free chapter — "The Crossing," the 1962 migration scene — and a glossary of Igbo proverbs woven through the text.</p>
+          <p>The targeting was specific: readers of Chimamanda, Ayọ̀bámi Adébáyọ̀, and the "African diaspora literary fiction" shelf on Goodreads. Broad "literary fiction" audiences were tested for one week and killed — four times more expensive, half the opt-in rate.</p>
+          <div class="feat-kv">
+            <div class="kv"><b>1,842</b><span>Readers collected</span></div>
+            <div class="kv"><b>39%</b><span>Opt-in rate</span></div>
+            <div class="kv"><b>$1.04</b><span>Cost per reader</span></div>
+            <div class="kv"><b>312</b><span>Pre-orders attributed</span></div>
+          </div>
+          <div class="feat-built">Built: <span>Landing page</span><span>Free chapter</span><span>Proverb glossary</span><span>4-letter sequence</span><span>12-week ad care</span></div>
+        </div>
+      </article>
+
+      <!-- 2. Bone Cartography -->
+      <article class="feat" data-reveal>
+        <div class="feat-visual">
+          <div class="feat-cover">
+            <img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/1a9f04c9f-1f8c-42f7-a60c-c70f02aaab19.png" alt="Bone Cartography by Miriam Halter">
+            <div class="feat-cap"><span>Miriam Halter</span><span>2023 · Memoir</span></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="kick"><span>/ MEMOIR</span><span class="rule"></span></div>
+          <h3>Bone Cartography — <em>a memoir of place, mapped in letters.</em></h3>
+          <div class="feat-meta"><span>Second book</span><span>Small press</span><span>10-week build</span></div>
+          <p>Miriam's memoir traces her grandmother's displacement from a Polish village that no longer appears on modern maps. The magnet we built was a "field notebook" — 22 pages of her grandmother's handwritten place names, translated, with Miriam's marginalia alongside.</p>
+          <p>The targeting was unusual: we aimed at readers of W.G. Sebald, Robert Macfarlane, and the "nature writing / place memoir" shelf. The opt-in rate surprised even us — 44%, the highest in the archive. Readers of place-based non-fiction, it turns out, are unusually willing to trade an email for a real artifact.</p>
+          <div class="feat-kv">
+            <div class="kv"><b>2,104</b><span>Readers collected</span></div>
+            <div class="kv"><b>44%</b><span>Opt-in rate</span></div>
+            <div class="kv"><b>$0.87</b><span>Cost per reader</span></div>
+            <div class="kv"><b>487</b><span>Pre-orders attributed</span></div>
+          </div>
+          <div class="feat-built">Built: <span>Landing page</span><span>Field notebook PDF</span><span>Map illustration</span><span>3-letter sequence</span><span>8-week ad care</span></div>
+        </div>
+      </article>
+
+      <!-- 3. Monsoon Gods -->
+      <article class="feat" data-reveal>
+        <div class="feat-visual">
+          <div class="feat-cover">
+            <img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/1ae44f5e9-e60f-4553-bff8-5db71821c912.png" alt="Monsoon Gods by Vikram Desai">
+            <div class="feat-cap"><span>Vikram Desai</span><span>2025 · Mythic fantasy</span></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="kick"><span>/ MYTHIC FANTASY</span><span class="rule"></span></div>
+          <h3>Monsoon Gods — <em>a pantheon, given freely.</em></h3>
+          <div class="feat-meta"><span>Debut novel</span><span>Self-published</span><span>12-week build</span></div>
+          <p>Vikram's debut reimagines the Hindu monsoon deities as a family in crisis. He had no platform, no mailing list, and a deep suspicion of "marketing." We built a glossary of forty deities, rivers, and rites — typeset to match the novel's design — and a short story about the youngest god, the one the novel is named after.</p>
+          <p>The targeting was the most culturally specific we've run: "South Asian mythic fantasy," "Hindu speculative fiction," "folklore retellings." We explicitly excluded broad "fantasy" audiences after a one-week test showed them at $4.87 per reader. The final blended cost: $1.12.</p>
+          <div class="feat-kv">
+            <div class="kv"><b>3,217</b><span>Readers collected</span></div>
+            <div class="kv"><b>41%</b><span>Opt-in rate</span></div>
+            <div class="kv"><b>$1.12</b><span>Cost per reader</span></div>
+            <div class="kv"><b>628</b><span>Pre-orders attributed</span></div>
+          </div>
+          <div class="feat-built">Built: <span>Landing page</span><span>Deity glossary</span><span>Short story</span><span>3-letter sequence</span><span>14-week ad care</span></div>
+        </div>
+      </article>
+
+      <!-- 4. The Drowning House -->
+      <article class="feat" data-reveal>
+        <div class="feat-visual">
+          <div class="feat-cover">
+            <img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/121d5c1e5-01f5-492d-bc3b-71fd736197d2.png" alt="The Drowning House by Siobhan Byrne">
+            <div class="feat-cap"><span>Siobhan Byrne</span><span>2024 · Literary horror</span></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="kick"><span>/ LITERARY HORROR</span><span class="rule"></span></div>
+          <h3>The Drowning House — <em>a folk tale, a field recording, a list.</em></h3>
+          <div class="feat-meta"><span>Third book</span><span>Mid-size press</span><span>8-week build</span></div>
+          <p>Siobhan's novel is set in a flooded Victorian house on the Irish coast, and the horror is inherited — the kind that lives in family stories. The magnet we built was a transcript of a "field recording" — a fictional oral history of the house, written as if recorded in 1974 by a folklore student.</p>
+          <p>The targeting was the most fun we've had: readers of Sarah Perry, Susan Hill, and the "Irish gothic" shelf. We also ran a small test against "cozy mystery" readers — it performed terribly, which told us something useful about the difference between atmospheric and cozy.</p>
+          <div class="feat-kv">
+            <div class="kv"><b>1,563</b><span>Readers collected</span></div>
+            <div class="kv"><b>36%</b><span>Opt-in rate</span></div>
+            <div class="kv"><b>$1.28</b><span>Cost per reader</span></div>
+            <div class="kv"><b>241</b><span>Pre-orders attributed</span></div>
+          </div>
+          <div class="feat-built">Built: <span>Landing page</span><span>Field recording transcript</span><span>House history PDF</span><span>3-letter sequence</span><span>10-week ad care</span></div>
+        </div>
+      </article>
+
+      <!-- 5. Quiet Machines -->
+      <article class="feat" data-reveal>
+        <div class="feat-visual">
+          <div class="feat-cover">
+            <img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/1ab20a603-60f1-4520-a331-b44f5a82fe09.png" alt="Quiet Machines by Tomás Reyes">
+            <div class="feat-cap"><span>Tomás Reyes</span><span>2025 · Diaspora SF</span></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="kick"><span>/ DIASPORA SF</span><span class="rule"></span></div>
+          <h3>Quiet Machines — <em>a future, built from the border.</em></h3>
+          <div class="feat-meta"><span>Debut novel</span><span>Small press</span><span>11-week build</span></div>
+          <p>Tomás's debut is set in a near-future Tijuana where the border wall has become a computational surface. The magnet was a "technical manual" — a fictional document from the novel's world, explaining how the wall's sensors work, written in the voice of the novel's engineer protagonist.</p>
+          <p>The targeting was the most niche we've attempted: "Latinx science fiction," "border literature," "speculative fiction by authors of color." The audience was small but fiercely engaged — 52% open rate on the welcome letter, the highest in the archive.</p>
+          <div class="feat-kv">
+            <div class="kv"><b>987</b><span>Readers collected</span></div>
+            <div class="kv"><b>47%</b><span>Opt-in rate</span></div>
+            <div class="kv"><b>$1.43</b><span>Cost per reader</span></div>
+            <div class="kv"><b>178</b><span>Pre-orders attributed</span></div>
+          </div>
+          <div class="feat-built">Built: <span>Landing page</span><span>Technical manual PDF</span><span>World-building doc</span><span>4-letter sequence</span><span>9-week ad care</span></div>
+        </div>
+      </article>
+
+      <!-- 6. Honey & Ash -->
+      <article class="feat" data-reveal>
+        <div class="feat-visual">
+          <div class="feat-cover">
+            <img src="https://image.qwenlm.ai/public_source/0cb2f40e-fca0-4348-99e5-bc4170a84961/118b6eb3a-8c63-4be3-9b32-b591e6175cf0.png" alt="Honey & Ash by Leila Farahani">
+            <div class="feat-cap"><span>Leila Farahani</span><span>2026 · Culinary memoir</span></div>
+          </div>
+        </div>
+        <div class="feat-body">
+          <div class="kick"><span>/ CULINARY MEMOIR</span><span class="rule"></span></div>
+          <h3>Honey &amp; Ash — <em>a recipe, a family, a list.</em></h3>
+          <div class="feat-meta"><span>Second book</span><span>Self-published</span><span>9-week build</span></div>
+          <p>Leila's memoir traces her family's displacement from Tehran through the recipes they carried with them. The magnet was a single recipe — "Fesenjān for Exiles" — tested, photographed, and typeset to match the book's design. It took three weeks to get the pomegranate molasses ratio right.</p>
+          <p>The targeting was the most cross-cultural we've run: "Iranian diaspora," "food memoir," "Middle Eastern cooking," "immigrant narratives." The recipe magnet outperformed every other magnet type in the archive — 51% opt-in rate. People will trade an email for a recipe they can cook tonight.</p>
+          <div class="feat-kv">
+            <div class="kv"><b>712</b><span>Readers collected</span></div>
+            <div class="kv"><b>51%</b><span>Opt-in rate</span></div>
+            <div class="kv"><b>$0.94</b><span>Cost per reader</span></div>
+            <div class="kv"><b>134</b><span>Pre-orders attributed</span></div>
+          </div>
+          <div class="feat-built">Built: <span>Landing page</span><span>Recipe PDF</span><span>Photo direction</span><span>3-letter sequence</span><span>6-week ad care</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMAIL WALL ============ -->
+<section class="wall" id="emails">
+  <div class="wrap">
+    <div class="s-head" data-reveal>
+      <div class="kick"><span>// 03 · THE EMAILS</span><span class="rule"></span></div>
+      <div class="s-row">
+        <h2 class="s-title">Thank-you notes, unedited.</h2>
+        <p class="s-lede">Six emails from six authors. No calls, no contracts signed in person, no handshakes. Just the work, and the quiet notes that came after.</p>
+      </div>
+    </div>
+
+    <div class="wall-grid">
+
+      <!-- Email 1: Adaeze -->
+      <article class="email" data-reveal>
+        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQV...</span></div>
+        <div class="email-head">
+          <div class="email-from">
+            <div class="email-av" style="background:var(--verm)">AO</div>
+            <div class="email-from-info"><b>Adaeze Okafor</b><small>to emilymitchellcooper@gmail.com</small></div>
+          </div>
+          <div class="email-subj">emily — 400 readers. four hundred.</div>
+          <div class="email-date">Tue, Mar 12, 2024 at 11:47 PM · Lagos time</div>
+        </div>
+        <div class="email-body">
+          <p>emily,</p>
+          <p>i'm sitting here at 11pm and the dashboard just ticked over to 400. four hundred people. four hundred strangers who read the crossing chapter and then gave you their email address because they wanted more of the world i made.</p>
+          <p>i keep refreshing the page like it's going to go back down. it doesn't.</p>
+          <p>my publisher sent me a "congratulations on your launch!" email at 9am this morning and i didn't reply because i was watching the reader count go from 387 to 391 to 394 and i couldn't look away. this is the first time in my life marketing has felt like something other than begging.</p>
+          <p>thank you. for the page, for the glossary, for not making me get on a single call. my mother asked why i wasn't stressed and i told her "because emily is handling it" and she said "who is emily" and i said "the person who built the machine" and she said "oh, the machine person. good."</p>
+          <p>that's the highest praise i can give.</p>
+          <div class="sig"><b>— adaeze</b><small>adaeze.okafor@gmail.com</small></div>
+        </div>
+        <div class="email-foot"><span class="star">★</span><span>Replied 2d ago</span></div>
+      </article>
+
+      <!-- Email 2: Miriam -->
+      <article class="email" data-reveal style="--d:.08s">
+        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQW...</span></div>
+        <div class="email-head">
+          <div class="email-from">
+            <div class="email-av" style="background:var(--jade)">MH</div>
+            <div class="email-from-info"><b>Miriam Halter</b><small>to emilymitchellcooper@gmail.com</small></div>
+          </div>
+          <div class="email-subj">Re: the signal report</div>
+          <div class="email-date">Thu, Nov 9, 2023 at 3:12 PM · Berlin time</div>
+        </div>
+        <div class="email-body">
+          <p>Emily,</p>
+          <p>I've read the Signal Report three times. My agent read it twice. My publisher's marketing director read it once and then emailed me to ask who you are.</p>
+          <p>The number that keeps catching me is the 44% opt-in rate. I've been in publishing for eleven years and I've never seen a number like that outside of a celebrity memoir. And this is a quiet book about a village that doesn't exist anymore.</p>
+          <p>What I want you to know — and this is the part that matters — is that the readers are writing back. Actual emails. One woman wrote to say the field notebook made her cry on the U-Bahn. A man in Kraków wrote to say his grandmother's village was also erased from the maps and he'd been looking for this book for twenty years.</p>
+          <p>This isn't marketing. This is the book finding its people. You built the bridge.</p>
+          <p>I've already told my agent to book you for the next one. She said "is she expensive" and I said "she's worth it" and that was the end of the conversation.</p>
+          <div class="sig"><b>— Miriam</b><small>miriam.halter@posteo.de</small></div>
+        </div>
+        <div class="email-foot"><span class="star">★</span><span>Replied 1d ago</span></div>
+      </article>
+
+      <!-- Email 3: Vikram -->
+      <article class="email wide" data-reveal>
+        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQX...</span></div>
+        <div class="email-head">
+          <div class="email-from">
+            <div class="email-av" style="background:var(--gold)">VD</div>
+            <div class="email-from-info"><b>Vikram Desai</b><small>to emilymitchellcooper@gmail.com</small></div>
+          </div>
+          <div class="email-subj">the glossary changed everything</div>
+          <div class="email-date">Mon, Jun 17, 2025 at 9:03 AM · Mumbai time</div>
+        </div>
+        <div class="email-body">
+          <p>emily —</p>
+          <p>i need to tell you something and i want to tell it clearly so there's no confusion about what i'm saying.</p>
+          <p>before we started working together, i had exactly three people on my mailing list. three. my mother, my sister, and my friend arjun who signed up to be supportive and then never opened a single email. i had convinced myself that "building an audience" was something that happened to other people — people with bigger platforms, people who were better at twitter, people who didn't spend their weekends re-reading the mahabharata for the fourteenth time.</p>
+          <p>the glossary you built — the one with the forty deities and rivers and rites — has been downloaded 3,217 times. three thousand two hundred and seventeen. i sat down last night and tried to imagine what that number means in human terms and i couldn't. it's too big. it's the population of a small town. a small town of people who wanted to know about the world i made.</p>
+          <p>but here's the part that actually matters: the readers are writing to tell me when i get something wrong. not angrily — respectfully. a woman from pune wrote to say that in her family's tradition, varuna is invoked differently during the first monsoon than the second. a man from diaspora in toronto wrote to say he'd never seen his grandmother's prayers represented in a book before and he was crying in his car in a parking lot. these are the emails i'm getting now. these are the conversations.</p>
+          <p>you didn't just build a mailing list. you built a community that cares enough to correct me. that's the most generous thing anyone has ever done for my work.</p>
+          <p>i'm starting book two next month. i'm not talking to anyone else. i'm writing to you first.</p>
+          <div class="sig"><b>— vikram</b><small>vikram.desai.writes@gmail.com</small></div>
+        </div>
+        <div class="email-foot"><span class="star">★</span><span>Replied 4h ago</span></div>
+      </article>
+
+      <!-- Email 4: Siobhan -->
+      <article class="email" data-reveal>
+        <div class="email-bar"><i></i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQY...</span></div>
+        <div class="email-head">
+          <div class="email-from">
+            <div class="email-av" style="background:var(--ink3)">SB</div>
+            <div class="email-from-info"><b>Siobhan Byrne</b><small>to emilymitchellcooper@gmail.com</small></div>
+          </div>
+          <div class="email-subj">quick note</div>
+          <div class="email-date">Fri, Sep 6, 2024 at 7:22 PM · Cork time</div>
+        </div>
+        <div class="email-body">
+          <p>Emily,</p>
+          <p>Quick note — my publisher just called me (actual phone call, the horror) to say the pre-order numbers are "unexpectedly strong" and they want to know what we're doing differently.</p>
+          <p>I told them "we're not doing anything differently, the book is just finding its readers" and they said "that's not how publishing works" and I said "well it is now" and hung up.</p>
+          <p>The field recording transcript is doing the work. People are genuinely unsettled by it in the best way. One reader wrote to say she listened to it on the bus and had to get off three stops early because she was too creeped out to stay on. That's the best review I've ever received.</p>
+          <p>Thank you for not making me do a single video. Or a single dance. Or a single "behind the scenes" post. I would have died. Actually died. On camera.</p>
+          <p>The machine works. The machine is quiet. The machine is mine.</p>
+          <p>— S</p>
+          <div class="sig"><b>— Siobhan Byrne</b><small>siobhan@byrnebooks.ie</small></div>
+        </div>
+        <div class="email-foot"><span class="star">★</span><span>Replied 3d ago</span></div>
+      </article>
+
+      <!-- Email 5: Tomás -->
+      <article class="email" data-reveal style="--d:.08s">
+        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQZ...</span></div>
+        <div class="email-head">
+          <div class="email-from">
+            <div class="email-av" style="background:var(--verm)">TR</div>
+            <div class="email-from-info"><b>Tomás Reyes</b><small>to emilymitchellcooper@gmail.com</small></div>
+          </div>
+          <div class="email-subj">Re: Re: Re: Re: thank you</div>
+          <div class="email-date">Wed, Jan 22, 2025 at 11:58 PM · Tijuana time</div>
+        </div>
+        <div class="email-body">
+          <p>Emily —</p>
+          <p>I know I've already thanked you four times in this thread but I'm looking at the numbers tonight and I need to say it again, differently.</p>
+          <p>The technical manual magnet — the fictional sensor documentation from the novel — has a 52% open rate on the welcome letter. FIFTY-TWO PERCENT. I work in tech. I read every newsletter that comes into my inbox and I unsubscribe from 90% of them within a week. The fact that half the people who signed up are opening your letters means you've built something that actually respects their attention.</p>
+          <p>But here's the metric that matters to me: 178 pre-orders attributed. That's 178 people who read the manual, read the letters, and then decided to buy the book. Not because of a countdown timer. Not because of "limited time offer." Because the world was interesting enough that they wanted to live in it longer.</p>
+          <p>My abuela read the manual last week (I translated it for her) and she said "this feels like the book" and then she asked if she could have a copy to give to her book club. That's the test. If it feels like the book, it works. If it doesn't, it's just marketing.</p>
+          <p>You passed the abuela test. That's the only review that matters.</p>
+          <p>— Tomás</p>
+          <div class="sig"><b>— Tomás Reyes</b><small>t.reyes.writer@proton.me</small></div>
+        </div>
+        <div class="email-foot"><span class="star">★</span><span>Replied 1d ago</span></div>
+      </article>
+
+      <!-- Email 6: Leila -->
+      <article class="email" data-reveal style="--d:.16s">
+        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzR0...</span></div>
+        <div class="email-head">
+          <div class="email-from">
+            <div class="email-av" style="background:var(--jade)">LF</div>
+            <div class="email-from-info"><b>Leila Farahani</b><small>to emilymitchellcooper@gmail.com</small></div>
+          </div>
+          <div class="email-subj">my mother read the letter</div>
+          <div class="email-date">Sun, Feb 16, 2026 at 6:34 PM · Tehran time (via VPN)</div>
+        </div>
+        <div class="email-body">
+          <p>Emily jan,</p>
+          <p>I have to tell you what happened yesterday. My mother — who has never once shown interest in anything I write, who calls my books "your little stories" — called me to say she'd received an email from you. The welcome letter. The one about the pomegranate molasses.</p>
+          <p>She said "I made fesenjān last night from your recipe and I cried the whole time because it tasted like my mother's kitchen in tehran and I haven't been able to go back since 1979."</p>
+          <p>My mother. Crying over a recipe. Over an email from a woman she's never met. Over a book she hasn't even bought yet.</p>
+          <p>That's when I understood what you've actually built. It's not a mailing list. It's a way for the book to reach the people who need it — the people who are looking for the taste of home, the people who are looking for the story that sounds like their grandmother's voice.</p>
+          <p>She asked me to send her the book. She said "I want to read the whole thing now." My mother. Who has never read anything I've written. Who said my first book was "too sad" and my second book was "too long."</p>
+          <p>You did this. The recipe did this. The letter did this. The machine you built — quiet, respectful, patient — it reached my mother through a VPN in tehran and made her cry over pomegranate molasses.</p>
+          <p>I don't have the english words for what I'm feeling. In farsi we say "dastet dard nakone" — may your hand not hurt. It's what we say to someone who has made something beautiful with their hands. Your hands built this. May they never hurt.</p>
+          <div class="sig"><b>— Leila</b><small>leila.farahani.writes@gmail.com</small></div>
+        </div>
+        <div class="email-foot"><span class="star">★</span><span>Replied 6h ago</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<section class="band" aria-label="Archive results">
+  <div class="wrap band-grid">
+    <div class="bm" data-reveal><b><span data-count="23">0</span></b><span>Books in the archive</span></div>
+    <div class="bm" data-reveal style="--d:.08s"><b><span data-count="61400">0</span><sup style="font-size:.5em">+</sup></b><span>Readers collected</span></div>
+    <div class="bm" data-reveal style="--d:.16s"><b><span data-count="38">0</span>%</b><span>Average opt-in rate</span></div>
+    <div class="bm" data-reveal style="--d:.24s"><b>$<span data-count="1.12" data-dec="2">0</span></b><span>Blended cost / reader</span></div>
+    <div class="bm" data-reveal style="--d:.32s"><b><span data-count="0">0</span></b><span>Calls required, ever</span></div>
+  </div>
+</section>
+
+<!-- ============ NOTE ============ -->
+<section class="note dark">
+  <div class="wrap note-grid">
+    <div class="note-body">
+      <div class="kick" data-reveal><span>// 04 · A NOTE ON THE WORK</span><span class="rule"></span></div>
+      <h2 class="s-title" style="margin:18px 0 30px;color:var(--paper)" data-reveal>Every book is different. The system is the same.</h2>
+      <p data-reveal>The magnet changes shape — a recipe, a field recording, a technical manual, a proverb glossary. The targeting changes — different shelves, different audiences, different costs. The letters change — different voices, different rhythms, different invitations.</p>
+      <p data-reveal>But the system is always the same: <strong>a page you own, a gift worth keeping, modest ads aimed at the right shelf, and letters that treat the reader like an adult.</strong> That's it. That's the whole strategy.</p>
+      <blockquote class="pull" data-reveal>"The machine is quiet. The machine is mine. The machine works."<small>— Siobhan Byrne, September 2024</small></blockquote>
+      <p data-reveal>Every engagement in this archive began with a single email. No calls. No pitches. No "let's hop on a quick call to discuss." Just a book, a story, and a written proposal within two working days.</p>
+    </div>
+    <div class="note-side" data-reveal>
+      <h4>What every engagement includes</h4>
+      <ul class="note-list">
+        <li>A landing page you own, exportable on day one</li>
+        <li>A lead magnet worth keeping — typeset to match the book</li>
+        <li>Modest ad budgets, reviewed in writing every month</li>
+        <li>A welcome sequence written in the book's voice</li>
+        <li>The Signal Report — plain words on what's working</li>
+        <li>Full list handover, always, for any reason</li>
+        <li>Zero calls. Ever. Unless you ask (and even then, we'd rather write)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN ============ -->
+<section class="join dark" id="join">
+  <div class="wm" aria-hidden="true">E</div>
+  <div class="wrap">
+    <div class="kick" data-reveal><span class="rule"></span><span>// 05 · ADD YOUR BOOK</span></div>
+    <h2 class="join-title" data-reveal>Your book belongs in the archive. <em>Let's build it.</em></h2>
+    <form class="join-form" id="joinForm" novalidate>
+      <input type="email" id="jEmail" placeholder="you@somewhere-quiet.com" aria-label="Email address" autocomplete="email">
+      <input type="text" id="jBook" placeholder="Working title of your book" aria-label="Book title">
+      <textarea class="full" id="jStory" rows="3" placeholder="One line about the world your book carries (optional)" aria-label="About your story"></textarea>
+      <button class="btn btn-paper full" type="submit">Send it over — no call required <span class="arr">→</span></button>
+    </form>
+    <div class="join-err" id="joinErr"></div>
+    <div class="join-success" id="joinSuccess">
+      <div class="seal">E</div>
+      <div><h4>Received. Thank you.</h4><p>A written proposal arrives within two working days. No calls — promise. Meanwhile, keep writing.</p></div>
+    </div>
+    <div class="join-perks" data-reveal>
+      <span>Reply within 48h</span><span>Written proposal</span><span>Fixed quote</span><span>No calls, ever</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="/" style="color:var(--paper)"><span class="logo-mark">E</span></a>
+        <p>Emily Editorial — a studio of four building quiet, precise reader systems for authors whose stories carry cultural depth. Built by email, run with respect.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Studio</h5>
+        <a href="/">The Problem</a><a href="/">The System</a><a href="/">Services</a><a href="/">Kushlam Case Study</a><a href="/">The Masthead</a>
+      </div>
+      <div class="foot-col">
+        <h5>Archive</h5>
+        <a href="#genres">The Genres</a><a href="#work">Featured Work</a><a href="#emails">The Emails</a><a href="#join">Add Your Book</a>
+      </div>
+      <div class="foot-col">
+        <h5>Begin</h5>
+        <a href="#join">Start your system</a><a href="/">Engagement &amp; pricing</a><a href="/">FAQ</a><a href="mailto:emilymitchellcooper@gmail.com">emilymitchellcooper@gmail.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Emily Mitchell Cooper · Emily Editorial</span>
+      <span>Built quietly, by email ✦ No calls were made in the making of this site</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta" aria-hidden="false">
+  <a class="btn" href="#join">Add your book — no call required <span class="arr">→</span></a>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* toast */
+  var toastEl = document.getElementById('toast'), toastT;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastT);
+    toastT = setTimeout(function(){ toastEl.classList.remove('show'); }, 2800);
+  }
+
+  /* header / progress */
+  var head = document.getElementById('siteHead'), prog = document.getElementById('progress');
+  function onScroll(){
+    head.classList.toggle('scrolled', window.scrollY > 30);
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var burger = document.getElementById('burger');
+  burger.addEventListener('click', function(){
+    document.body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', document.body.classList.contains('menu-open'));
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.body.classList.remove('menu-open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* reveals */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
+
+  /* counters */
+  function runCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    if(reduce){ el.textContent = dec ? target.toFixed(dec) : target.toLocaleString('en-US'); return; }
+    var t0 = performance.now(), dur = 1700;
+    (function step(t){
+      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3), v = target * e;
+      el.textContent = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US');
+      if(p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ runCount(e.target); cio.unobserve(e.target); } });
+  }, {threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+
+  /* scramble kicker */
+  (function(){
+    var el = document.getElementById('heroKick'), txt = el.getAttribute('data-text');
+    if(reduce){ el.textContent = txt; return; }
+    var glyphs = '#/\\|<>*+=·';
+    setTimeout(function(){
+      var t0 = performance.now(), dur = 1200;
+      (function tick(t){
+        var p = Math.min(1, (t - t0) / dur), solved = Math.floor(p * txt.length), out = '';
+        for(var i = 0; i < txt.length; i++){
+          out += i < solved ? txt[i] : (txt[i] === ' ' ? ' ' : glyphs[Math.floor(Math.random()*glyphs.length)]);
+        }
+        el.textContent = out;
+        if(p < 1) requestAnimationFrame(tick); else el.textContent = txt;
+      })(t0);
+    }, 500);
+  })();
+
+  /* ticker duplicate */
+  var track = document.getElementById('tickerTrack');
+  track.innerHTML += track.innerHTML;
+
+  /* join form */
+  var form = document.getElementById('joinForm'), jEmail = document.getElementById('jEmail'),
+      jBook = document.getElementById('jBook'), err = document.getElementById('joinErr'),
+      success = document.getElementById('joinSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = jEmail.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){
+      form.classList.remove('error'); void form.offsetWidth; form.classList.add('error');
+      err.textContent = '✦ That address doesn\u2019t look quite right — one more try?';
+      return;
+    }
+    if(!jBook.value.trim()){
+      err.textContent = '✦ Add your working title — even a provisional one.';
+      return;
+    }
+    err.textContent = '';
+    form.style.display = 'none';
+    success.classList.add('show');
+    toast('Received — a written proposal within two working days.');
+  });
+})();
+</script>
+</body>
+</html>
