@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>The Archive — Emily Editorial</title>
-<meta name="description" content="Previous work across fiction, non-fiction, mythic fantasy, memoir, diaspora SF, literary horror, and culinary writing. Real numbers, real authors, real emails.">
+<title>Emily Editorial — Reader Systems for Culturally Rooted Fiction</title>
+<meta name="description" content="Emily Mitchell Cooper and a small studio build quiet, precise reader systems for authors whose stories carry cultural depth. Landing pages, lead magnets, precise ads — all by email. No calls.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/400.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/600.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/700.css">
@@ -97,13 +97,12 @@ body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
 .in .rl>span{transform:none}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 .chips span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:6px 13px;color:var(--ink3)}
-.dark .chips span{border-color:var(--linel);color:rgba(246,241,230,.75)}
 
 /* ---------- hero ---------- */
-.hero{position:relative;padding:170px 0 100px;background-image:radial-gradient(rgba(20,17,12,.09) 1px,transparent 1px);background-size:26px 26px}
+.hero{position:relative;padding:170px 0 0;background-image:radial-gradient(rgba(20,17,12,.09) 1px,transparent 1px);background-size:26px 26px}
 .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,transparent 40%,var(--paper) 92%);pointer-events:none}
 .hero .wrap{position:relative;z-index:2}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:end}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
 .hero-kick{margin-bottom:26px}
 .hero-title{font-family:var(--serif);font-weight:900;font-size:clamp(40px,5.6vw,84px);line-height:1;letter-spacing:-.02em;overflow-wrap:break-word}
 .hero-title em{font-style:italic;font-weight:400;color:var(--verm)}
@@ -112,22 +111,34 @@ body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
 .hero-note{display:flex;gap:14px 22px;flex-wrap:wrap;margin-top:36px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
 .hero-note span::before{content:'✦ ';color:var(--gold)}
 
-/* archive shelf */
-.shelf{background:var(--ink);color:var(--paper);border-radius:18px;box-shadow:0 40px 80px -30px rgba(20,17,12,.5);overflow:hidden;border:1px solid rgba(246,241,230,.08);padding:28px 24px}
-.shelf-head{display:flex;align-items:center;gap:8px;padding-bottom:14px;border-bottom:1px solid var(--linel);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:rgba(246,241,230,.6)}
-.shelf-head i{width:10px;height:10px;border-radius:50%;background:var(--linel);flex:0 0 auto}
-.shelf-head i:nth-child(1){background:var(--verm)}
-.shelf-head i:nth-child(2){background:var(--gold)}
-.shelf-head i:nth-child(3){background:var(--jade)}
-.shelf-head .lbl{margin-left:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.shelf-head .cnt{margin-left:auto;color:var(--gold);white-space:nowrap}
-.shelf-body{padding:22px 4px 6px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.shelf-book{display:flex;flex-direction:column;gap:10px;padding:14px;border:1px solid var(--linel);border-radius:10px;background:rgba(246,241,230,.03);transition:border-color .3s,transform .3s var(--ease)}
-.shelf-book:hover{border-color:rgba(201,151,59,.5);transform:translateY(-3px)}
-.shelf-book img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;box-shadow:0 10px 20px -8px rgba(0,0,0,.5)}
-.shelf-book h5{font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.15}
-.shelf-book small{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.shelf-book .yr{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:rgba(246,241,230,.5);margin-top:4px}
+/* dashboard */
+.dash{background:var(--ink);color:var(--paper);border-radius:18px;box-shadow:0 40px 80px -30px rgba(20,17,12,.5);overflow:hidden;transform-style:preserve-3d;will-change:transform;border:1px solid rgba(246,241,230,.08)}
+.dash-head{display:flex;align-items:center;gap:8px;padding:14px 20px;border-bottom:1px solid var(--linel);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:rgba(246,241,230,.6)}
+.dash-head i{width:10px;height:10px;border-radius:50%;background:var(--linel);flex:0 0 auto}
+.dash-head i:nth-child(1){background:var(--verm)}
+.dash-head i:nth-child(2){background:var(--gold)}
+.dash-head i:nth-child(3){background:var(--jade)}
+.dash-head .url{margin-left:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dash-status{margin-left:auto;display:flex;align-items:center;gap:8px;color:var(--jade);white-space:nowrap}
+.pipe{padding:22px 24px 6px}
+.pipe-row{display:grid;grid-template-columns:26px 1fr auto;gap:14px;align-items:center;padding:11px 0;border-bottom:1px dashed var(--linel);font-size:13px}
+.pipe-row:last-child{border:none}
+.pipe-no{font-family:var(--mono);font-size:10px;color:var(--gold)}
+.pipe-name{font-weight:600;letter-spacing:.02em;min-width:0;overflow-wrap:break-word}
+.pipe-name small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;color:rgba(246,241,230,.5);letter-spacing:.1em;margin-top:2px;overflow-wrap:anywhere}
+.pipe-st{font-family:var(--mono);font-size:10px;letter-spacing:.14em;display:flex;align-items:center;gap:7px;white-space:nowrap}
+.pipe-st.ok{color:var(--jade)}
+.pipe-st.wait{color:var(--gold)}
+.pipe-st .dot{width:7px;height:7px;border-radius:50%;background:currentColor;animation:pulse 2.2s infinite;flex:0 0 auto}
+.dash-metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linel)}
+.dm{padding:18px 20px;border-left:1px solid var(--linel);min-width:0}
+.dm:first-child{border-left:none}
+.dm b{font-family:var(--serif);font-weight:700;font-size:28px;display:block;letter-spacing:-.01em;white-space:nowrap}
+.dm b .u{color:var(--gold);font-size:.6em}
+.dm span{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,241,230,.55)}
+.term{background:rgba(0,0,0,.35);padding:18px 22px;font-family:var(--mono);font-size:11.5px;line-height:1.9;color:rgba(246,241,230,.78);min-height:172px;overflow-wrap:anywhere}
+.term .tl:last-child::after{content:'▍';color:var(--jade);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
 
 /* stats strip */
 .hero-stats{border-top:1px solid var(--line);margin-top:80px;background:var(--paper)}
@@ -145,77 +156,126 @@ body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
 .ticker-track .fl{color:var(--gold)}
 @keyframes tick{to{transform:translateX(-50%)}}
 
-/* ---------- genre index ---------- */
-.genres{padding:130px 0}
-.genre-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:10px}
-.genre{border-top:1px solid var(--line);padding:34px 10px 34px 0;display:grid;grid-template-columns:1fr;gap:14px;transition:background .3s,padding-left .35s var(--ease);cursor:pointer}
-.genre:nth-last-child(-n+4){border-bottom:1px solid var(--line)}
-.genre:hover{background:var(--paper2);padding-left:18px}
-.genre-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.genre-no{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--verm)}
-.genre-ct{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);opacity:.7}
-.genre h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.15;margin-top:4px}
-.genre p{font-size:14px;color:var(--ink3);max-width:42ch}
-.genre .sample{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink2);margin-top:8px;padding-left:14px;border-left:2px solid var(--gold)}
-.genre .sample small{display:block;font-family:var(--mono);font-style:normal;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-top:4px}
+/* ---------- manifesto ---------- */
+.mani{padding:130px 0}
+.mani-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
+.mani-sticky{position:sticky;top:120px;align-self:start}
+.mani-sticky p{margin-top:24px;max-width:40ch;color:var(--ink3)}
+.arg{border-top:1px solid var(--line);padding:34px 8px 34px 0;display:grid;grid-template-columns:110px 1fr;gap:24px;transition:background .3s,padding-left .35s var(--ease)}
+.arg:last-child{border-bottom:1px solid var(--line)}
+.arg:hover{background:var(--paper2);padding-left:20px}
+.arg-no{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--verm);padding-top:6px}
+.arg h3{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.2;margin-bottom:10px}
+.arg p{font-size:15px;color:var(--ink3);max-width:52ch}
 
-/* ---------- featured work ---------- */
-.featured{padding:130px 0;background:var(--paper2);border-block:1px solid var(--line)}
-.feat-grid{display:grid;grid-template-columns:1fr;gap:80px}
-.feat{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
-.feat:nth-child(even){direction:rtl}
-.feat:nth-child(even) > *{direction:ltr}
-.feat-visual{position:sticky;top:120px}
-.feat-cover{position:relative;padding:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 60px -25px rgba(20,17,12,.35)}
-.feat-cover::before{content:'';position:absolute;top:-12px;left:-26px;width:90px;height:26px;background:rgba(201,151,59,.35);transform:rotate(-40deg)}
-.feat-cover::after{content:'';position:absolute;bottom:-12px;right:-26px;width:90px;height:26px;background:rgba(201,151,59,.35);transform:rotate(-40deg)}
-.feat-cover img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.feat-cap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);padding-top:14px}
-.feat-body .kick{margin-bottom:18px}
-.feat-body h3{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
-.feat-body h3 em{font-style:italic;font-weight:400;color:var(--verm)}
-.feat-meta{display:flex;gap:14px 24px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin:18px 0 26px}
-.feat-meta span::before{content:'✦ ';color:var(--gold)}
-.feat-body > p{font-size:16px;color:var(--ink2);margin-bottom:16px;max-width:58ch}
-.feat-kv{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:28px 0}
+/* ---------- system ---------- */
+.system{background:var(--ink);color:var(--paper);padding:130px 0}
+.sys-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px}
+.sys-sticky{position:sticky;top:120px;align-self:start}
+.sys-sticky p{margin:22px 0 30px;max-width:40ch;color:rgba(246,241,230,.7)}
+.sys-note{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:26px;display:flex;align-items:center;gap:10px}
+.steps{position:relative;padding-left:64px}
+.rail{position:absolute;left:20px;top:10px;bottom:10px;width:1px;background:var(--linel)}
+.rail-fill{position:absolute;left:20px;top:10px;width:1px;height:0;background:var(--verm);transition:height .7s var(--ease)}
+.step{padding:38px 0;border-bottom:1px dashed var(--linel);opacity:.35;transition:opacity .5s}
+.step.active{opacity:1}
+.step-no{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+.step h3{font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.4vw,32px);margin:10px 0 10px}
+.step h3 em{font-style:italic;font-weight:400;color:var(--gold)}
+.step p{color:rgba(246,241,230,.72);font-size:15px;max-width:52ch}
+.step .chips span{border-color:var(--linel);color:rgba(246,241,230,.75)}
+.step.active .chips span{border-color:rgba(201,151,59,.5);color:var(--gold)}
+
+/* ---------- services ---------- */
+.srv-sec{padding:130px 0}
+.srv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+.srv{border-top:1px solid var(--line);padding:34px 10px 34px 0;transition:background .3s,padding-left .35s var(--ease)}
+.srv:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+.srv:hover{background:var(--paper2);padding-left:18px}
+.srv-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.srv-no{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--verm)}
+.srv-tag{background:var(--verm);color:var(--paper);font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:4px 11px;margin-left:10px;white-space:nowrap}
+.srv-price{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);white-space:nowrap}
+.srv h3{font-family:var(--serif);font-weight:600;font-size:24px;margin:10px 0 10px;display:flex;align-items:center;flex-wrap:wrap}
+.srv p{font-size:15px;color:var(--ink3);max-width:52ch}
+.srv .chips span{border-color:var(--line);color:var(--ink3)}
+
+/* ---------- case study ---------- */
+.cs-banner{position:relative;height:440px;overflow:hidden}
+.cs-banner img{width:100%;height:100%;object-fit:cover;animation:kb 16s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.1) translate(-1.5%,1%)}}
+.cs-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,17,12,.85),rgba(20,17,12,.1) 60%)}
+.cs-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:36px}
+.cs-cap .kick{color:var(--gold)}.cs-cap .kick .rule{background:var(--gold)}
+.cs-cap h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4vw,54px);color:var(--paper);margin-top:12px}
+.cs-cap p{color:rgba(246,241,230,.8);margin-top:8px;max-width:60ch}
+.cs-sec{padding:90px 0 130px}
+.cs-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
+.cs-tab{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:12px 22px;transition:all .3s}
+.cs-tab:hover{border-color:var(--ink)}
+.cs-tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cs-panel{display:none}
+.cs-panel.active{display:block;animation:panelIn .6s var(--ease)}
+@keyframes panelIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.cs-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+
+/* browser mock */
+.browser{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:0 40px 80px -30px rgba(20,17,12,.35)}
+.browser-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--paper2);border-bottom:1px solid var(--line)}
+.browser-bar i{width:9px;height:9px;border-radius:50%;background:var(--line);flex:0 0 auto}
+.browser-bar .url{flex:1;margin-left:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;padding:6px 14px;color:var(--ink3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.mock{padding:38px 40px;display:grid;grid-template-columns:150px 1fr;gap:30px;align-items:center}
+.mock img{border-radius:4px 8px 8px 4px;box-shadow:0 18px 34px -14px rgba(20,17,12,.45)}
+.mock h4{font-family:var(--serif);font-weight:700;font-size:24px;line-height:1.15}
+.mock p{font-size:13px;color:var(--ink3);margin:10px 0 16px}
+.mock-form{display:flex;gap:8px}
+.mock-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:12.5px;background:var(--paper)}
+.mock-form button{background:var(--verm);color:var(--paper);border-radius:999px;padding:11px 18px;font-size:12px;font-weight:600;transition:background .3s;white-space:nowrap}
+.mock-form button:hover{background:var(--verm-d)}
+.mock-trust{display:flex;gap:8px 14px;flex-wrap:wrap;margin-top:14px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.cs-side h3{font-family:var(--serif);font-weight:600;font-size:28px;margin-bottom:14px}
+.cs-side p{font-size:15px;color:var(--ink3);margin-bottom:14px}
+.cs-kv{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
 .kv{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card)}
 .kv b{font-family:var(--serif);font-size:24px;font-weight:700;display:block}
 .kv span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
-.feat-built{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-top:14px}
-.feat-built span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin:4px 4px 4px 0}
 
-/* ---------- email wall ---------- */
-.wall{padding:130px 0}
-.wall-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:10px}
-.email{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(20,17,12,.25);transition:transform .5s var(--ease),box-shadow .5s}
-.email:hover{transform:translateY(-6px);box-shadow:0 40px 80px -30px rgba(20,17,12,.35)}
-.email-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--paper2);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink3)}
-.email-bar i{width:9px;height:9px;border-radius:50%;background:var(--line);flex:0 0 auto}
-.email-bar i:nth-child(1){background:var(--verm)}
-.email-bar i:nth-child(2){background:var(--gold)}
-.email-bar i:nth-child(3){background:var(--jade)}
-.email-bar .emurl{flex:1;margin-left:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.email-head{padding:18px 22px 14px;border-bottom:1px solid var(--line)}
-.email-from{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.email-av{width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--paper);font-weight:700}
-.email-from-info b{font-size:14px;font-weight:600;display:block}
-.email-from-info small{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink3)}
-.email-subj{font-family:var(--serif);font-weight:600;font-size:18px;line-height:1.3}
-.email-date{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--ink3);margin-top:6px}
-.email-body{padding:22px;font-size:14.5px;line-height:1.7;color:var(--ink2)}
-.email-body p{margin-bottom:12px}
-.email-body p:last-child{margin-bottom:0}
-.email-body .sig{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-family:var(--serif);font-style:italic;color:var(--ink3)}
-.email-body .sig b{display:block;font-family:var(--sans);font-style:normal;font-weight:600;color:var(--ink);font-size:14px}
-.email-body .sig small{font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.1em;color:var(--ink3)}
-.email-foot{display:flex;justify-content:space-between;align-items:center;padding:12px 22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--ink3);opacity:.7}
-.email-foot .star{color:var(--gold)}
+/* scatter postcards */
+.scatter{position:relative;height:520px}
+.pcard{position:absolute;transition:transform .5s var(--ease);box-shadow:0 26px 50px -18px rgba(20,17,12,.4);border-radius:6px;background:var(--card);padding:10px 10px 14px;border:1px solid var(--line)}
+.pcard img{border-radius:3px}
+.pcard figcaption{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);padding-top:10px;text-align:center}
+.pcard:hover{transform:rotate(0deg) translateY(-10px) scale(1.03);z-index:10}
+.pc1{top:0;left:4%;width:44%;transform:rotate(-6deg)}
+.pc2{top:6%;right:2%;width:48%;transform:rotate(5deg)}
+.pc2 img{height:290px;width:100%;object-fit:cover;object-position:50% 82%}
+.pc3{bottom:0;left:22%;width:52%;transform:rotate(-2deg);background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pc3 .pc-body{padding:18px 20px;font-size:13px;line-height:1.6}
+.pc3 .pc-body b{font-family:var(--serif);font-size:17px;color:var(--gold);display:block;margin-bottom:6px}
+.pc3 figcaption{color:rgba(246,241,230,.6)}
 
-/* email variants */
-.email.wide{grid-column:1/-1}
-.email .quote-mark{font-family:var(--serif);font-size:60px;line-height:1;color:var(--verm);opacity:.3;float:left;margin:4px 10px 0 0}
+/* targeting bars */
+.aud-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
+.aud-chips span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:8px 15px;transition:all .3s}
+.aud-chips span:hover{background:var(--ink);color:var(--paper)}
+.aud-chips span.no{border-style:dashed;color:var(--verm);border-color:var(--verm)}
+.bar-row{margin-bottom:24px}
+.bar-row .lbl{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.bar{height:8px;background:var(--paper2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--jade);border-radius:99px;transition:width 1.2s var(--ease) .2s}
+.bar i.bad{background:var(--verm)}
+.cs-panel.active .bar i{width:var(--w)}
 
-/* ---------- stats band ---------- */
+/* letters */
+.letter{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:24px 28px;margin-bottom:18px;transition:transform .4s var(--ease),box-shadow .4s}
+.letter:hover{transform:translateX(8px);box-shadow:0 20px 40px -20px rgba(20,17,12,.3)}
+.letter .l-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.letter h4{font-family:var(--serif);font-weight:600;font-size:19px}
+.letter p{font-size:13.5px;color:var(--ink3);margin:6px 0 14px}
+.letter .bar{height:5px}
+.letter .bar i{background:var(--gold)}
+
+/* metrics band */
 .band{background:var(--verm);color:var(--paper);padding:80px 0}
 .band-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
 .bm{text-align:center;border-left:1px solid rgba(246,241,230,.25);padding:6px 10px}
@@ -223,18 +283,95 @@ body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
 .bm b{font-family:var(--serif);font-weight:700;font-size:clamp(30px,3.4vw,50px);display:block;letter-spacing:-.01em}
 .bm span{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
 
-/* ---------- note ---------- */
-.note{padding:130px 0;background:var(--ink);color:var(--paper)}
-.note-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
-.note-body p{font-size:16.5px;color:rgba(246,241,230,.78);margin-bottom:20px;max-width:58ch}
-.note-body p strong{color:var(--paper);font-weight:600}
-.pull{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.2vw,28px);line-height:1.4;border-left:3px solid var(--gold);padding-left:26px;margin:34px 0;color:var(--paper)}
-.pull small{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:12px}
-.note-side{background:rgba(246,241,230,.04);border:1px solid var(--linel);border-radius:16px;padding:32px}
-.note-side h4{font-family:var(--serif);font-weight:600;font-size:22px;margin-bottom:18px}
-.note-list{list-style:none;display:flex;flex-direction:column;gap:14px}
-.note-list li{display:flex;gap:14px;font-size:14.5px;color:rgba(246,241,230,.78)}
-.note-list li::before{content:'';color:var(--gold);flex:0 0 auto;margin-top:2px}
+/* ---------- about ---------- */
+.about{padding:130px 0;background:var(--paper2);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+.a-frame{position:relative;padding:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 60px -25px rgba(20,17,12,.35)}
+.a-frame::before,.a-frame::after{content:'';position:absolute;width:90px;height:26px;background:rgba(201,151,59,.35)}
+.a-frame::before{top:-12px;left:-26px;transform:rotate(-40deg)}
+.a-frame::after{bottom:-12px;right:-26px;transform:rotate(-40deg)}
+.a-frame .kb{overflow:hidden}
+.a-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;animation:kb 14s ease-in-out infinite alternate}
+.a-cap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);padding-top:14px}
+.about-body p{font-size:16.5px;color:var(--ink2);margin-bottom:20px;max-width:58ch}
+.pull{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.2vw,28px);line-height:1.4;border-left:3px solid var(--verm);padding-left:26px;margin:34px 0}
+.pull small{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);margin-top:12px}
+.capacity{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--card)}
+.about-cta{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:28px}
+
+/* ---------- team ---------- */
+.team-sec{padding:130px 0}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:10px}
+.team-card:nth-child(even){margin-top:46px}
+.t-photo{position:relative;padding:10px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 44px -22px rgba(20,17,12,.35)}
+.t-photo::before{content:'';position:absolute;top:-11px;left:-18px;width:70px;height:22px;background:rgba(201,151,59,.35);transform:rotate(-38deg)}
+.t-img{overflow:hidden}
+.t-img img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1.2s var(--ease)}
+.team-card:hover .t-img img{transform:scale(1.05)}
+.team-card h3{font-family:var(--serif);font-weight:600;font-size:21px;margin-top:18px}
+.t-role{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--verm);margin-top:5px}
+.t-bio{font-size:13.5px;color:var(--ink3);margin-top:10px}
+.t-desk{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--ink3);margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
+.t-desk b{color:var(--gold);letter-spacing:.16em}
+.team-note{margin-top:56px;text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)}
+.team-note span{color:var(--verm)}
+
+/* ---------- voices ---------- */
+.voices{padding:130px 0}
+.masonry{columns:3;column-gap:26px}
+.voice{break-inside:avoid;margin-bottom:26px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px;transition:transform .4s var(--ease),box-shadow .4s}
+.voice:hover{transform:translateY(-6px);box-shadow:0 26px 44px -22px rgba(20,17,12,.3)}
+.voice q{font-family:var(--serif);font-size:18px;line-height:1.5;quotes:'“' '”'}
+.voice-who{display:flex;align-items:center;gap:12px;margin-top:22px}
+.voice-who .av{width:38px;height:38px;flex:0 0 38px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--paper)}
+.voice-who b{font-size:13.5px;font-weight:600;display:block}
+.voice-who span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.voice.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.voice.dark q{color:var(--paper)}
+.voice.dark .voice-who span{color:rgba(246,241,230,.6)}
+
+/* ---------- engagement ---------- */
+.engage{background:var(--ink);color:var(--paper);padding:130px 0}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:20px;align-items:stretch}
+.tier{border:1px solid var(--linel);border-radius:18px;padding:40px 34px;display:flex;flex-direction:column;position:relative;background:rgba(246,241,230,.03);transition:transform .4s var(--ease),border-color .4s}
+.tier:hover{transform:translateY(-8px);border-color:rgba(246,241,230,.4)}
+.tier.featured{background:var(--paper);color:var(--ink);border-color:var(--paper);transform:translateY(-14px)}
+.tier.featured:hover{transform:translateY(-22px)}
+.tier-flag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--verm);color:var(--paper);font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.tier h3{font-family:var(--serif);font-weight:600;font-size:26px}
+.tier-desc{font-size:13.5px;opacity:.7;margin-top:6px}
+.price{display:flex;align-items:baseline;gap:6px;margin:26px 0 4px;flex-wrap:wrap}
+.price .cur{font-family:var(--serif);font-size:20px}
+.price b{font-family:var(--serif);font-weight:700;font-size:52px;letter-spacing:-.02em;line-height:1}
+.price .per{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;opacity:.6}
+.tier ul{list-style:none;margin:26px 0 34px;display:flex;flex-direction:column;gap:13px;font-size:14px}
+.tier li{display:flex;gap:12px}
+.tier li::before{content:'✓';color:var(--verm);font-weight:700}
+.tier .btn{margin-top:auto;justify-content:center}
+.tier.featured .btn{background:var(--ink);color:var(--paper)}
+.tier .btn:hover{background:var(--verm);color:var(--paper)}
+.engage-foot{text-align:center;margin-top:52px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.55}
+
+/* ---------- process ---------- */
+.process{padding:110px 0}
+.proc-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:20px}
+.proc-row::before{content:'';position:absolute;top:26px;left:4%;right:4%;height:1px;background:var(--line)}
+.proc{position:relative;padding:0 18px;text-align:left}
+.proc .node{width:52px;height:52px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink);display:grid;place-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.06em;margin-bottom:20px;position:relative;z-index:2;transition:background .3s,color .3s,transform .3s var(--ease)}
+.proc:hover .node{background:var(--verm);border-color:var(--verm);color:var(--paper);transform:scale(1.1)}
+.proc h4{font-family:var(--serif);font-weight:600;font-size:19px}
+.proc p{font-size:13px;color:var(--ink3);margin-top:6px}
+
+/* ---------- faq ---------- */
+.faq{padding:130px 0;background:var(--paper2);border-top:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;padding:26px 4px;font-family:var(--serif);font-weight:600;font-size:19px;transition:color .3s}
+.faq-q:hover{color:var(--verm)}
+.faq-q .ic{flex:0 0 30px;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:15px;transition:transform .4s var(--ease),background .3s,color .3s}
+.faq-item.open .ic{transform:rotate(45deg);background:var(--verm);color:var(--paper);border-color:var(--verm)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.faq-a p{padding:0 44px 26px 4px;font-size:15px;color:var(--ink3);max-width:62ch}
 
 /* ---------- join ---------- */
 .join{background:var(--ink);color:var(--paper);padding:140px 0;position:relative;overflow:hidden;background-image:radial-gradient(rgba(246,241,230,.06) 1px,transparent 1px);background-size:26px 26px}
@@ -278,26 +415,45 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
 /* ============ RESPONSIVE ============ */
 @media(max-width:1280px){
   .wrap{padding:0 24px}
-  .hero-grid{gap:48px}
-  .feat{gap:48px}
-  .note-grid{gap:56px}
+  .hero-grid,.mani-grid,.sys-grid{gap:48px}
+  .about-grid,.faq-grid{gap:56px}
+  .srv-grid{gap:0 44px}
+}
+@media(max-width:1240px){
+  .nav-links{gap:16px;font-size:12.5px}
+  .nav-in{gap:20px}
 }
 @media(max-width:1080px){
   .hero{padding-top:150px}
   .hero-grid{grid-template-columns:1fr;gap:56px}
-  .shelf{max-width:640px}
-  .feat{grid-template-columns:1fr;gap:56px}
-  .feat:nth-child(even){direction:ltr}
-  .feat-visual{position:static;max-width:420px}
-  .wall-grid{grid-template-columns:1fr}
-  .email.wide{grid-column:auto}
-  .note-grid{grid-template-columns:1fr;gap:56px}
-  .genres,.featured,.wall,.note{padding:100px 0}
+  .dash{max-width:640px}
+  .mani-grid,.sys-grid,.cs-grid,.about-grid,.faq-grid{grid-template-columns:1fr;gap:56px}
+  .mani-sticky,.sys-sticky{position:static}
+  .mani,.system,.voices,.engage,.faq,.about,.srv-sec,.team-sec{padding:100px 0}
+  .cs-sec{padding:80px 0 100px}
+  .join{padding:110px 0}
+  .masonry{columns:2}
+  .team-grid{grid-template-columns:repeat(2,1fr);gap:36px}
+  .tiers{grid-template-columns:1fr;max-width:540px;margin-left:auto;margin-right:auto}
+  .tier.featured{transform:none}
+  .tier.featured:hover{transform:translateY(-8px)}
   .band-grid{grid-template-columns:repeat(3,1fr);row-gap:36px}
   .bm{border-left:none}
-  .genre-grid{grid-template-columns:repeat(2,1fr)}
-  .genre:nth-last-child(-n+4){border-bottom:none}
-  .genre:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+  .proc-row{grid-template-columns:1fr;gap:36px;padding-left:4px}
+  .proc-row::before{left:25px;right:auto;top:6px;bottom:6px;width:1px;height:auto}
+  .proc{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:0;align-items:start}
+  .proc .node{margin-bottom:0}
+  .scatter{height:auto;display:flex;flex-direction:column;gap:22px}
+  .pcard{position:static;width:100% !important;transform:rotate(-1deg)}
+  .pcard:nth-child(2){transform:rotate(1deg)}
+  .pcard:hover{transform:rotate(0) translateY(-6px)}
+  .pc2 img{height:260px}
+}
+@media(max-width:900px){
+  .cs-grid{gap:44px}
+  .srv-grid{grid-template-columns:1fr}
+  .srv:nth-last-child(-n+2){border-bottom:none}
+  .srv:last-child{border-bottom:1px solid var(--line)}
 }
 @media(max-width:820px){
   .nav-in{padding:14px 20px;gap:16px}
@@ -314,82 +470,121 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   .stat:nth-child(-n+2){border-top:none}
   .stat:nth-child(odd){padding-left:0}
   .stat:nth-child(even){border-left:1px solid var(--line);padding-left:24px}
+  .mock{grid-template-columns:1fr;padding:30px 26px;gap:24px}
+  .mock img{width:130px}
   .join-form{grid-template-columns:1fr}
   .band{padding:64px 0}
   .band-grid{grid-template-columns:1fr 1fr;gap:28px 16px}
   .bm{text-align:left;padding:0}
+  .cs-banner{height:360px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:44px}
   .foot-brand{grid-column:1/-1}
   .mobile-cta{display:block}
   footer{padding-bottom:110px}
   .toast{bottom:96px}
-  .shelf-body{grid-template-columns:repeat(2,1fr)}
+  .faq-a p{padding-right:10px}
 }
 @media(max-width:640px){
   .wrap{padding:0 20px}
-  .genres,.featured,.wall,.note{padding:80px 0}
+  .mani,.system,.voices,.engage,.faq,.about,.srv-sec,.team-sec{padding:80px 0}
+  .cs-sec{padding:64px 0 84px}
+  .process{padding:80px 0}
   .join{padding:96px 0}
-  .shelf-body{grid-template-columns:1fr 1fr;gap:12px}
-  .shelf-book{padding:10px}
-  .shelf-book h5{font-size:13px}
-  .genre-grid{grid-template-columns:1fr}
-  .genre{padding:28px 4px 28px 0}
-  .genre:hover{padding-left:10px}
-  .genre:nth-last-child(-n+2){border-bottom:none}
-  .genre:last-child{border-bottom:1px solid var(--line)}
-  .feat-cover::before,.feat-cover::after{width:70px}
-  .feat-cover::before{left:-16px}
-  .feat-cover::after{right:-16px}
-  .feat-kv{grid-template-columns:1fr 1fr;gap:10px}
-  .kv{padding:13px 14px}
-  .kv b{font-size:21px}
-  .feat-body h3{font-size:28px}
-  .band-grid{grid-template-columns:1fr 1fr}
-  .s-title{font-size:clamp(28px,8vw,36px)}
-  .s-lede{font-size:15px}
-  .email-head{padding:16px 18px 12px}
-  .email-body{padding:18px}
-  .email-foot{padding:10px 18px}
-  .email-subj{font-size:16px}
-  .join-form input,.join-form textarea{padding:15px 18px;font-size:16px}
-  .join-perks{font-size:9.5px;letter-spacing:.12em;gap:12px 20px}
-  .foot-grid{grid-template-columns:1fr;gap:36px}
-  .foot-bottom{flex-direction:column;align-items:flex-start}
-  .note-side{padding:24px}
+  .arg{grid-template-columns:1fr;gap:8px;padding:28px 4px 28px 0}
+  .arg-no{padding-top:0}
+  .arg:hover{padding-left:10px}
+  .cs-tabs{gap:8px;margin-bottom:32px}
+  .cs-tab{padding:11px 16px;font-size:10px}
+  .pipe{padding:18px 18px 4px}
+  .pipe-row{gap:10px;font-size:12.5px}
+  .term{padding:16px 18px;font-size:10px;line-height:1.8;min-height:150px}
+  .dash-metrics .dm{padding:14px 14px}
+  .dm b{font-size:22px}
+  .dm span{font-size:8.5px;letter-spacing:.12em}
+  .cs-banner{height:320px}
+  .letter{padding:20px 20px}
+  .masonry{columns:1}
+  .voice{padding:26px}
+  .steps{padding-left:48px}
+  .rail,.rail-fill{left:14px}
+  .tier{padding:32px 26px}
+  .price b{font-size:46px}
   .pull{padding-left:20px;margin:28px 0}
+  .join-success{flex-direction:column;text-align:center;padding:26px}
   .hero-actions{gap:18px}
   .btn{padding:14px 24px}
   .hero-stats{margin-top:64px}
+  .team-card:nth-child(even){margin-top:0}
+  .team-note{font-size:9.5px;letter-spacing:.14em}
+  .srv h3{font-size:22px}
+  .srv-top{flex-wrap:wrap;gap:8px}
 }
 @media(max-width:480px){
+  .logo{font-size:17px}
+  .logo-mark{width:34px;height:34px;flex-basis:34px;font-size:13px}
+  .hero{padding-top:128px}
   .hero-title{font-size:clamp(36px,11.5vw,52px)}
   .hero-sub{margin:22px 0 28px}
   .hero-note{font-size:9.5px;letter-spacing:.1em}
-  .shelf-head{font-size:9px;padding:12px 14px;gap:6px}
-  .shelf-head .lbl{display:none}
-  .shelf-head .cnt{margin-left:auto}
-  .shelf-body{grid-template-columns:1fr 1fr;gap:10px}
+  .dash-head{font-size:9px;padding:12px 14px;gap:6px}
+  .dash-head .url{display:none}
+  .dash-status{margin-left:auto}
+  .pipe-row{grid-template-columns:20px 1fr}
+  .pipe-st{grid-column:2;justify-content:flex-start;margin-top:2px}
+  .dash-metrics{grid-template-columns:repeat(3,1fr)}
+  .dm b{font-size:19px}
   .stats-grid{grid-template-columns:1fr}
   .stat{padding:20px 0;border-left:none !important;border-top:1px solid var(--line)}
   .stat:nth-child(-n+2){border-top:1px solid var(--line)}
   .stat:first-child{border-top:none}
+  .mock{padding:26px 20px}
+  .mock h4{font-size:21px}
+  .mock-form{flex-direction:column}
+  .mock-form input{width:100%}
+  .mock-form button{padding:13px 18px}
+  .cs-kv{grid-template-columns:1fr 1fr;gap:10px}
+  .kv{padding:13px 14px}
+  .kv b{font-size:21px}
+  .cs-side h3{font-size:24px}
   .band-grid{grid-template-columns:1fr 1fr}
-  .feat-kv{grid-template-columns:1fr}
-  .email-av{width:32px;height:32px;flex-basis:32px;font-size:10px}
-  .email-from-info b{font-size:13px}
-  .email-subj{font-size:15px}
-  .email-body{font-size:14px}
+  .s-title{font-size:clamp(28px,8vw,36px)}
+  .s-lede{font-size:15px}
+  .step h3{font-size:23px}
+  .chips span{font-size:9px;padding:5px 10px}
+  .faq-q{font-size:17px;padding:22px 2px}
+  .faq-a p{padding-left:2px;font-size:14px}
   .join-form input,.join-form textarea{padding:15px 18px;font-size:16px}
+  .join-perks{font-size:9.5px;letter-spacing:.12em;gap:12px 20px}
   .foot-grid{grid-template-columns:1fr;gap:36px}
   .foot-bottom{flex-direction:column;align-items:flex-start}
+  .a-frame::before,.a-frame::after{width:70px}
+  .a-frame::before{left:-16px}
+  .a-frame::after{right:-16px}
   .capacity{font-size:9.5px;padding:9px 14px}
   .ticker-track{font-size:10.5px;letter-spacing:.16em}
+  .pc2 img{height:210px}
+  .team-grid{grid-template-columns:1fr;gap:32px}
+  .t-photo::before{left:-12px}
+}
+@media(max-width:380px){
+  .hero-title{font-size:34px}
+  .dash-metrics{grid-template-columns:1fr}
+  .dm{border-left:none;border-top:1px solid var(--linel)}
+  .dm:first-child{border-top:none}
+  .cs-kv{grid-template-columns:1fr}
+  .band-grid{grid-template-columns:1fr}
+  .cs-tab{width:100%;text-align:center}
+}
+@media (orientation:landscape) and (max-height:520px){
+  .hero{padding-top:120px}
+  .mobile-menu{top:60px;max-height:70vh;overflow:auto}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   [data-reveal]{opacity:1;transform:none}
   .rl>span{transform:none}
+  .cs-panel.active .bar i{width:var(--w)}
 }
 </style>
 </head>
@@ -402,18 +597,18 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   <div class="topbar"><span><span class="pulse" aria-hidden="true"></span>Now booking — 2 build slots for Autumn 2026<span class="tb-extra"> · Everything by email, no calls</span></span></div>
   <div class="nav">
     <div class="nav-in">
-      <a class="logo" href="/" aria-label="Emily Editorial home">
+      <a class="logo" href="#top" aria-label="Emily Editorial home">
         <span class="logo-mark">E</span>
         <span>Emily <em>Editorial</em></span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/">System</a>
-        <a href="/">Services</a>
-        <a href="/">Case Study</a>
-        <a href="/archive" style="opacity:1;color:var(--verm)">Archive</a>
-        <a href="/">Team</a>
-        <a href="/">FAQ</a>
+        <a href="#why">Why</a>
+        <a href="#system">System</a>
+        <a href="#services">Services</a>
+        <a href="#case">Case Study</a>
+        <a href="#team">Team</a>
+        <a href="#engage">Engagement</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <a class="btn nav-cta" href="#join" style="padding:12px 24px">Start your system <span class="arr">→</span></a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -421,7 +616,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   </div>
 </header>
 <nav class="mobile-menu" aria-label="Mobile">
-  <a href="/">Home</a><a href="/">The System</a><a href="/">Services</a><a href="/">Case Study</a><a href="/archive" style="color:var(--gold)">Archive</a><a href="/">Team</a><a href="/">FAQ</a>
+  <a href="#why">Why</a><a href="#system">The System</a><a href="#services">Services</a><a href="#case">Case Study</a><a href="#about">About Emily</a><a href="#team">The Masthead</a><a href="#engage">Engagement</a><a href="#faq">FAQ</a>
   <a class="mm-cta" href="#join">Start your system →</a>
 </nav>
 
@@ -432,43 +627,47 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="kick hero-kick" data-reveal><span class="rule"></span><span id="heroKick" data-text="// THE ARCHIVE — 2022 TO 2026">// THE ARCHIVE — 2022 TO 2026</span></div>
+        <div class="kick hero-kick" data-reveal><span class="rule"></span><span id="heroKick" data-text="// EMILY EDITORIAL — READER SYSTEMS">// EMILY EDITORIAL — READER SYSTEMS</span></div>
         <h1 class="hero-title" data-reveal>
-          <span class="rl"><span>The work,</span></span>
-          <span class="rl" style="--d:.12s"><span>in <em>full.</em></span></span>
+          <span class="rl"><span>Turn curious readers</span></span>
+          <span class="rl" style="--d:.12s"><span>into <em>lasting supporters.</em></span></span>
         </h1>
-        <p class="hero-sub" data-reveal style="--d:.25s">Twenty-three books across eight genres. Every system built by email, every reader list handed over on day one, every author still writing. This is the archive — the real numbers, the real names, the real thank-you notes.</p>
+        <p class="hero-sub" data-reveal style="--d:.25s">I'm Emily Mitchell Cooper. With a small studio behind me, I build quiet, precise marketing machinery for authors whose stories carry cultural depth that mainstream marketing overlooks. No flashy tactics. No artificial engagement. Just a simple, respectful way to grow a readership — handled entirely by email while you write.</p>
         <div class="hero-actions" data-reveal style="--d:.35s">
-          <a class="btn" href="#join">Add your book <span class="arr">→</span></a>
-          <a class="btn-ghost" href="#emails">Read the emails</a>
+          <a class="btn" href="#join">Start your system <span class="arr">→</span></a>
+          <a class="btn-ghost" href="#case">See the Kushlam build</a>
         </div>
         <div class="hero-note" data-reveal style="--d:.45s">
-          <span>23 books shipped</span><span>8 genres</span><span>61,400+ readers</span>
+          <span>No calls, ever</span><span>Written proposals</span><span>You own the list</span>
         </div>
       </div>
 
       <div data-reveal style="--d:.2s">
-        <div class="shelf" aria-label="Archive shelf">
-          <div class="shelf-head">
+        <div class="dash" id="dash" aria-label="Live reader pipeline dashboard">
+          <div class="dash-head">
             <i></i><i></i><i></i>
-            <span class="lbl">emily.editorial / archive</span>
-            <span class="cnt">23 TITLES · 2022–2026</span>
+            <span class="url">emily.editorial / live-pipeline</span>
+            <span class="dash-status"><span class="pulse"></span>SYSTEM NOMINAL</span>
           </div>
-          <div class="shelf-body">
-            <div class="shelf-book"><img src="https://m.media-amazon.com/images/I/81xjQ9vZURL._SL1500_.jpg" alt="Homegoing by Yaa Gyasi"><h5>Homegoing</h5><small>Literary fiction</small><div class="yr">Yaa Gyasi · 2016</div></div>
-            <div class="shelf-book"><img src="https://m.media-amazon.com/images/I/81Ge+VbGSSL._SL1500_.jpg" alt="Crying in H Mart by Michelle Zauner"><h5>Crying in H Mart</h5><small>Memoir</small><div class="yr">Michelle Zauner · 2021</div></div>
-            <div class="shelf-book"><img src="https://m.media-amazon.com/images/I/81rB3RV2URL._SL1500_.jpg" alt="The City of Brass by S.A. Chakraborty"><h5>The City of Brass</h5><small>Mythic fantasy</small><div class="yr">S.A. Chakraborty · 2017</div></div>
-            <div class="shelf-book"><img src="https://m.media-amazon.com/images/I/81QUHDqURL._SL1500_.jpg" alt="Pachinko by Min Jin Lee"><h5>Pachinko</h5><small>Historical epic</small><div class="yr">Min Jin Lee · 2017</div></div>
-            <div class="shelf-book"><img src="https://m.media-amazon.com/images/I/81x5vURL._SL1500_.jpg" alt="Binti by Nnedi Okorafor"><h5>Binti</h5><small>Diaspora SF</small><div class="yr">Nnedi Okorafor · 2015</div></div>
-            <div class="shelf-book"><img src="https://m.media-amazon.com/images/I/81a4bURL._SL1500_.jpg" alt="Mexican Gothic by Silvia Moreno-Garcia"><h5>Mexican Gothic</h5><small>Literary horror</small><div class="yr">Silvia Moreno-Garcia · 2020</div></div>
+          <div class="pipe">
+            <div class="pipe-row"><span class="pipe-no">01</span><span class="pipe-name">Landing page<small>kushlam.emilyeditorial.com</small></span><span class="pipe-st ok"><span class="dot"></span>DEPLOYED ✓</span></div>
+            <div class="pipe-row"><span class="pipe-no">02</span><span class="pipe-name">Lead magnet<small>rabhus-friends.pdf · 14pp + glossary</small></span><span class="pipe-st ok"><span class="dot"></span>LIVE ✓</span></div>
+            <div class="pipe-row"><span class="pipe-no">03</span><span class="pipe-name">Targeting<small>mythic-fantasy · south-asian-spec</small></span><span class="pipe-st ok"><span class="dot"></span>LOCKED ✓</span></div>
+            <div class="pipe-row"><span class="pipe-no">04</span><span class="pipe-name">Email sequence<small>welcome · world · invitation</small></span><span class="pipe-st wait"><span class="dot"></span>QUEUED</span></div>
           </div>
+          <div class="dash-metrics">
+            <div class="dm"><b><span data-count="1284">0</span></b><span>Readers collected</span></div>
+            <div class="dm"><b><span class="u">$</span><span data-count="1.12" data-dec="2">0</span></b><span>Cost per reader</span></div>
+            <div class="dm"><b><span data-count="0">0</span><span class="u">%</span></b><span>Amazon dependence</span></div>
+          </div>
+          <div class="term" id="term" aria-hidden="true"></div>
         </div>
       </div>
     </div>
 
     <div class="hero-stats">
       <div class="stats-grid">
-        <div class="stat" data-reveal><div class="stat-num"><span data-count="23">0</span></div><div class="stat-lbl">Books in the archive</div></div>
+        <div class="stat" data-reveal><div class="stat-num"><span data-count="23">0</span></div><div class="stat-lbl">Books in the system</div></div>
         <div class="stat" data-reveal style="--d:.1s"><div class="stat-num"><span data-count="61400">0</span><sup>+</sup></div><div class="stat-lbl">Readers collected</div></div>
         <div class="stat" data-reveal style="--d:.2s"><div class="stat-num"><span data-count="38">0</span>%</div><div class="stat-lbl">Average opt-in rate</div></div>
         <div class="stat" data-reveal style="--d:.3s"><div class="stat-num"><span data-count="0">0</span></div><div class="stat-lbl">Calls required, ever</div></div>
@@ -480,434 +679,424 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
 <!-- ============ TICKER ============ -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="tickerTrack">
-    <span><span class="fl">✦</span> Literary fiction</span>
-    <span><span class="fl">✦</span> Memoir &amp; non-fiction</span>
     <span><span class="fl">✦</span> Mythic fantasy</span>
-    <span><span class="fl">✦</span> Historical epic</span>
+    <span><span class="fl">✦</span> South Asian speculative</span>
+    <span><span class="fl">✦</span> Folklore retellings</span>
+    <span><span class="fl">✦</span> Indigenous futurism</span>
     <span><span class="fl">✦</span> Diaspora SF</span>
-    <span><span class="fl"></span> Literary horror</span>
-    <span><span class="fl">✦</span> Culinary writing</span>
-    <span><span class="fl">✦</span> Poetry &amp; oral history</span>
+    <span><span class="fl">✦</span> Literary horror</span>
+    <span><span class="fl">✦</span> Oral history, retold</span>
+    <span><span class="fl">✦</span> Sacred texts, respected</span>
   </div>
 </div>
 
-<!-- ============ GENRE INDEX ============ -->
-<section class="genres" id="genres">
-  <div class="wrap">
-    <div class="s-head" data-reveal>
-      <div class="kick"><span>// 01 · THE GENRES</span><span class="rule"></span></div>
-      <div class="s-row">
-        <h2 class="s-title">Eight shelves. One system.</h2>
-        <p class="s-lede">The machinery is the same. The magnet, the letters, the targeting — they change shape for each shelf. Here is where the work has lived.</p>
-      </div>
+<!-- ============ WHY ============ -->
+<section class="mani" id="why">
+  <div class="wrap mani-grid">
+    <div class="mani-sticky">
+      <div class="kick" data-reveal><span>// 01 · THE PROBLEM</span><span class="rule"></span></div>
+      <h2 class="s-title" style="margin-top:18px" data-reveal>The algorithm was never built for your book.</h2>
+      <p data-reveal>Mainstream marketing treats every novel as the same product with a different cover. Yours isn't. Here is what actually breaks — and what we build instead.</p>
     </div>
-    <div class="genre-grid">
-      <div class="genre" data-reveal>
-        <div class="genre-top"><span class="genre-no">G·01</span><span class="genre-ct">5 titles</span></div>
-        <h3>Literary Fiction</h3>
-        <p>Diaspora stories, family epics, quiet novels about displacement and return. The magnet is often a chapter, a letter, a recipe from the old country.</p>
-        <div class="sample">"Homegoing"<small>Yaa Gyasi · 2016</small></div>
-      </div>
-      <div class="genre" data-reveal style="--d:.06s">
-        <div class="genre-top"><span class="genre-no">G·02</span><span class="genre-ct">4 titles</span></div>
-        <h3>Memoir &amp; Non-Fiction</h3>
-        <p>Personal history, cultural essays, investigative work. The magnet becomes a long-form excerpt, a field notebook, a glossary of place names.</p>
-        <div class="sample">"Crying in H Mart"<small>Michelle Zauner · 2021</small></div>
-      </div>
-      <div class="genre" data-reveal style="--d:.12s">
-        <div class="genre-top"><span class="genre-no">G·03</span><span class="genre-ct">4 titles</span></div>
-        <h3>Mythic Fantasy</h3>
-        <p>Rooted in living traditions — Hindu, Yoruba, Celtic, Andean. The magnet is always a piece of the world: a short story, a bestiary, a map of the sacred geography.</p>
-        <div class="sample">"The City of Brass"<small>S.A. Chakraborty · 2017</small></div>
-      </div>
-      <div class="genre" data-reveal style="--d:.18s">
-        <div class="genre-top"><span class="genre-no">G·04</span><span class="genre-ct">3 titles</span></div>
-        <h3>Historical Epic</h3>
-        <p>Multi-generational sagas, wartime narratives, stories of migration. The magnet is a timeline, a family tree, a letter from the period.</p>
-        <div class="sample">"Pachinko"<small>Min Jin Lee · 2017</small></div>
-      </div>
-      <div class="genre" data-reveal style="--d:.06s">
-        <div class="genre-top"><span class="genre-no">G·05</span><span class="genre-ct">3 titles</span></div>
-        <h3>Diaspora SF</h3>
-        <p>Speculative futures rooted in specific cultures — Afrofuturism, Indigenous futurism, Latinx SF. The magnet is often a world-building document.</p>
-        <div class="sample">"Binti"<small>Nnedi Okorafor · 2015</small></div>
-      </div>
-      <div class="genre" data-reveal style="--d:.12s">
-        <div class="genre-top"><span class="genre-no">G·06</span><span class="genre-ct">2 titles</span></div>
-        <h3>Literary Horror</h3>
-        <p>Horror rooted in place, tradition, and inherited fear. The magnet is a folk tale, a local legend, a field recording transcript.</p>
-        <div class="sample">"Mexican Gothic"<small>Silvia Moreno-Garcia · 2020</small></div>
-      </div>
-      <div class="genre" data-reveal style="--d:.18s">
-        <div class="genre-top"><span class="genre-no">G·07</span><span class="genre-ct">1 title</span></div>
-        <h3>Culinary Writing</h3>
-        <p>Food memoirs, recipe collections, culinary history. The magnet is always a recipe — tested, photographed, typeset like the book itself.</p>
-        <div class="sample">"Crying in H Mart"<small>Michelle Zauner · 2021</small></div>
-      </div>
-      <div class="genre" data-reveal style="--d:.24s">
-        <div class="genre-top"><span class="genre-no">G·08</span><span class="genre-ct">1 title</span></div>
-        <h3>Poetry &amp; Oral History</h3>
-        <p>Verse collections, recorded testimonies, spoken-word transcriptions. The magnet is an audio file, a broadside, a single poem in translation.</p>
-        <div class="sample">"Night Sky with Exit Wounds"<small>Ocean Vuong · 2016</small></div>
-      </div>
+    <div>
+      <div class="arg" data-reveal><div class="arg-no">PROBLEM / A</div><div><h3>Ads to Amazon are first-date proposals.</h3><p>You pay to send a stranger to a storefront that also sells ten thousand lookalikes — and the reader is gone before the sample loads. We point ads at a page you own, with one promise and one field.</p></div></div>
+      <div class="arg" data-reveal><div class="arg-no">PROBLEM / B</div><div><h3>Mainstream targeting flattens culture into keywords.</h3><p>"Fantasy" is not an audience. The reader searching for Assamese forest spirits is not the reader searching for dragon academies. We target the shelf your book actually lives on.</p></div></div>
+      <div class="arg" data-reveal><div class="arg-no">PROBLEM / C</div><div><h3>You lose the reader the moment you lose the address.</h3><p>An algorithm can demote you overnight. An email list is property — portable, exportable, yours. Every system we build hands you the keys on day one.</p></div></div>
+      <div class="arg" data-reveal><div class="arg-no">PROBLEM / D</div><div><h3>Hype decays. Respect compounds.</h3><p>Countdown timers and artificial engagement are rented attention. A reader who chose your world freely, and was welcomed properly, stays. That is the entire strategy.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ============ FEATURED WORK ============ -->
-<section class="featured" id="work">
+<!-- ============ SYSTEM ============ -->
+<section class="system dark" id="system">
+  <div class="wrap sys-grid">
+    <div class="sys-sticky">
+      <div class="kick" data-reveal><span>// 02 · THE SYSTEM</span><span class="rule"></span></div>
+      <h2 class="s-title" style="margin-top:18px" data-reveal>Four quiet pieces of machinery.</h2>
+      <p data-reveal>Lightweight to build, modest to run, and precise by design. Each piece feeds the next, so curiosity becomes a list, and a list becomes a readership.</p>
+      <a class="btn btn-paper" href="#services" data-reveal>Browse all services <span class="arr">→</span></a>
+      <div class="sys-note" data-reveal><span class="pulse"></span>Everything below ran for Kushlam in ten days.</div>
+    </div>
+    <div class="steps" id="steps">
+      <div class="rail" aria-hidden="true"></div>
+      <div class="rail-fill" id="railFill" aria-hidden="true"></div>
+      <div class="step" data-reveal><div class="step-no">/ 01</div><h3>The Page — <em>one promise, one field.</em></h3><p>A lightweight landing page built for a single book. One offer, one email field, zero distractions, loading in under a second on any phone in any timezone.</p><div class="chips"><span>1 field</span><span>0 distractions</span><span>&lt;1s load</span><span>Yours to keep</span></div></div>
+      <div class="step" data-reveal><div class="step-no">/ 02</div><h3>The Magnet — <em>a piece of the world, given freely.</em></h3><p>For Kushlam: a free short story about Rabhu's friends, and a glossary of the mythology. A gift, not a trap — the reader keeps it forever, whether or not they ever buy.</p><div class="chips"><span>Free story</span><span>Myth glossary</span><span>Maps &amp; recipes</span><span>No gatekeeping</span></div></div>
+      <div class="step" data-reveal><div class="step-no">/ 03</div><h3>The Signal — <em>modest ads, jeweler's precision.</em></h3><p>Small budgets aimed at readers of mythic fantasy and South Asian speculative fiction — the adjacent shelves, never the broad feed. We point them at the page, not at Amazon, and let the story do the converting.</p><div class="chips"><span>$1–2 / reader</span><span>Adjacent shelves</span><span>Never broad</span></div></div>
+      <div class="step" data-reveal><div class="step-no">/ 04</div><h3>The Letters — <em>welcome, world, invitation.</em></h3><p>A three-letter welcome sequence, then a calm weekly rhythm. No countdown timers, no fake scarcity, no "LAST CHANCE." Just clear writing that treats the reader like an adult.</p><div class="chips"><span>3 letters</span><span>63% median open</span><span>Unsubscribe in one click</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="srv-sec" id="services">
   <div class="wrap">
     <div class="s-head" data-reveal>
-      <div class="kick"><span>// 02 · FEATURED WORK</span><span class="rule"></span></div>
+      <div class="kick"><span>// 03 · THE SERVICES</span><span class="rule"></span></div>
       <div class="s-row">
-        <h2 class="s-title">Six builds, six shelves.</h2>
-        <p class="s-lede">The full story of six engagements — what was built, what it cost, what it returned. No vanity metrics, no rounded numbers.</p>
+        <h2 class="s-title">The studio's full bookshelf of services.</h2>
+        <p class="s-lede">Every engagement is fixed-quote and entirely in writing. Pick one piece, or the whole machinery — each service works alone and better together.</p>
       </div>
     </div>
-
-    <div class="feat-grid">
-
-      <!-- 1. Homegoing -->
-      <article class="feat" data-reveal>
-        <div class="feat-visual">
-          <div class="feat-cover">
-            <img src="https://m.media-amazon.com/images/I/81xjQ9vZURL._SL1500_.jpg" alt="Homegoing by Yaa Gyasi">
-            <div class="feat-cap"><span>Yaa Gyasi</span><span>2016 · Literary fiction</span></div>
-          </div>
-        </div>
-        <div class="feat-body">
-          <div class="kick"><span>/ LITERARY FICTION</span><span class="rule"></span></div>
-          <h3>Homegoing — <em>a diaspora novel, built from Lagos to London.</em></h3>
-          <div class="feat-meta"><span>Debut novel</span><span>Zero platform</span><span>14-week build</span></div>
-          <p>Yaa Gyasi's debut follows three generations of a Nigerian-British family across the Atlantic. Her publisher had given her a stock Amazon ad template and a prayer. We built a landing page around a free chapter — "The Crossing," the 1962 migration scene — and a glossary of Igbo proverbs woven through the text.</p>
-          <p>The targeting was specific: readers of Chimamanda, Ayọ̀bámi Adébáyọ̀, and the "African diaspora literary fiction" shelf on Goodreads. Broad "literary fiction" audiences were tested for one week and killed — four times more expensive, half the opt-in rate.</p>
-          <div class="feat-kv">
-            <div class="kv"><b>1,842</b><span>Readers collected</span></div>
-            <div class="kv"><b>39%</b><span>Opt-in rate</span></div>
-            <div class="kv"><b>$1.04</b><span>Cost per reader</span></div>
-            <div class="kv"><b>312</b><span>Pre-orders attributed</span></div>
-          </div>
-          <div class="feat-built">Built: <span>Landing page</span><span>Free chapter</span><span>Proverb glossary</span><span>4-letter sequence</span><span>12-week ad care</span></div>
-        </div>
+    <div class="srv-grid">
+      <article class="srv" data-reveal>
+        <div class="srv-top"><span class="srv-no">S·01</span><span class="srv-price">from $1,400 · 10 days</span></div>
+        <h3>The Landing Sprint<span class="srv-tag">Most booked</span></h3>
+        <p>The whole system at once: page, magnet, first campaign, letters. Live ten days after your first email to us.</p>
+        <div class="chips"><span>Landing page</span><span>Lead magnet</span><span>Ad setup</span><span>3 letters</span></div>
       </article>
-
-      <!-- 2. Crying in H Mart -->
-      <article class="feat" data-reveal>
-        <div class="feat-visual">
-          <div class="feat-cover">
-            <img src="https://m.media-amazon.com/images/I/81Ge+VbGSSL._SL1500_.jpg" alt="Crying in H Mart by Michelle Zauner">
-            <div class="feat-cap"><span>Michelle Zauner</span><span>2021 · Memoir</span></div>
-          </div>
-        </div>
-        <div class="feat-body">
-          <div class="kick"><span>/ MEMOIR</span><span class="rule"></span></div>
-          <h3>Crying in H Mart — <em>a memoir of place, mapped in letters.</em></h3>
-          <div class="feat-meta"><span>Second book</span><span>Small press</span><span>10-week build</span></div>
-          <p>Michelle Zauner's memoir traces her mother's displacement from Seoul and the food that connected them. The magnet we built was a "field notebook" — 22 pages of her mother's handwritten recipes, translated, with Michelle's marginalia alongside.</p>
-          <p>The targeting was unusual: we aimed at readers of W.G. Sebald, Robert Macfarlane, and the "nature writing / place memoir" shelf. The opt-in rate surprised even us — 44%, the highest in the archive. Readers of place-based non-fiction, it turns out, are unusually willing to trade an email for a real artifact.</p>
-          <div class="feat-kv">
-            <div class="kv"><b>2,104</b><span>Readers collected</span></div>
-            <div class="kv"><b>44%</b><span>Opt-in rate</span></div>
-            <div class="kv"><b>$0.87</b><span>Cost per reader</span></div>
-            <div class="kv"><b>487</b><span>Pre-orders attributed</span></div>
-          </div>
-          <div class="feat-built">Built: <span>Landing page</span><span>Field notebook PDF</span><span>Map illustration</span><span>3-letter sequence</span><span>8-week ad care</span></div>
-        </div>
+      <article class="srv" data-reveal style="--d:.06s">
+        <div class="srv-top"><span class="srv-no">S·02</span><span class="srv-price">from $450 · ~1 week</span></div>
+        <h3>Lead Magnet Studio</h3>
+        <p>Free artifacts worth keeping: typeset short stories, mythology glossaries, illustrated maps, recipe chapters from the river house.</p>
+        <div class="chips"><span>Typesetting</span><span>Illustration briefs</span><span>PDF + EPUB</span></div>
       </article>
+      <article class="srv" data-reveal style="--d:.1s">
+        <div class="srv-top"><span class="srv-no">S·03</span><span class="srv-price">from $300 / month</span></div>
+        <h3>The Letter Desk</h3>
+        <p>Welcome sequences and monthly letters written in your book's voice — drafted, edited and sent on your behalf.</p>
+        <div class="chips"><span>Welcome 3</span><span>Monthly letter</span><span>Subject-line tests</span></div>
+      </article>
+      <article class="srv" data-reveal style="--d:.14s">
+        <div class="srv-top"><span class="srv-no">S·04</span><span class="srv-price">from $250 / month + budget</span></div>
+        <h3>Precision Ad Care</h3>
+        <p>Modest budgets aimed at adjacent shelves, reviewed weekly, killed quickly when wrong, reported plainly when right.</p>
+        <div class="chips"><span>Audience builds</span><span>Creative swaps</span><span>Weekly care</span></div>
+      </article>
+      <article class="srv" data-reveal style="--d:.18s">
+        <div class="srv-top"><span class="srv-no">S·05</span><span class="srv-price">from $700 · 2 weeks</span></div>
+        <h3>Audience Mapping</h3>
+        <p>Written research on who actually reads books like yours, where they gather, and what would make them opt in.</p>
+        <div class="chips"><span>Reader interviews</span><span>Shelf analysis</span><span>Written report</span></div>
+      </article>
+      <article class="srv" data-reveal style="--d:.22s">
+        <div class="srv-top"><span class="srv-no">S·06</span><span class="srv-price">from $900 / title</span></div>
+        <h3>Backlist Revival</h3>
+        <p>Older titles get a new front door: fresh page, fresh magnet, fresh letters — so new readers meet the whole shelf.</p>
+        <div class="chips"><span>Per title</span><span>Page + magnet</span><span>Cross-linking</span></div>
+      </article>
+      <article class="srv" data-reveal style="--d:.26s">
+        <div class="srv-top"><span class="srv-no">S·07</span><span class="srv-price">from $2,200 · 12 weeks</span></div>
+        <h3>Launch Season</h3>
+        <p>A twelve-week pre-order and launch campaign for a new book — planned in writing, executed quietly, reported honestly.</p>
+        <div class="chips"><span>12-week timeline</span><span>ARC readers</span><span>Launch letters</span></div>
+      </article>
+      <article class="srv" data-reveal style="--d:.3s">
+        <div class="srv-top"><span class="srv-no">S·08</span><span class="srv-price">included with retainers</span></div>
+        <h3>The Signal Report</h3>
+        <p>Plain-words analytics on everything we run together. No dashboard left unexplained, no vanity metric left alive.</p>
+        <div class="chips"><span>Monthly</span><span>Plain words</span><span>Always honest</span></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <!-- 3. The City of Brass -->
-      <article class="feat" data-reveal>
-        <div class="feat-visual">
-          <div class="feat-cover">
-            <img src="https://m.media-amazon.com/images/I/81rB3RV2URL._SL1500_.jpg" alt="The City of Brass by S.A. Chakraborty">
-            <div class="feat-cap"><span>S.A. Chakraborty</span><span>2017 · Mythic fantasy</span></div>
+<!-- ============ CASE STUDY ============ -->
+<section class="cs-banner" id="case" aria-label="Kushlam case study">
+  <img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/1719cc295-63e9-4325-8bfb-a3271e9b7590.png" alt="Misty mythic rainforest with spirits in the light">
+  <div class="cs-cap"><div class="wrap">
+    <div class="kick" data-reveal><span class="rule"></span><span>// 04 · Case study — live build</span></div>
+    <h2 data-reveal>Kushlam, by Neelam Saikia.</h2>
+    <p data-reveal>Assamese mythic fantasy. Zero author platform. Ten days to a working reader machine — then nine weeks of quiet compounding.</p>
+  </div></div>
+</section>
+
+<section class="cs-sec">
+  <div class="wrap">
+    <div class="cs-tabs" role="tablist" aria-label="Case study details" data-reveal>
+      <button class="cs-tab active" data-panel="page" role="tab">The Landing Page</button>
+      <button class="cs-tab" data-panel="magnet" role="tab">The Lead Magnet</button>
+      <button class="cs-tab" data-panel="target" role="tab">The Targeting</button>
+      <button class="cs-tab" data-panel="letters" role="tab">The Letters</button>
+    </div>
+
+    <!-- PAGE -->
+    <div class="cs-panel active" data-panel="page">
+      <div class="cs-grid">
+        <div class="browser" data-reveal>
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">kushlam.emilyeditorial.com</span></div>
+          <div class="mock">
+            <img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/119b89f32-e913-4b77-82c5-9f161e15dae6.png" alt="Kushlam book cover">
+            <div>
+              <h4>Enter Kushlam — a free story waits inside.</h4>
+              <p>A 14-page tale of Rabhu's friends — the spirits who raised him — plus the glossary of Kushlam's mythology. Yours for an email address.</p>
+              <div class="mock-form"><input type="email" placeholder="you@somewhere-quiet.com" aria-label="Email (demo)"><button type="button" id="demoBtn">Send me the story</button></div>
+              <div class="mock-trust"><span>No spam</span><span>One letter a week</span><span>Yours to keep forever</span></div>
+            </div>
           </div>
         </div>
-        <div class="feat-body">
-          <div class="kick"><span>/ MYTHIC FANTASY</span><span class="rule"></span></div>
-          <h3>The City of Brass — <em>a pantheon, given freely.</em></h3>
-          <div class="feat-meta"><span>Debut novel</span><span>Self-published</span><span>12-week build</span></div>
-          <p>S.A. Chakraborty's debut reimagines Islamic mythology as a family in crisis. She had no platform, no mailing list, and a deep suspicion of "marketing." We built a glossary of forty deities, rivers, and rites — typeset to match the novel's design — and a short story about the youngest god, the one the novel is named after.</p>
-          <p>The targeting was the most culturally specific we've run: "South Asian mythic fantasy," "Islamic speculative fiction," "folklore retellings." We explicitly excluded broad "fantasy" audiences after a one-week test showed them at $4.87 per reader. The final blended cost: $1.12.</p>
-          <div class="feat-kv">
-            <div class="kv"><b>3,217</b><span>Readers collected</span></div>
+        <div class="cs-side" data-reveal style="--d:.15s">
+          <h3>One page. One promise. One field.</h3>
+          <p>No navigation, no pop-ups stacking like doors in a hallway. A reader arrives from an ad, meets the world, and decides in thirty seconds. The page respects that.</p>
+          <p>Built in four days, typeset like the book it leads to.</p>
+          <div class="cs-kv">
             <div class="kv"><b>41%</b><span>Opt-in rate</span></div>
-            <div class="kv"><b>$1.12</b><span>Cost per reader</span></div>
-            <div class="kv"><b>628</b><span>Pre-orders attributed</span></div>
-          </div>
-          <div class="feat-built">Built: <span>Landing page</span><span>Deity glossary</span><span>Short story</span><span>3-letter sequence</span><span>14-week ad care</span></div>
-        </div>
-      </article>
-
-      <!-- 4. Pachinko -->
-      <article class="feat" data-reveal>
-        <div class="feat-visual">
-          <div class="feat-cover">
-            <img src="https://m.media-amazon.com/images/I/81QUHDqURL._SL1500_.jpg" alt="Pachinko by Min Jin Lee">
-            <div class="feat-cap"><span>Min Jin Lee</span><span>2017 · Historical epic</span></div>
+            <div class="kv"><b>0.8s</b><span>Load time</span></div>
+            <div class="kv"><b>1</b><span>Field, total</span></div>
+            <div class="kv"><b>0</b><span>Pop-ups</span></div>
           </div>
         </div>
-        <div class="feat-body">
-          <div class="kick"><span>/ HISTORICAL EPIC</span><span class="rule"></span></div>
-          <h3>Pachinko — <em>a family tree, a timeline, a list.</em></h3>
-          <div class="feat-meta"><span>Third book</span><span>Mid-size press</span><span>8-week build</span></div>
-          <p>Min Jin Lee's novel follows four generations of a Korean family in Japan, and the history is inherited — the kind that lives in family stories. The magnet we built was a transcript of a "field recording" — a fictional oral history of the family, written as if recorded in 1974 by a folklore student.</p>
-          <p>The targeting was the most fun we've had: readers of Sarah Perry, Susan Hill, and the "Korean historical fiction" shelf. We also ran a small test against "cozy mystery" readers — it performed terribly, which told us something useful about the difference between atmospheric and cozy.</p>
-          <div class="feat-kv">
-            <div class="kv"><b>1,563</b><span>Readers collected</span></div>
-            <div class="kv"><b>36%</b><span>Opt-in rate</span></div>
-            <div class="kv"><b>$1.28</b><span>Cost per reader</span></div>
-            <div class="kv"><b>241</b><span>Pre-orders attributed</span></div>
-          </div>
-          <div class="feat-built">Built: <span>Landing page</span><span>Field recording transcript</span><span>Family history PDF</span><span>3-letter sequence</span><span>10-week ad care</span></div>
-        </div>
-      </article>
-
-      <!-- 5. Binti -->
-      <article class="feat" data-reveal>
-        <div class="feat-visual">
-          <div class="feat-cover">
-            <img src="https://m.media-amazon.com/images/I/81x5vURL._SL1500_.jpg" alt="Binti by Nnedi Okorafor">
-            <div class="feat-cap"><span>Nnedi Okorafor</span><span>2015 · Diaspora SF</span></div>
-          </div>
-        </div>
-        <div class="feat-body">
-          <div class="kick"><span>/ DIASPORA SF</span><span class="rule"></span></div>
-          <h3>Binti — <em>a future, built from the border.</em></h3>
-          <div class="feat-meta"><span>Debut novel</span><span>Small press</span><span>11-week build</span></div>
-          <p>Nnedi Okorafor's novella is set in a near-future where the border wall has become a computational surface. The magnet was a "technical manual" — a fictional document from the novel's world, explaining how the wall's sensors work, written in the voice of the novel's engineer protagonist.</p>
-          <p>The targeting was the most niche we've attempted: "African science fiction," "border literature," "speculative fiction by authors of color." The audience was small but fiercely engaged — 52% open rate on the welcome letter, the highest in the archive.</p>
-          <div class="feat-kv">
-            <div class="kv"><b>987</b><span>Readers collected</span></div>
-            <div class="kv"><b>47%</b><span>Opt-in rate</span></div>
-            <div class="kv"><b>$1.43</b><span>Cost per reader</span></div>
-            <div class="kv"><b>178</b><span>Pre-orders attributed</span></div>
-          </div>
-          <div class="feat-built">Built: <span>Landing page</span><span>Technical manual PDF</span><span>World-building doc</span><span>4-letter sequence</span><span>9-week ad care</span></div>
-        </div>
-      </article>
-
-      <!-- 6. Mexican Gothic -->
-      <article class="feat" data-reveal>
-        <div class="feat-visual">
-          <div class="feat-cover">
-            <img src="https://m.media-amazon.com/images/I/81a4bURL._SL1500_.jpg" alt="Mexican Gothic by Silvia Moreno-Garcia">
-            <div class="feat-cap"><span>Silvia Moreno-Garcia</span><span>2020 · Literary horror</span></div>
-          </div>
-        </div>
-        <div class="feat-body">
-          <div class="kick"><span>/ LITERARY HORROR</span><span class="rule"></span></div>
-          <h3>Mexican Gothic — <em>a folk tale, a field recording, a list.</em></h3>
-          <div class="feat-meta"><span>Second book</span><span>Self-published</span><span>9-week build</span></div>
-          <p>Silvia Moreno-Garcia's novel traces her family's displacement from Mexico City through the recipes they carried with them. The magnet was a single recipe — "Fesenjān for Exiles" — tested, photographed, and typeset to match the book's design. It took three weeks to get the pomegranate molasses ratio right.</p>
-          <p>The targeting was the most cross-cultural we've run: "Mexican diaspora," "food memoir," "Middle Eastern cooking," "immigrant narratives." The recipe magnet outperformed every other magnet type in the archive — 51% opt-in rate. People will trade an email for a recipe they can cook tonight.</p>
-          <div class="feat-kv">
-            <div class="kv"><b>712</b><span>Readers collected</span></div>
-            <div class="kv"><b>51%</b><span>Opt-in rate</span></div>
-            <div class="kv"><b>$0.94</b><span>Cost per reader</span></div>
-            <div class="kv"><b>134</b><span>Pre-orders attributed</span></div>
-          </div>
-          <div class="feat-built">Built: <span>Landing page</span><span>Recipe PDF</span><span>Photo direction</span><span>3-letter sequence</span><span>6-week ad care</span></div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ EMAIL WALL ============ -->
-<section class="wall" id="emails">
-  <div class="wrap">
-    <div class="s-head" data-reveal>
-      <div class="kick"><span>// 03 · THE EMAILS</span><span class="rule"></span></div>
-      <div class="s-row">
-        <h2 class="s-title">Thank-you notes, unedited.</h2>
-        <p class="s-lede">Six emails from six authors. No calls, no contracts signed in person, no handshakes. Just the work, and the quiet notes that came after.</p>
       </div>
     </div>
 
-    <div class="wall-grid">
-
-      <!-- Email 1: Yaa Gyasi -->
-      <article class="email" data-reveal>
-        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQV...</span></div>
-        <div class="email-head">
-          <div class="email-from">
-            <div class="email-av" style="background:var(--verm)">YG</div>
-            <div class="email-from-info"><b>Yaa Gyasi</b><small>to emilymitchellcooper@gmail.com</small></div>
+    <!-- MAGNET -->
+    <div class="cs-panel" data-panel="magnet">
+      <div class="cs-grid">
+        <div class="scatter">
+          <figure class="pcard pc1"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/1a92f4674-bbd2-419f-b4b8-fd80bd790858.png" alt="Rabhu's Friends short story cover"><figcaption>Rabhu's Friends · 14pp · free</figcaption></figure>
+          <figure class="pcard pc2"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/1b26eab28-12c8-4137-9fa1-1681d8a61aed.png" alt="The Kushlam Glossary illustrated spread"><figcaption>The Kushlam Glossary · beings, rivers &amp; rites</figcaption></figure>
+          <figure class="pcard pc3"><div class="pc-body"><b>A gift, not a trap.</b>The reader keeps both forever — whether or not they ever buy the book. Generosity is the strategy.</div><figcaption>Typeset · illustrated · exportable</figcaption></figure>
+        </div>
+        <div class="cs-side" data-reveal>
+          <h3>The world, given freely.</h3>
+          <p>Mainstream funnels hand out checklists. Culturally rooted fiction can do better: a short story about the spirits who raised Rabhu; a glossary of forty beings, rivers and rites; a map of the forest road.</p>
+          <p>Each artifact is typeset to match the novel, so the first contact with your book already feels like your book.</p>
+          <div class="cs-kv">
+            <div class="kv"><b>14pp</b><span>Short story</span></div>
+            <div class="kv"><b>40</b><span>Glossary entries</span></div>
+            <div class="kv"><b>68%</b><span>Finish the story</span></div>
+            <div class="kv"><b>∞</b><span>Kept forever</span></div>
           </div>
-          <div class="email-subj">emily — 400 readers. four hundred.</div>
-          <div class="email-date">Tue, Mar 12, 2024 at 11:47 PM · Lagos time</div>
         </div>
-        <div class="email-body">
-          <p>emily,</p>
-          <p>i'm sitting here at 11pm and the dashboard just ticked over to 400. four hundred people. four hundred strangers who read the crossing chapter and then gave you their email address because they wanted more of the world i made.</p>
-          <p>i keep refreshing the page like it's going to go back down. it doesn't.</p>
-          <p>my publisher sent me a "congratulations on your launch!" email at 9am this morning and i didn't reply because i was watching the reader count go from 387 to 391 to 394 and i couldn't look away. this is the first time in my life marketing has felt like something other than begging.</p>
-          <p>thank you. for the page, for the glossary, for not making me get on a single call. my mother asked why i wasn't stressed and i told her "because emily is handling it" and she said "who is emily" and i said "the person who built the machine" and she said "oh, the machine person. good."</p>
-          <p>that's the highest praise i can give.</p>
-          <div class="sig"><b>— yaa</b><small>yaa.gyasi@gmail.com</small></div>
-        </div>
-        <div class="email-foot"><span class="star">★</span><span>Replied 2d ago</span></div>
-      </article>
+      </div>
+    </div>
 
-      <!-- Email 2: Michelle Zauner -->
-      <article class="email" data-reveal style="--d:.08s">
-        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQW...</span></div>
-        <div class="email-head">
-          <div class="email-from">
-            <div class="email-av" style="background:var(--jade)">MZ</div>
-            <div class="email-from-info"><b>Michelle Zauner</b><small>to emilymitchellcooper@gmail.com</small></div>
+    <!-- TARGETING -->
+    <div class="cs-panel" data-panel="target">
+      <div class="cs-grid">
+        <div data-reveal>
+          <div class="aud-chips">
+            <span>Mythic fantasy</span><span>South Asian spec-fic</span><span>Folklore retellings</span><span>Assamese diaspora</span><span>Literary horror</span><span class="no">✕ broad "fantasy"</span><span class="no">✕ lookalike spam</span>
           </div>
-          <div class="email-subj">Re: the signal report</div>
-          <div class="email-date">Thu, Nov 9, 2023 at 3:12 PM · Berlin time</div>
+          <div class="bar-row"><div class="lbl"><span>Mythic fantasy readers</span><span>$0.94 / reader</span></div><div class="bar"><i style="--w:34%"></i></div></div>
+          <div class="bar-row"><div class="lbl"><span>South Asian spec-fic</span><span>$1.08 / reader</span></div><div class="bar"><i style="--w:40%"></i></div></div>
+          <div class="bar-row"><div class="lbl"><span>Folklore retellings</span><span>$1.31 / reader</span></div><div class="bar"><i style="--w:48%"></i></div></div>
+          <div class="bar-row"><div class="lbl"><span>Broad "fantasy" (turned off)</span><span>$4.87 / reader</span></div><div class="bar"><i class="bad" style="--w:96%"></i></div></div>
         </div>
-        <div class="email-body">
-          <p>Emily,</p>
-          <p>I've read the Signal Report three times. My agent read it twice. My publisher's marketing director read it once and then emailed me to ask who you are.</p>
-          <p>The number that keeps catching me is the 44% opt-in rate. I've been in publishing for eleven years and I've never seen a number like that outside of a celebrity memoir. And this is a quiet book about a village that doesn't exist anymore.</p>
-          <p>What I want you to know — and this is the part that matters — is that the readers are writing back. Actual emails. One woman wrote to say the field notebook made her cry on the U-Bahn. A man in Kraków wrote to say his grandmother's village was also erased from the maps and he'd been looking for this book for twenty years.</p>
-          <p>This isn't marketing. This is the book finding its people. You built the bridge.</p>
-          <p>I've already told my agent to book you for the next one. She said "is she expensive" and I said "she's worth it" and that was the end of the conversation.</p>
-          <div class="sig"><b>— Michelle</b><small>michelle.zauner@posteo.de</small></div>
-        </div>
-        <div class="email-foot"><span class="star">★</span><span>Replied 1d ago</span></div>
-      </article>
-
-      <!-- Email 3: S.A. Chakraborty -->
-      <article class="email wide" data-reveal>
-        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQX...</span></div>
-        <div class="email-head">
-          <div class="email-from">
-            <div class="email-av" style="background:var(--gold)">SC</div>
-            <div class="email-from-info"><b>S.A. Chakraborty</b><small>to emilymitchellcooper@gmail.com</small></div>
+        <div class="cs-side" data-reveal style="--d:.15s">
+          <h3>Aimed at the shelf, not the feed.</h3>
+          <p>We ran a two-week test including broad fantasy audiences, then killed it and never looked back. Precision wasn't a preference — it was five times cheaper.</p>
+          <p>Modest budgets, reviewed in writing every month. You always know what's working, in plain words.</p>
+          <div class="cs-kv">
+            <div class="kv"><b>$1.12</b><span>Blended cost / reader</span></div>
+            <div class="kv"><b>9</b><span>Weeks of data</span></div>
+            <div class="kv"><b>3</b><span>Audiences kept</span></div>
+            <div class="kv"><b>1</b><span>Audience killed</span></div>
           </div>
-          <div class="email-subj">the glossary changed everything</div>
-          <div class="email-date">Mon, Jun 17, 2025 at 9:03 AM · Mumbai time</div>
         </div>
-        <div class="email-body">
-          <p>emily —</p>
-          <p>i need to tell you something and i want to tell it clearly so there's no confusion about what i'm saying.</p>
-          <p>before we started working together, i had exactly three people on my mailing list. three. my mother, my sister, and my friend arjun who signed up to be supportive and then never opened a single email. i had convinced myself that "building an audience" was something that happened to other people — people with bigger platforms, people who were better at twitter, people who didn't spend their weekends re-reading the mahabharata for the fourteenth time.</p>
-          <p>the glossary you built — the one with the forty deities and rivers and rites — has been downloaded 3,217 times. three thousand two hundred and seventeen. i sat down last night and tried to imagine what that number means in human terms and i couldn't. it's too big. it's the population of a small town. a small town of people who wanted to know about the world i made.</p>
-          <p>but here's the part that actually matters: the readers are writing to tell me when i get something wrong. not angrily — respectfully. a woman from pune wrote to say that in her family's tradition, varuna is invoked differently during the first monsoon than the second. a man from diaspora in toronto wrote to say he'd never seen his grandmother's prayers represented in a book before and he was crying in his car in a parking lot. these are the emails i'm getting now. these are the conversations.</p>
-          <p>you didn't just build a mailing list. you built a community that cares enough to correct me. that's the most generous thing anyone has ever done for my work.</p>
-          <p>i'm starting book two next month. i'm not talking to anyone else. i'm writing to you first.</p>
-          <div class="sig"><b>— sanaa</b><small>sanaa.chakraborty@gmail.com</small></div>
-        </div>
-        <div class="email-foot"><span class="star">★</span><span>Replied 4h ago</span></div>
-      </article>
+      </div>
+    </div>
 
-      <!-- Email 4: Min Jin Lee -->
-      <article class="email" data-reveal>
-        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQY...</span></div>
-        <div class="email-head">
-          <div class="email-from">
-            <div class="email-av" style="background:var(--ink3)">ML</div>
-            <div class="email-from-info"><b>Min Jin Lee</b><small>to emilymitchellcooper@gmail.com</small></div>
+    <!-- LETTERS -->
+    <div class="cs-panel" data-panel="letters">
+      <div class="cs-grid">
+        <div data-reveal>
+          <div class="letter"><div class="l-top"><span>Letter 01 · on signup</span><span>71% open</span></div><h4>Welcome — the fire is lit.</h4><p>The story arrives first. No pitch, no preamble. A reader is welcomed the way Rabhu welcomes strangers: with food before questions.</p><div class="bar"><i style="--w:71%"></i></div></div>
+          <div class="letter"><div class="l-top"><span>Letter 02 · day 4</span><span>66% open</span></div><h4>Who raised Rabhu? (a glossary)</h4><p>The mythology, opened one door at a time. Forty entries, three highlighted, zero urgency.</p><div class="bar"><i style="--w:66%"></i></div></div>
+          <div class="letter"><div class="l-top"><span>Letter 03 · day 9</span><span>58% open · 24% click</span></div><h4>Kushlam is ready, if you are.</h4><p>The only ask in the sequence. One link, one honest paragraph, no countdown timer in sight.</p><div class="bar"><i style="--w:58%"></i></div></div>
+        </div>
+        <div class="cs-side" data-reveal style="--d:.15s">
+          <h3>Welcome. World. Invitation. Nothing else.</h3>
+          <p>Three letters, then a calm weekly rhythm only if the reader opts up. The sequence reads like the novel — because it was written by someone who read it twice.</p>
+          <div class="cs-kv">
+            <div class="kv"><b>63%</b><span>Median open</span></div>
+            <div class="kv"><b>24%</b><span>Click on the ask</span></div>
+            <div class="kv"><b>214</b><span>Pre-orders attributed</span></div>
+            <div class="kv"><b>0</b><span>"LAST CHANCE" emails</span></div>
           </div>
-          <div class="email-subj">quick note</div>
-          <div class="email-date">Fri, Sep 6, 2024 at 7:22 PM · Cork time</div>
         </div>
-        <div class="email-body">
-          <p>Emily,</p>
-          <p>Quick note — my publisher just called me (actual phone call, the horror) to say the pre-order numbers are "unexpectedly strong" and they want to know what we're doing differently.</p>
-          <p>I told them "we're not doing anything differently, the book is just finding its readers" and they said "that's not how publishing works" and I said "well it is now" and hung up.</p>
-          <p>The field recording transcript is doing the work. People are genuinely unsettled by it in the best way. One reader wrote to say she listened to it on the bus and had to get off three stops early because she was too creeped out to stay on. That's the best review I've ever received.</p>
-          <p>Thank you for not making me do a single video. Or a single dance. Or a single "behind the scenes" post. I would have died. Actually died. On camera.</p>
-          <p>The machine works. The machine is quiet. The machine is mine.</p>
-          <p>— M</p>
-          <div class="sig"><b>— Min Jin Lee</b><small>minjin.lee@gmail.com</small></div>
-        </div>
-        <div class="email-foot"><span class="star">★</span><span>Replied 3d ago</span></div>
-      </article>
-
-      <!-- Email 5: Nnedi Okorafor -->
-      <article class="email" data-reveal style="--d:.08s">
-        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzQZ...</span></div>
-        <div class="email-head">
-          <div class="email-from">
-            <div class="email-av" style="background:var(--verm)">NO</div>
-            <div class="email-from-info"><b>Nnedi Okorafor</b><small>to emilymitchellcooper@gmail.com</small></div>
-          </div>
-          <div class="email-subj">Re: Re: Re: Re: thank you</div>
-          <div class="email-date">Wed, Jan 22, 2025 at 11:58 PM · Tijuana time</div>
-        </div>
-        <div class="email-body">
-          <p>Emily —</p>
-          <p>I know I've already thanked you four times in this thread but I'm looking at the numbers tonight and I need to say it again, differently.</p>
-          <p>The technical manual magnet — the fictional sensor documentation from the novel — has a 52% open rate on the welcome letter. FIFTY-TWO PERCENT. I work in tech. I read every newsletter that comes into my inbox and I unsubscribe from 90% of them within a week. The fact that half the people who signed up are opening your letters means you've built something that actually respects their attention.</p>
-          <p>But here's the metric that matters to me: 178 pre-orders attributed. That's 178 people who read the manual, read the letters, and then decided to buy the book. Not because of a countdown timer. Not because of "limited time offer." Because the world was interesting enough that they wanted to live in it longer.</p>
-          <p>My abuela read the manual last week (I translated it for her) and she said "this feels like the book" and then she asked if she could have a copy to give to her book club. That's the test. If it feels like the book, it works. If it doesn't, it's just marketing.</p>
-          <p>You passed the abuela test. That's the only review that matters.</p>
-          <p>— Nnedi</p>
-          <div class="sig"><b>— Nnedi Okorafor</b><small>nnedi.okorafor@proton.me</small></div>
-        </div>
-        <div class="email-foot"><span class="star">★</span><span>Replied 1d ago</span></div>
-      </article>
-
-      <!-- Email 6: Silvia Moreno-Garcia -->
-      <article class="email" data-reveal style="--d:.16s">
-        <div class="email-bar"><i></i><i></i><i></i><span class="emurl">mail.google.com/mail/u/0/#inbox/FMfcgzR0...</span></div>
-        <div class="email-head">
-          <div class="email-from">
-            <div class="email-av" style="background:var(--jade)">SM</div>
-            <div class="email-from-info"><b>Silvia Moreno-Garcia</b><small>to emilymitchellcooper@gmail.com</small></div>
-          </div>
-          <div class="email-subj">my mother read the letter</div>
-          <div class="email-date">Sun, Feb 16, 2026 at 6:34 PM · Mexico City time</div>
-        </div>
-        <div class="email-body">
-          <p>Emily,</p>
-          <p>I have to tell you what happened yesterday. My mother — who has never once shown interest in anything I write, who calls my books "your little stories" — called me to say she'd received an email from you. The welcome letter. The one about the pomegranate molasses.</p>
-          <p>She said "I made fesenjān last night from your recipe and I cried the whole time because it tasted like my mother's kitchen in tehran and I haven't been able to go back since 1979."</p>
-          <p>My mother. Crying over a recipe. Over an email from a woman she's never met. Over a book she hasn't even bought yet.</p>
-          <p>That's when I understood what you've actually built. It's not a mailing list. It's a way for the book to reach the people who need it — the people who are looking for the taste of home, the people who are looking for the story that sounds like their grandmother's voice.</p>
-          <p>She asked me to send her the book. She said "I want to read the whole thing now." My mother. Who has never read anything I've written. Who said my first book was "too sad" and my second book was "too long."</p>
-          <p>You did this. The recipe did this. The letter did this. The machine you built — quiet, respectful, patient — it reached my mother and made her cry over pomegranate molasses.</p>
-          <p>I don't have the english words for what I'm feeling. In spanish we say "que las manos no te duelan" — may your hands not hurt. It's what we say to someone who has made something beautiful with their hands. Your hands built this. May they never hurt.</p>
-          <div class="sig"><b>— Silvia</b><small>silvia.moreno.garcia@gmail.com</small></div>
-        </div>
-        <div class="email-foot"><span class="star">★</span><span>Replied 6h ago</span></div>
-      </article>
-
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ STATS BAND ============ -->
-<section class="band" aria-label="Archive results">
+<!-- ============ METRICS BAND ============ -->
+<section class="band" aria-label="Kushlam results">
   <div class="wrap band-grid">
-    <div class="bm" data-reveal><b><span data-count="23">0</span></b><span>Books in the archive</span></div>
-    <div class="bm" data-reveal style="--d:.08s"><b><span data-count="61400">0</span><sup style="font-size:.5em">+</sup></b><span>Readers collected</span></div>
-    <div class="bm" data-reveal style="--d:.16s"><b><span data-count="38">0</span>%</b><span>Average opt-in rate</span></div>
-    <div class="bm" data-reveal style="--d:.24s"><b>$<span data-count="1.12" data-dec="2">0</span></b><span>Blended cost / reader</span></div>
-    <div class="bm" data-reveal style="--d:.32s"><b><span data-count="0">0</span></b><span>Calls required, ever</span></div>
+    <div class="bm" data-reveal><b><span data-count="1284">0</span></b><span>Readers in 9 weeks</span></div>
+    <div class="bm" data-reveal style="--d:.08s"><b><span data-count="41">0</span>%</b><span>Opt-in rate</span></div>
+    <div class="bm" data-reveal style="--d:.16s"><b>$<span data-count="1.12" data-dec="2">0</span></b><span>Cost per reader</span></div>
+    <div class="bm" data-reveal style="--d:.24s"><b><span data-count="63">0</span>%</b><span>Median open</span></div>
+    <div class="bm" data-reveal style="--d:.32s"><b><span data-count="214">0</span></b><span>Pre-orders attributed</span></div>
   </div>
 </section>
 
-<!-- ============ NOTE ============ -->
-<section class="note dark">
-  <div class="wrap note-grid">
-    <div class="note-body">
-      <div class="kick" data-reveal><span>// 04 · A NOTE ON THE WORK</span><span class="rule"></span></div>
-      <h2 class="s-title" style="margin:18px 0 30px;color:var(--paper)" data-reveal>Every book is different. The system is the same.</h2>
-      <p data-reveal>The magnet changes shape — a recipe, a field recording, a technical manual, a proverb glossary. The targeting changes — different shelves, different audiences, different costs. The letters change — different voices, different rhythms, different invitations.</p>
-      <p data-reveal>But the system is always the same: <strong>a page you own, a gift worth keeping, modest ads aimed at the right shelf, and letters that treat the reader like an adult.</strong> That's it. That's the whole strategy.</p>
-      <blockquote class="pull" data-reveal>"The machine is quiet. The machine is mine. The machine works."<small>— Min Jin Lee, September 2024</small></blockquote>
-      <p data-reveal>Every engagement in this archive began with a single email. No calls. No pitches. No "let's hop on a quick call to discuss." Just a book, a story, and a written proposal within two working days.</p>
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div data-reveal>
+      <div class="a-frame">
+        <div class="kb"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/183e38d98-dfa8-4eeb-a0f1-4a0f8e3a39af.png" alt="Emily Mitchell Cooper in her studio"></div>
+        <div class="a-cap"><span>Emily Mitchell Cooper</span><span>The studio, 2026</span></div>
+      </div>
     </div>
-    <div class="note-side" data-reveal>
-      <h4>What every engagement includes</h4>
-      <ul class="note-list">
-        <li>A landing page you own, exportable on day one</li>
-        <li>A lead magnet worth keeping — typeset to match the book</li>
-        <li>Modest ad budgets, reviewed in writing every month</li>
-        <li>A welcome sequence written in the book's voice</li>
-        <li>The Signal Report — plain words on what's working</li>
-        <li>Full list handover, always, for any reason</li>
-        <li>Zero calls. Ever. Unless you ask (and even then, we'd rather write)</li>
-      </ul>
+    <div class="about-body">
+      <div class="kick" data-reveal><span>// 05 · THE OPERATOR</span><span class="rule"></span></div>
+      <h2 class="s-title" style="margin:18px 0 30px" data-reveal>Ten years in publishing, one conclusion.</h2>
+      <p data-reveal>First as a publicist, then as an editor, Emily watched the same story repeat: the books with the most to say received the least machinery. The deeply cultural ones were marketed with stock ad templates written for anything. In 2022 she left to build that machinery herself.</p>
+      <p data-reveal>Today Emily Editorial is a studio of four, working with a deliberately small roster — six authors at a time — building reader systems for fiction rooted in myth, memory and the speculative traditions mainstream marketing can't see. Every engagement runs entirely in writing.</p>
+      <blockquote class="pull" data-reveal>"I'm not interested in flashy tactics or artificial engagement. What I want to build for you is a simple, respectful way to turn curious readers into lasting supporters."<small>— Emily Mitchell Cooper</small></blockquote>
+      <div class="capacity" data-reveal><span class="pulse"></span>Currently 6 authors · 2 seats open for Autumn 2026</div>
+      <div class="about-cta" data-reveal>
+        <a class="btn-ghost" href="#team">Meet the masthead</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="team-sec" id="team">
+  <div class="wrap">
+    <div class="s-head" data-reveal>
+      <div class="kick"><span>// 06 · THE MASTHEAD</span><span class="rule"></span></div>
+      <div class="s-row">
+        <h2 class="s-title">Four people. Six authors. Nothing industrial.</h2>
+        <p class="s-lede">A deliberately small masthead — like the front page of a paper that only prints what it can stand behind.</p>
+      </div>
+    </div>
+    <div class="team-grid">
+      <article class="team-card" data-reveal>
+        <div class="t-photo"><div class="t-img"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/183e38d98-dfa8-4eeb-a0f1-4a0f8e3a39af.png" alt="Portrait of Emily Mitchell Cooper"></div></div>
+        <h3>Emily Mitchell Cooper</h3>
+        <div class="t-role">Founder · Strategy &amp; Letters</div>
+        <p class="t-bio">Ten years in publishing. Writes every strategy, every proposal and every first letter by hand — twice.</p>
+        <div class="t-desk"><b>AT THE DESK —</b> Sundays, with black tea and the Kushlam glossary.</div>
+      </article>
+      <article class="team-card" data-reveal style="--d:.08s">
+        <div class="t-photo"><div class="t-img"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/16b616fa5-de96-4594-9a28-97541ba48330.png" alt="Portrait of Priya Raman"></div></div>
+        <h3>Priya Raman</h3>
+        <div class="t-role">Design &amp; Typesetting</div>
+        <p class="t-bio">Turns glossaries and short stories into objects readers keep. Believes a magnet should feel like the book it leads to.</p>
+        <div class="t-desk"><b>AT THE DESK —</b> kerning river names in the Kushlam map.</div>
+      </article>
+      <article class="team-card" data-reveal style="--d:.16s">
+        <div class="t-photo"><div class="t-img"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/13fca4720-34dd-455a-91f1-d3bfc068b3c8.png" alt="Portrait of Jonas Feld"></div></div>
+        <h3>Jonas Feld</h3>
+        <div class="t-role">Targeting &amp; Data</div>
+        <p class="t-bio">Finds the exact shelf your book lives on and kills broad audiences without mercy. Author of the Signal Report.</p>
+        <div class="t-desk"><b>AT THE DESK —</b> reading last month's report backwards.</div>
+      </article>
+      <article class="team-card" data-reveal style="--d:.24s">
+        <div class="t-photo"><div class="t-img"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/129613bf2-075e-4050-a38e-c17bf97b161e.png" alt="Portrait of Amara Diallo"></div></div>
+        <h3>Amara Diallo</h3>
+        <div class="t-role">Reader Research &amp; Cultural Care</div>
+        <p class="t-bio">Talks to real readers so nobody has to guess. Guardian of cultural accuracy in every ad, page and letter.</p>
+        <div class="t-desk"><b>AT THE DESK —</b> interview three of the week, Guwahati time.</div>
+      </article>
+    </div>
+    <p class="team-note" data-reveal><span>✦</span> Four people · Six authors · Zero calls spent on retainers <span>✦</span></p>
+  </div>
+</section>
+
+<!-- ============ VOICES ============ -->
+<section class="voices">
+  <div class="wrap">
+    <div class="s-head" data-reveal>
+      <div class="kick"><span>// 07 · AUTHOR VOICES</span><span class="rule"></span></div>
+      <div class="s-row">
+        <h2 class="s-title">Written references, of course.</h2>
+        <p class="s-lede">Every one of these arrived by email. None required a call.</p>
+      </div>
+    </div>
+    <div class="masonry">
+      <article class="voice dark" data-reveal><q>Emily built in nine days what my publisher couldn't in nine months: a list of readers who actually want my book. I never got on a single call.</q><div class="voice-who"><span class="av" style="background:var(--verm)">NS</span><div><b>Neelam Saikia</b><span>Author of Kushlam</span></div></div></article>
+      <article class="voice" data-reveal style="--d:.08s"><q>She treated my mythology like sacred text and my reader list like it was hers to protect. Because, as she kept reminding me, it is mine.</q><div class="voice-who"><span class="av" style="background:var(--jade)">RO</span><div><b>R. Okonkwo</b><span>The River Remembers</span></div></div></article>
+      <article class="voice" data-reveal style="--d:.16s"><q>I'm a hermit. The whole system ran by email while I wrote the next book. The monthly Signal Report is the only marketing document I've ever actually finished reading.</q><div class="voice-who"><span class="av" style="background:var(--gold)">HY</span><div><b>Hana Yoshida</b><span>Fox Season</span></div></div></article>
+      <article class="voice" data-reveal style="--d:.1s"><q>412 readers in my first month — people who chose the world I made. That isn't marketing. That's hospitality.</q><div class="voice-who"><span class="av" style="background:var(--ink3)">KT</span><div><b>K. Thangsiam</b><span>The Hornbill Road</span></div></div></article>
+      <article class="voice dark" data-reveal style="--d:.18s"><q>We hired the studio for one debut and handed them our backlist by winter. The reader graph they built now informs our entire acquisition list.</q><div class="voice-who"><span class="av" style="background:var(--verm)">MP</span><div><b>Meridian Press</b><span>Independent publisher</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENGAGEMENT ============ -->
+<section class="engage dark" id="engage">
+  <div class="wrap">
+    <div class="s-head" data-reveal>
+      <div class="kick"><span>// 08 · ENGAGEMENT</span><span class="rule"></span></div>
+      <div class="s-row">
+        <h2 class="s-title">Simple terms, in writing.</h2>
+        <p class="s-lede">Fixed quotes. No calls. Cancel any month. Every update arrives as a clear written note on what's working.</p>
+      </div>
+    </div>
+    <div class="tiers">
+      <article class="tier" data-reveal>
+        <h3>The Landing Sprint</h3>
+        <p class="tier-desc">The whole system, built in ten days.</p>
+        <div class="price"><span class="cur">$</span><b>1,400</b><span class="per">one-time</span></div>
+        <ul>
+          <li>Custom landing page, built in 10 days</li>
+          <li>Lead magnet typeset &amp; designed</li>
+          <li>First ad campaign — $250 budget included</li>
+          <li>Three-letter welcome sequence</li>
+          <li>Full list handover, exportable day one</li>
+          <li>Signal Report at day 30</li>
+        </ul>
+        <button class="btn btn-paper tier-btn" data-tier="The Landing Sprint">Book the sprint</button>
+      </article>
+      <article class="tier featured" data-reveal style="--d:.1s">
+        <span class="tier-flag">MOST AUTHORS CONTINUE</span>
+        <h3>The Monthly Signal</h3>
+        <p class="tier-desc">The system keeps compounding.</p>
+        <div class="price"><span class="cur">$</span><b>600</b><span class="per">/ month</span></div>
+        <ul>
+          <li>Ongoing targeting &amp; ad care</li>
+          <li>A new lead magnet each season</li>
+          <li>Monthly letters, written for you</li>
+          <li>The Signal Report — what's working, plainly</li>
+          <li>Cancel any month, keep everything</li>
+        </ul>
+        <button class="btn tier-btn" data-tier="The Monthly Signal">Start the Signal <span class="arr">→</span></button>
+      </article>
+      <article class="tier" data-reveal style="--d:.2s">
+        <h3>For Publishers</h3>
+        <p class="tier-desc">Lists, backlists, imprints.</p>
+        <div class="price"><b style="font-size:34px">Custom</b></div>
+        <ul>
+          <li>Multi-title &amp; backlist funnels</li>
+          <li>Imprint-level reader graphs</li>
+          <li>Team onboarding, entirely in writing</li>
+          <li>Written proposal within five days</li>
+        </ul>
+        <button class="btn btn-paper tier-btn" data-tier="Publisher proposal">Request proposal</button>
+      </article>
+    </div>
+    <p class="engage-foot">Ad budgets stay yours · You own every reader address · 14-day honest-review on everything</p>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process">
+  <div class="wrap">
+    <div class="s-head" data-reveal>
+      <div class="kick"><span>// 09 · HOW IT FEELS</span><span class="rule"></span></div>
+      <div class="s-row"><h2 class="s-title">Ten days, five emails, zero calls.</h2></div>
+    </div>
+    <div class="proc-row">
+      <div class="proc" data-reveal><div class="node">D·00</div><div><h4>Send the book</h4><p>One email. Attachments judged kindly.</p></div></div>
+      <div class="proc" data-reveal style="--d:.08s"><div class="node">D·02</div><div><h4>Written proposal</h4><p>Plan, quote, timeline. Take your time.</p></div></div>
+      <div class="proc" data-reveal style="--d:.16s"><div class="node">D·03</div><div><h4>The build</h4><p>Page, magnet, ads, letters — quietly assembled.</p></div></div>
+      <div class="proc" data-reveal style="--d:.24s"><div class="node">D·10</div><div><h4>Quiet launch</h4><p>The machine starts small and learns fast.</p></div></div>
+      <div class="proc" data-reveal style="--d:.32s"><div class="node">M·01</div><div><h4>The Signal Report</h4><p>Monthly, in plain words: what's working.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <div class="kick" data-reveal><span>// 10 · QUESTIONS</span><span class="rule"></span></div>
+      <h2 class="s-title" style="margin-top:18px" data-reveal>Asked by email, answered by email.</h2>
+      <p class="s-lede" style="margin-top:20px" data-reveal>Anything else? Write to <strong>hello@emilyeditorial.com</strong> — a written reply within two working days.</p>
+    </div>
+    <div>
+      <div class="faq-item" data-reveal><button class="faq-q">Will I really never have to get on a call?<span class="ic">+</span></button><div class="faq-a"><p>Really. Proposals, builds, launches and monthly Signal Reports all happen in writing. You stay focused on the manuscript; we stay focused on the machinery. If you love calls, this is not the right studio — and that's fine.</p></div></div>
+      <div class="faq-item" data-reveal><button class="faq-q">Who owns the reader list?<span class="ic">+</span></button><div class="faq-a"><p>You do, from the first signup. The list lives in an account in your name, exportable at any moment, for any reason, including the day you decide to leave. A system you don't own is a leash.</p></div></div>
+      <div class="faq-item" data-reveal><button class="faq-q">My book isn't fantasy. Does this still work?<span class="ic">+</span></button><div class="faq-a"><p>The system works for any story with cultural depth — literary fiction, memoir-adjacent novels, historical epics, horror rooted in tradition. The magnet changes shape (an essay, a recipe chapter, a family glossary); the machinery stays the same.</p></div></div>
+      <div class="faq-item" data-reveal><button class="faq-q">How much ad budget do I need?<span class="ic">+</span></button><div class="faq-a"><p>Most authors start at $200–400 a month. The budget is always yours, held in your own ad account, and the first rule of the Signal Report is telling you when to spend less.</p></div></div>
+      <div class="faq-item" data-reveal><button class="faq-q">What exactly is a lead magnet?<span class="ic">+</span></button><div class="faq-a"><p>A piece of your world given freely in exchange for an email address — for Kushlam, a short story about Rabhu's friends and a glossary of the mythology. It must be genuinely worth keeping; that's the entire trick.</p></div></div>
+      <div class="faq-item" data-reveal><button class="faq-q">Can I hire just one service, like the magnet?<span class="ic">+</span></button><div class="faq-a"><p>Yes. Every service on the index works alone. Most authors start with the Landing Sprint or the Magnet Studio, then add the Letter Desk once readers begin arriving.</p></div></div>
+      <div class="faq-item" data-reveal><button class="faq-q">What if it doesn't work?<span class="ic">+</span></button><div class="faq-a"><p>At day 30 you get an honest report with the real numbers. If opt-in is under target, we rebuild the page and magnet at no charge. If the book simply isn't finding its shelf yet, we'll say so in writing and hand over everything, neatly.</p></div></div>
     </div>
   </div>
 </section>
@@ -916,8 +1105,8 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
 <section class="join dark" id="join">
   <div class="wm" aria-hidden="true">E</div>
   <div class="wrap">
-    <div class="kick" data-reveal><span class="rule"></span><span>// 05 · ADD YOUR BOOK</span></div>
-    <h2 class="join-title" data-reveal>Your book belongs in the archive. <em>Let's build it.</em></h2>
+    <div class="kick" data-reveal><span class="rule"></span><span>// 11 · BEGIN</span></div>
+    <h2 class="join-title" data-reveal>Send me your story. <em>We'll answer in writing.</em></h2>
     <form class="join-form" id="joinForm" novalidate>
       <input type="email" id="jEmail" placeholder="you@somewhere-quiet.com" aria-label="Email address" autocomplete="email">
       <input type="text" id="jBook" placeholder="Working title of your book" aria-label="Book title">
@@ -941,20 +1130,20 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="logo" href="/" style="color:var(--paper)"><span class="logo-mark">E</span></a>
+        <a class="logo" href="#top" style="color:var(--paper)"><span class="logo-mark">E</span></a>
         <p>Emily Editorial — a studio of four building quiet, precise reader systems for authors whose stories carry cultural depth. Built by email, run with respect.</p>
       </div>
       <div class="foot-col">
         <h5>Studio</h5>
-        <a href="/">The Problem</a><a href="/">The System</a><a href="/">Services</a><a href="/">Kushlam Case Study</a><a href="/">The Masthead</a>
-      </div>
-      <div class="foot-col">
-        <h5>Archive</h5>
-        <a href="#genres">The Genres</a><a href="#work">Featured Work</a><a href="#emails">The Emails</a><a href="#join">Add Your Book</a>
+        <a href="#why">The Problem</a><a href="#system">The System</a><a href="#services">Services</a><a href="#case">Kushlam Case Study</a><a href="#team">The Masthead</a>
       </div>
       <div class="foot-col">
         <h5>Begin</h5>
-        <a href="#join">Start your system</a><a href="/">Engagement &amp; pricing</a><a href="/">FAQ</a><a href="mailto:emilymitchellcooper@gmail.com">emilymitchellcooper@gmail.com</a>
+        <a href="#join">Start your system</a><a href="#engage">Engagement &amp; pricing</a><a href="#faq">FAQ</a><a href="mailto:hello@emilyeditorial.com">hello@emilyeditorial.com</a>
+      </div>
+      <div class="foot-col">
+        <h5>Elsewhere</h5>
+        <a href="#">The Signal — monthly notes</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Substack</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -965,7 +1154,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
 </footer>
 
 <div class="mobile-cta" aria-hidden="false">
-  <a class="btn" href="#join">Add your book — no call required <span class="arr">→</span></a>
+  <a class="btn" href="#join">Start your system — no call required <span class="arr">→</span></a>
 </div>
 
 <div class="toast" id="toast" role="status"></div>
@@ -1046,9 +1235,98 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
     }, 500);
   })();
 
+  /* terminal typewriter */
+  (function(){
+    var term = document.getElementById('term');
+    var LINES = [
+      '▸ deploy kushlam.emilyeditorial.com ....... ok',
+      '▸ magnet: rabhus-friends.pdf · 14pp ....... live',
+      '▸ glossary: 40 entries · beings/rivers .... live',
+      '▸ targeting: mythic-fantasy / sa-spec ..... locked',
+      '▸ broad "fantasy" audience ................ killed',
+      '▸ +1 reader · Guwahati, IN',
+      '▸ +1 reader · Leeds, UK',
+      '▸ +1 reader · Toronto, CA',
+      '▸ status: compounding'
+    ];
+    if(reduce){ term.innerHTML = LINES.map(function(l){ return '<div class="tl">' + l + '</div>'; }).join(''); return; }
+    var li = 0;
+    function nextLine(){
+      if(li >= LINES.length){ setTimeout(function(){ term.innerHTML = ''; li = 0; nextLine(); }, 4200); return; }
+      var line = LINES[li], el = document.createElement('div');
+      el.className = 'tl'; term.appendChild(el);
+      var ci = 0;
+      (function ch(){
+        ci++; el.textContent = line.slice(0, ci);
+        if(ci < line.length){ setTimeout(ch, 13); }
+        else { li++; setTimeout(nextLine, 240); }
+      })();
+    }
+    nextLine();
+  })();
+
+  /* dashboard tilt */
+  var dash = document.getElementById('dash');
+  if(!reduce && window.matchMedia('(pointer:fine)').matches && dash){
+    dash.addEventListener('mousemove', function(e){
+      var r = dash.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      dash.style.transform = 'perspective(1100px) rotateY(' + (x * 5) + 'deg) rotateX(' + (-y * 5) + 'deg)';
+    });
+    dash.addEventListener('mouseleave', function(){ dash.style.transform = 'perspective(1100px) rotateX(0deg) rotateY(0deg)'; });
+  }
+
   /* ticker duplicate */
   var track = document.getElementById('tickerTrack');
   track.innerHTML += track.innerHTML;
+
+  /* method rail */
+  var steps = document.querySelectorAll('.step'), railFill = document.getElementById('railFill');
+  var sio = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        steps.forEach(function(s){ s.classList.toggle('active', s === e.target); });
+        railFill.style.height = (e.target.offsetTop + e.target.offsetHeight * .5) + 'px';
+      }
+    });
+  }, {threshold:.55});
+  steps.forEach(function(s){ sio.observe(s); });
+
+  /* case study tabs */
+  var tabs = document.querySelectorAll('.cs-tab'), panels = document.querySelectorAll('.cs-panel');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      t.classList.add('active');
+      document.querySelector('.cs-panel[data-panel="' + t.getAttribute('data-panel') + '"]').classList.add('active');
+    });
+  });
+
+  /* demo button */
+  document.getElementById('demoBtn').addEventListener('click', function(){
+    toast('Demo only — the real Kushlam page converts at 41%.');
+  });
+
+  /* tier buttons */
+  document.querySelectorAll('.tier-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      toast('Noted: ' + b.getAttribute('data-tier') + ' — finish the form below to begin.');
+      document.getElementById('join').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+
+  /* faq */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = '0px';
+      });
+      if(!open){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
 
   /* join form */
   var form = document.getElementById('joinForm'), jEmail = document.getElementById('jEmail'),
