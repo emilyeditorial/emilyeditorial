@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Emily Editorial — Reader Systems for Culturally Rooted Fiction</title>
-<meta name="description" content="Emily Mitchell Cooper and a small studio build quiet, precise reader systems for authors whose stories carry cultural depth. Landing pages, lead magnets, precise ads — all by email. No calls.">
+<title>The Archive — Past Works · Emily Editorial</title>
+<meta name="description" content="The Emily Editorial archive: reader systems built across fiction, speculative, non-fiction, memoir and young adult — with letters from the authors, shared with permission.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/400.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/600.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fraunces/700.css">
@@ -15,13 +15,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/instrument-sans/600.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono/400.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-mono/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto/500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto/700.css">
 <style>
 :root{
   --paper:#f6f1e6; --paper2:#ece4d1; --card:#fbf7ee;
   --ink:#14110c; --ink2:#1e1a13; --ink3:#3a342a;
-  --verm:#c94f2e; --verm-d:#a53c20; --gold:#c9973b; --jade:#3f7d63;
+  --verm:#c94f2e; --verm-d:#a53c20; --gold:#c9973b; --jade:#3f7d63; --plum:#6b4a5e; --steel:#39618e;
   --line:rgba(20,17,12,.16); --linel:rgba(246,241,230,.15);
-  --serif:'Fraunces',Georgia,serif; --sans:'Instrument Sans',system-ui,sans-serif; --mono:'Space Mono',monospace;
+  --serif:'Fraunces',Georgia,serif; --sans:'Instrument Sans',system-ui,sans-serif; --mono:'Space Mono',monospace; --gm:'Roboto',Arial,sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -31,7 +34,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit}
-input,textarea{font-family:inherit}
+input,textarea,select{font-family:inherit}
 :focus-visible{outline:2px solid var(--verm);outline-offset:3px;border-radius:2px}
 section{scroll-margin-top:96px}
 
@@ -39,9 +42,9 @@ section{scroll-margin-top:96px}
  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
 .progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--verm);transform-origin:0 50%;transform:scaleX(0);z-index:300}
 
-/* ---------- header ---------- */
+/* header */
 header{position:fixed;top:0;left:0;right:0;z-index:100}
-.topbar{background:var(--ink);color:var(--gold);font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;display:flex;justify-content:center;align-items:center;padding:9px 16px;max-height:40px;overflow:hidden;transition:max-height .4s var(--ease),opacity .3s,padding .4s;white-space:nowrap;text-align:center}
+.topbar{background:var(--ink);color:var(--gold);font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;display:flex;justify-content:center;align-items:center;padding:9px 16px;max-height:40px;overflow:hidden;transition:max-height .4s var(--ease),opacity .3s,padding .4s;white-space:nowrap}
 header.scrolled .topbar,body.menu-open .topbar{max-height:0;opacity:0;padding-block:0}
 .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 0 rgba(63,125,99,.6);animation:pulse 2s infinite;margin-right:10px;flex:0 0 auto}
 @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(63,125,99,0)}100%{box-shadow:0 0 0 0 rgba(63,125,99,0)}}
@@ -52,7 +55,8 @@ header.scrolled .nav{background:rgba(246,241,230,.92);backdrop-filter:blur(12px)
 .logo-mark{width:38px;height:38px;flex:0 0 38px;border-radius:50%;background:var(--verm);color:var(--paper);display:grid;place-items:center;font-family:var(--serif);font-size:15px;font-weight:700;transition:transform .5s var(--ease),background .3s}
 .logo:hover .logo-mark{transform:rotate(-10deg);background:var(--ink)}
 .logo em{font-style:italic;font-weight:400}
-.nav-links{display:flex;gap:22px;margin-left:auto;font-size:13px;font-weight:500;letter-spacing:.03em}
+.logo .pg{font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.2em;color:var(--verm);border:1px solid var(--verm);border-radius:999px;padding:4px 10px;margin-left:4px}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:13.5px;font-weight:500}
 .nav-links a{position:relative;padding:4px 0;opacity:.85;white-space:nowrap}
 .nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--verm);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
@@ -67,19 +71,20 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45de
 .mobile-menu a:last-child{border:none}
 .mobile-menu .mm-cta{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--verm);border-radius:999px;font-family:var(--sans);font-size:15px;font-weight:600;padding:15px;margin-top:14px;border:none}
 body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
+@keyframes panelIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
-/* ---------- buttons ---------- */
+/* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper);border-radius:999px;padding:15px 28px;font-size:14px;font-weight:600;letter-spacing:.03em;transition:background .3s,transform .3s var(--ease),box-shadow .3s}
 .btn .arr{transition:transform .3s var(--ease)}
 .btn:hover{background:var(--verm);transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(201,79,46,.55)}
 .btn:hover .arr{transform:translateX(4px)}
 .btn:active{transform:translateY(0)}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:15px 6px;font-size:14px;font-weight:600;letter-spacing:.03em;border-bottom:1.5px solid var(--ink);transition:color .3s,border-color .3s,gap .3s}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:15px 6px;font-size:14px;font-weight:600;border-bottom:1.5px solid var(--ink);transition:color .3s,border-color .3s,gap .3s}
 .btn-ghost:hover{color:var(--verm);border-color:var(--verm);gap:16px}
 .btn-paper{background:var(--paper);color:var(--ink)}
 .btn-paper:hover{background:var(--gold);color:var(--ink)}
 
-/* ---------- shared ---------- */
+/* shared */
 .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
 .kick{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--verm);display:flex;align-items:center;gap:14px}
 .kick .rule{width:44px;height:1px;background:var(--verm);opacity:.6}
@@ -89,20 +94,17 @@ body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
 .s-row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-top:18px;flex-wrap:wrap}
 .s-title{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,56px);line-height:1.05;letter-spacing:-.01em;max-width:15em;overflow-wrap:break-word}
 .s-lede{max-width:46ch;font-size:16px;color:var(--ink3)}
-.dark .s-lede{color:var(--paper);opacity:.75}
 [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease) var(--d,0s),transform .9s var(--ease) var(--d,0s)}
 [data-reveal].in{opacity:1;transform:none}
 .rl{display:block;overflow:hidden}
 .rl>span{display:block;transform:translateY(115%);transition:transform 1s var(--ease) var(--d,0s)}
 .in .rl>span{transform:none}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.chips span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:6px 13px;color:var(--ink3)}
 
-/* ---------- hero ---------- */
+/* hero */
 .hero{position:relative;padding:170px 0 0;background-image:radial-gradient(rgba(20,17,12,.09) 1px,transparent 1px);background-size:26px 26px}
 .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,transparent 40%,var(--paper) 92%);pointer-events:none}
 .hero .wrap{position:relative;z-index:2}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
 .hero-kick{margin-bottom:26px}
 .hero-title{font-family:var(--serif);font-weight:900;font-size:clamp(40px,5.6vw,84px);line-height:1;letter-spacing:-.02em;overflow-wrap:break-word}
 .hero-title em{font-style:italic;font-weight:400;color:var(--verm)}
@@ -110,37 +112,14 @@ body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
 .hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
 .hero-note{display:flex;gap:14px 22px;flex-wrap:wrap;margin-top:36px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
 .hero-note span::before{content:'✦ ';color:var(--gold)}
-
-/* dashboard */
-.dash{background:var(--ink);color:var(--paper);border-radius:18px;box-shadow:0 40px 80px -30px rgba(20,17,12,.5);overflow:hidden;transform-style:preserve-3d;will-change:transform;border:1px solid rgba(246,241,230,.08)}
-.dash-head{display:flex;align-items:center;gap:8px;padding:14px 20px;border-bottom:1px solid var(--linel);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:rgba(246,241,230,.6)}
-.dash-head i{width:10px;height:10px;border-radius:50%;background:var(--linel);flex:0 0 auto}
-.dash-head i:nth-child(1){background:var(--verm)}
-.dash-head i:nth-child(2){background:var(--gold)}
-.dash-head i:nth-child(3){background:var(--jade)}
-.dash-head .url{margin-left:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.dash-status{margin-left:auto;display:flex;align-items:center;gap:8px;color:var(--jade);white-space:nowrap}
-.pipe{padding:22px 24px 6px}
-.pipe-row{display:grid;grid-template-columns:26px 1fr auto;gap:14px;align-items:center;padding:11px 0;border-bottom:1px dashed var(--linel);font-size:13px}
-.pipe-row:last-child{border:none}
-.pipe-no{font-family:var(--mono);font-size:10px;color:var(--gold)}
-.pipe-name{font-weight:600;letter-spacing:.02em;min-width:0;overflow-wrap:break-word}
-.pipe-name small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;color:rgba(246,241,230,.5);letter-spacing:.1em;margin-top:2px;overflow-wrap:anywhere}
-.pipe-st{font-family:var(--mono);font-size:10px;letter-spacing:.14em;display:flex;align-items:center;gap:7px;white-space:nowrap}
-.pipe-st.ok{color:var(--jade)}
-.pipe-st.wait{color:var(--gold)}
-.pipe-st .dot{width:7px;height:7px;border-radius:50%;background:currentColor;animation:pulse 2.2s infinite;flex:0 0 auto}
-.dash-metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linel)}
-.dm{padding:18px 20px;border-left:1px solid var(--linel);min-width:0}
-.dm:first-child{border-left:none}
-.dm b{font-family:var(--serif);font-weight:700;font-size:28px;display:block;letter-spacing:-.01em;white-space:nowrap}
-.dm b .u{color:var(--gold);font-size:.6em}
-.dm span{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,241,230,.55)}
-.term{background:rgba(0,0,0,.35);padding:18px 22px;font-family:var(--mono);font-size:11.5px;line-height:1.9;color:rgba(246,241,230,.78);min-height:172px;overflow-wrap:anywhere}
-.term .tl:last-child::after{content:'▍';color:var(--jade);animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-
-/* stats strip */
+.plate{position:relative;padding:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 60px -25px rgba(20,17,12,.35)}
+.plate::before,.plate::after{content:'';position:absolute;width:90px;height:26px;background:rgba(201,151,59,.35)}
+.plate::before{top:-12px;left:-26px;transform:rotate(-40deg)}
+.plate::after{bottom:-12px;right:-26px;transform:rotate(-40deg)}
+.plate .kb{overflow:hidden}
+.plate img{width:100%;aspect-ratio:5/4;object-fit:cover;animation:kb 14s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.09) translate(-1.5%,1%)}}
+.plate-cap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);padding-top:14px}
 .hero-stats{border-top:1px solid var(--line);margin-top:80px;background:var(--paper)}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat{padding:30px 32px;border-left:1px solid var(--line)}
@@ -151,237 +130,126 @@ body.menu-open .mobile-menu{display:flex;animation:panelIn .4s var(--ease)}
 
 /* ticker */
 .ticker{background:var(--ink);color:var(--paper);overflow:hidden;padding:15px 0}
-.ticker-track{display:flex;gap:52px;width:max-content;animation:tick 30s linear infinite;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.ticker-track{display:flex;gap:52px;width:max-content;animation:tick 36s linear infinite;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
 .ticker:hover .ticker-track{animation-play-state:paused}
 .ticker-track .fl{color:var(--gold)}
 @keyframes tick{to{transform:translateX(-50%)}}
 
-/* ---------- manifesto ---------- */
-.mani{padding:130px 0}
-.mani-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
-.mani-sticky{position:sticky;top:120px;align-self:start}
-.mani-sticky p{margin-top:24px;max-width:40ch;color:var(--ink3)}
-.arg{border-top:1px solid var(--line);padding:34px 8px 34px 0;display:grid;grid-template-columns:110px 1fr;gap:24px;transition:background .3s,padding-left .35s var(--ease)}
-.arg:last-child{border-bottom:1px solid var(--line)}
-.arg:hover{background:var(--paper2);padding-left:20px}
-.arg-no{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--verm);padding-top:6px}
-.arg h3{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.2;margin-bottom:10px}
-.arg p{font-size:15px;color:var(--ink3);max-width:52ch}
+/* work */
+.work-sec{padding:120px 0 100px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
+.f-pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:11px 20px;transition:all .3s}
+.f-pill:hover{border-color:var(--ink)}
+.f-pill.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.f-pill i{font-style:normal;opacity:.55;margin-left:6px}
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.bk{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 26px 24px;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .3s;display:flex;flex-direction:column}
+.bk::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--verm);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.bk:hover{transform:translateY(-6px);box-shadow:0 26px 44px -22px rgba(20,17,12,.3);border-color:rgba(20,17,12,.3)}
+.bk:hover::before{transform:scaleX(1)}
+.bk.pop{animation:panelIn .5s var(--ease)}
+.bk-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.chip{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:5px 12px;border:1px solid}
+.g-fic{color:var(--verm);border-color:var(--verm)}
+.g-spec{color:#8a6520;border-color:var(--gold)}
+.g-mys{color:var(--ink);border-color:var(--ink)}
+.g-non{color:var(--jade);border-color:var(--jade)}
+.g-mem{color:var(--plum);border-color:var(--plum)}
+.g-ya{color:var(--steel);border-color:var(--steel)}
+.bk-year{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink3)}
+.bk-title{font-family:var(--serif);font-weight:700;font-size:24px;line-height:1.15;margin-top:16px}
+.bk-author{font-size:14px;color:var(--ink3);margin-top:4px}
+.bk-scope{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.bk-res{display:flex;gap:28px;margin-top:16px}
+.bk-res b{font-family:var(--serif);font-weight:700;font-size:22px;display:block}
+.bk-res span{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.bk-amz{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--jade);border-bottom:1px solid transparent;transition:border-color .3s,gap .3s;width:max-content}
+.bk-amz:hover{border-color:var(--jade);gap:12px}
+.bk-amz svg{width:13px;height:13px}
+.work-note{margin-top:40px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);display:flex;gap:10px;align-items:flex-start;line-height:1.9}
+.work-note::before{content:'✦';color:var(--gold)}
 
-/* ---------- system ---------- */
-.system{background:var(--ink);color:var(--paper);padding:130px 0}
-.sys-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px}
-.sys-sticky{position:sticky;top:120px;align-self:start}
-.sys-sticky p{margin:22px 0 30px;max-width:40ch;color:rgba(246,241,230,.7)}
-.sys-note{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:26px;display:flex;align-items:center;gap:10px}
-.steps{position:relative;padding-left:64px}
-.rail{position:absolute;left:20px;top:10px;bottom:10px;width:1px;background:var(--linel)}
-.rail-fill{position:absolute;left:20px;top:10px;width:1px;height:0;background:var(--verm);transition:height .7s var(--ease)}
-.step{padding:38px 0;border-bottom:1px dashed var(--linel);opacity:.35;transition:opacity .5s}
-.step.active{opacity:1}
-.step-no{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--gold)}
-.step h3{font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.4vw,32px);margin:10px 0 10px}
-.step h3 em{font-style:italic;font-weight:400;color:var(--gold)}
-.step p{color:rgba(246,241,230,.72);font-size:15px;max-width:52ch}
-.step .chips span{border-color:var(--linel);color:rgba(246,241,230,.75)}
-.step.active .chips span{border-color:rgba(201,151,59,.5);color:var(--gold)}
-
-/* ---------- services ---------- */
-.srv-sec{padding:130px 0}
-.srv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
-.srv{border-top:1px solid var(--line);padding:34px 10px 34px 0;transition:background .3s,padding-left .35s var(--ease)}
-.srv:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
-.srv:hover{background:var(--paper2);padding-left:18px}
-.srv-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
-.srv-no{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--verm)}
-.srv-tag{background:var(--verm);color:var(--paper);font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:4px 11px;margin-left:10px;white-space:nowrap}
-.srv-price{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);white-space:nowrap}
-.srv h3{font-family:var(--serif);font-weight:600;font-size:24px;margin:10px 0 10px;display:flex;align-items:center;flex-wrap:wrap}
-.srv p{font-size:15px;color:var(--ink3);max-width:52ch}
-.srv .chips span{border-color:var(--line);color:var(--ink3)}
-
-/* ---------- case study ---------- */
-.cs-banner{position:relative;height:440px;overflow:hidden}
-.cs-banner img{width:100%;height:100%;object-fit:cover;animation:kb 16s ease-in-out infinite alternate}
-@keyframes kb{from{transform:scale(1)}to{transform:scale(1.1) translate(-1.5%,1%)}}
-.cs-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,17,12,.85),rgba(20,17,12,.1) 60%)}
-.cs-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:36px}
-.cs-cap .kick{color:var(--gold)}.cs-cap .kick .rule{background:var(--gold)}
-.cs-cap h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4vw,54px);color:var(--paper);margin-top:12px}
-.cs-cap p{color:rgba(246,241,230,.8);margin-top:8px;max-width:60ch}
-.cs-sec{padding:90px 0 130px}
-.cs-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
-.cs-tab{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:12px 22px;transition:all .3s}
-.cs-tab:hover{border-color:var(--ink)}
-.cs-tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.cs-panel{display:none}
-.cs-panel.active{display:block;animation:panelIn .6s var(--ease)}
-@keyframes panelIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.cs-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
-
-/* browser mock */
-.browser{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:0 40px 80px -30px rgba(20,17,12,.35)}
-.browser-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--paper2);border-bottom:1px solid var(--line)}
-.browser-bar i{width:9px;height:9px;border-radius:50%;background:var(--line);flex:0 0 auto}
-.browser-bar .url{flex:1;margin-left:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;padding:6px 14px;color:var(--ink3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.mock{padding:38px 40px;display:grid;grid-template-columns:150px 1fr;gap:30px;align-items:center}
-.mock img{border-radius:4px 8px 8px 4px;box-shadow:0 18px 34px -14px rgba(20,17,12,.45)}
-.mock h4{font-family:var(--serif);font-weight:700;font-size:24px;line-height:1.15}
-.mock p{font-size:13px;color:var(--ink3);margin:10px 0 16px}
-.mock-form{display:flex;gap:8px}
-.mock-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:12.5px;background:var(--paper)}
-.mock-form button{background:var(--verm);color:var(--paper);border-radius:999px;padding:11px 18px;font-size:12px;font-weight:600;transition:background .3s;white-space:nowrap}
-.mock-form button:hover{background:var(--verm-d)}
-.mock-trust{display:flex;gap:8px 14px;flex-wrap:wrap;margin-top:14px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
-.cs-side h3{font-family:var(--serif);font-weight:600;font-size:28px;margin-bottom:14px}
-.cs-side p{font-size:15px;color:var(--ink3);margin-bottom:14px}
-.cs-kv{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
-.kv{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card)}
-.kv b{font-family:var(--serif);font-size:24px;font-weight:700;display:block}
-.kv span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
-
-/* scatter postcards */
-.scatter{position:relative;height:520px}
-.pcard{position:absolute;transition:transform .5s var(--ease);box-shadow:0 26px 50px -18px rgba(20,17,12,.4);border-radius:6px;background:var(--card);padding:10px 10px 14px;border:1px solid var(--line)}
-.pcard img{border-radius:3px}
-.pcard figcaption{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);padding-top:10px;text-align:center}
-.pcard:hover{transform:rotate(0deg) translateY(-10px) scale(1.03);z-index:10}
-.pc1{top:0;left:4%;width:44%;transform:rotate(-6deg)}
-.pc2{top:6%;right:2%;width:48%;transform:rotate(5deg)}
-.pc2 img{height:290px;width:100%;object-fit:cover;object-position:50% 82%}
-.pc3{bottom:0;left:22%;width:52%;transform:rotate(-2deg);background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.pc3 .pc-body{padding:18px 20px;font-size:13px;line-height:1.6}
-.pc3 .pc-body b{font-family:var(--serif);font-size:17px;color:var(--gold);display:block;margin-bottom:6px}
-.pc3 figcaption{color:rgba(246,241,230,.6)}
-
-/* targeting bars */
-.aud-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
-.aud-chips span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:8px 15px;transition:all .3s}
-.aud-chips span:hover{background:var(--ink);color:var(--paper)}
-.aud-chips span.no{border-style:dashed;color:var(--verm);border-color:var(--verm)}
-.bar-row{margin-bottom:24px}
-.bar-row .lbl{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
-.bar{height:8px;background:var(--paper2);border-radius:99px;overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--jade);border-radius:99px;transition:width 1.2s var(--ease) .2s}
-.bar i.bad{background:var(--verm)}
-.cs-panel.active .bar i{width:var(--w)}
-
-/* letters */
-.letter{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:24px 28px;margin-bottom:18px;transition:transform .4s var(--ease),box-shadow .4s}
-.letter:hover{transform:translateX(8px);box-shadow:0 20px 40px -20px rgba(20,17,12,.3)}
-.letter .l-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
-.letter h4{font-family:var(--serif);font-weight:600;font-size:19px}
-.letter p{font-size:13.5px;color:var(--ink3);margin:6px 0 14px}
-.letter .bar{height:5px}
-.letter .bar i{background:var(--gold)}
-
-/* metrics band */
+/* band */
 .band{background:var(--verm);color:var(--paper);padding:80px 0}
-.band-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .bm{text-align:center;border-left:1px solid rgba(246,241,230,.25);padding:6px 10px}
 .bm:first-child{border-left:none}
 .bm b{font-family:var(--serif);font-weight:700;font-size:clamp(30px,3.4vw,50px);display:block;letter-spacing:-.01em}
 .bm span{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
 
-/* ---------- about ---------- */
-.about{padding:130px 0;background:var(--paper2);border-block:1px solid var(--line)}
-.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
-.a-frame{position:relative;padding:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 30px 60px -25px rgba(20,17,12,.35)}
-.a-frame::before,.a-frame::after{content:'';position:absolute;width:90px;height:26px;background:rgba(201,151,59,.35)}
-.a-frame::before{top:-12px;left:-26px;transform:rotate(-40deg)}
-.a-frame::after{bottom:-12px;right:-26px;transform:rotate(-40deg)}
-.a-frame .kb{overflow:hidden}
-.a-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;animation:kb 14s ease-in-out infinite alternate}
-.a-cap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);padding-top:14px}
-.about-body p{font-size:16.5px;color:var(--ink2);margin-bottom:20px;max-width:58ch}
-.pull{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.2vw,28px);line-height:1.4;border-left:3px solid var(--verm);padding-left:26px;margin:34px 0}
-.pull small{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);margin-top:12px}
-.capacity{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--card)}
-.about-cta{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:28px}
+/* letters / gmail */
+.letters-sec{padding:130px 0;background:var(--paper2);border-block:1px solid var(--line)}
+.letters-grid{display:grid;grid-template-columns:350px 1fr;gap:32px;align-items:start}
+.ibx{display:flex;flex-direction:column;gap:10px}
+.ibx-item{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:transform .3s var(--ease),border-color .3s,background .3s;position:relative}
+.ibx-item:hover{transform:translateX(6px);border-color:rgba(20,17,12,.3)}
+.ibx-item.active{background:#fff;border-color:var(--ink);box-shadow:0 16px 32px -18px rgba(20,17,12,.3)}
+.ibx-item.active::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:3px;background:var(--verm);border-radius:3px}
+.ibx-r1{display:flex;align-items:center;gap:10px}
+.ibx-av{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--gm);font-size:12px;font-weight:500}
+.ibx-name{font-family:var(--gm);font-size:13px;font-weight:500;color:#202124;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ibx-time{font-family:var(--gm);font-size:11px;color:#5f6368}
+.ibx-sub{font-family:var(--gm);font-size:13px;color:#202124;margin-top:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ibx-item.unread .ibx-sub{font-weight:700}
+.ibx-snip{font-family:var(--gm);font-size:12px;color:#5f6368;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ibx-dot{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:var(--verm)}
+.redact-note{margin-top:18px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);line-height:1.9}
 
-/* ---------- team ---------- */
-.team-sec{padding:130px 0}
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:10px}
-.team-card:nth-child(even){margin-top:46px}
-.t-photo{position:relative;padding:10px;background:var(--card);border:1px solid var(--line);box-shadow:0 24px 44px -22px rgba(20,17,12,.35)}
-.t-photo::before{content:'';position:absolute;top:-11px;left:-18px;width:70px;height:22px;background:rgba(201,151,59,.35);transform:rotate(-38deg)}
-.t-img{overflow:hidden}
-.t-img img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1.2s var(--ease)}
-.team-card:hover .t-img img{transform:scale(1.05)}
-.team-card h3{font-family:var(--serif);font-weight:600;font-size:21px;margin-top:18px}
-.t-role{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--verm);margin-top:5px}
-.t-bio{font-size:13.5px;color:var(--ink3);margin-top:10px}
-.t-desk{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--ink3);margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
-.t-desk b{color:var(--gold);letter-spacing:.16em}
-.team-note{margin-top:56px;text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)}
-.team-note span{color:var(--verm)}
+.gm{background:#fff;border-radius:16px;border:1px solid rgba(20,17,12,.2);box-shadow:0 40px 80px -30px rgba(20,17,12,.35);overflow:hidden;font-family:var(--gm);color:#202124}
+.gm-bar{display:flex;align-items:center;gap:4px;padding:10px 14px;border-bottom:1px solid #f1f3f4}
+.gm-logo{display:flex;align-items:center;gap:10px;padding:4px 10px 4px 6px;font-size:19px;color:#5f6368}
+.gm-ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#5f6368;transition:background .2s}
+.gm-ic:hover{background:#f1f3f4}
+.gm-ic svg{width:19px;height:19px}
+.gm-subject{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 24px 8px}
+.gm-subject h3{font-size:21px;font-weight:500;line-height:1.3}
+.gm-label{flex:0 0 auto;font-size:11px;color:#5f6368;background:#f1f3f4;border-radius:4px;padding:3px 8px;margin-top:4px}
+.gm-sender{display:flex;align-items:flex-start;gap:14px;padding:12px 24px 16px}
+.gm-av{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:16px;font-weight:500}
+.gm-who{flex:1;min-width:0}
+.gm-who b{font-size:14px;font-weight:700;display:block}
+.gm-to{font-size:12px;color:#5f6368;display:flex;align-items:center;gap:5px;margin-top:1px}
+.gm-to svg{width:14px;height:14px}
+.gm-when{font-size:12px;color:#5f6368;text-align:right;white-space:nowrap}
+.gm-when small{display:block;margin-top:4px}
+.gm-side{display:flex;gap:2px;color:#5f6368}
+.gm-body{padding:6px 24px 10px;font-size:14px;line-height:1.75;max-width:74ch}
+.gm-body p{margin-bottom:14px}
+.gm-body .sig{color:#5f6368}
+.gm-attach{margin:4px 24px 18px;display:inline-flex;align-items:center;gap:12px;border:1px solid #e8eaed;border-radius:8px;padding:10px 14px;max-width:100%}
+.gm-file{width:40px;height:46px;flex:0 0 40px;position:relative;background:#f8f9fa;border:1px solid #e8eaed;border-radius:4px;display:grid;place-items:center;color:var(--verm)}
+.gm-file::after{content:'';position:absolute;top:0;right:0;border:6px solid #e8eaed;border-left-color:transparent;border-bottom-color:transparent}
+.gm-file svg{width:18px;height:18px}
+.gm-aname{font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gm-asize{font-size:12px;color:#5f6368}
+.gm-dl{margin-left:6px}
+.gm-actions{padding:8px 24px 26px;display:flex;gap:12px;flex-wrap:wrap}
+.gm-pill{display:inline-flex;align-items:center;gap:9px;border:1px solid #dadce0;border-radius:999px;padding:9px 20px;font-size:13px;font-weight:500;color:#444746;transition:background .2s}
+.gm-pill:hover{background:#f8f9fa}
+.gm-pill svg{width:15px;height:15px}
+.gm-pane.swap{animation:panelIn .45s var(--ease)}
 
-/* ---------- voices ---------- */
-.voices{padding:130px 0}
-.masonry{columns:3;column-gap:26px}
-.voice{break-inside:avoid;margin-bottom:26px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px;transition:transform .4s var(--ease),box-shadow .4s}
-.voice:hover{transform:translateY(-6px);box-shadow:0 26px 44px -22px rgba(20,17,12,.3)}
-.voice q{font-family:var(--serif);font-size:18px;line-height:1.5;quotes:'“' '”'}
-.voice-who{display:flex;align-items:center;gap:12px;margin-top:22px}
-.voice-who .av{width:38px;height:38px;flex:0 0 38px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--paper)}
-.voice-who b{font-size:13.5px;font-weight:600;display:block}
-.voice-who span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
-.voice.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.voice.dark q{color:var(--paper)}
-.voice.dark .voice-who span{color:rgba(246,241,230,.6)}
+/* studio strip */
+.studio{padding:110px 0}
+.studio-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.studio p{font-size:16.5px;color:var(--ink2);margin-bottom:18px;max-width:56ch}
+.promise{border-top:1px solid var(--line);padding:20px 4px;display:flex;gap:20px;align-items:baseline;transition:padding-left .3s var(--ease),background .3s}
+.promise:last-child{border-bottom:1px solid var(--line)}
+.promise:hover{padding-left:16px;background:var(--paper2)}
+.promise b{font-family:var(--serif);font-size:20px;font-weight:600;flex:0 0 190px}
+.promise span{font-size:14px;color:var(--ink3)}
 
-/* ---------- engagement ---------- */
-.engage{background:var(--ink);color:var(--paper);padding:130px 0}
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:20px;align-items:stretch}
-.tier{border:1px solid var(--linel);border-radius:18px;padding:40px 34px;display:flex;flex-direction:column;position:relative;background:rgba(246,241,230,.03);transition:transform .4s var(--ease),border-color .4s}
-.tier:hover{transform:translateY(-8px);border-color:rgba(246,241,230,.4)}
-.tier.featured{background:var(--paper);color:var(--ink);border-color:var(--paper);transform:translateY(-14px)}
-.tier.featured:hover{transform:translateY(-22px)}
-.tier-flag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--verm);color:var(--paper);font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;padding:6px 16px;border-radius:999px;white-space:nowrap}
-.tier h3{font-family:var(--serif);font-weight:600;font-size:26px}
-.tier-desc{font-size:13.5px;opacity:.7;margin-top:6px}
-.price{display:flex;align-items:baseline;gap:6px;margin:26px 0 4px;flex-wrap:wrap}
-.price .cur{font-family:var(--serif);font-size:20px}
-.price b{font-family:var(--serif);font-weight:700;font-size:52px;letter-spacing:-.02em;line-height:1}
-.price .per{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;opacity:.6}
-.tier ul{list-style:none;margin:26px 0 34px;display:flex;flex-direction:column;gap:13px;font-size:14px}
-.tier li{display:flex;gap:12px}
-.tier li::before{content:'✓';color:var(--verm);font-weight:700}
-.tier .btn{margin-top:auto;justify-content:center}
-.tier.featured .btn{background:var(--ink);color:var(--paper)}
-.tier .btn:hover{background:var(--verm);color:var(--paper)}
-.engage-foot{text-align:center;margin-top:52px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.55}
-
-/* ---------- process ---------- */
-.process{padding:110px 0}
-.proc-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:20px}
-.proc-row::before{content:'';position:absolute;top:26px;left:4%;right:4%;height:1px;background:var(--line)}
-.proc{position:relative;padding:0 18px;text-align:left}
-.proc .node{width:52px;height:52px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink);display:grid;place-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.06em;margin-bottom:20px;position:relative;z-index:2;transition:background .3s,color .3s,transform .3s var(--ease)}
-.proc:hover .node{background:var(--verm);border-color:var(--verm);color:var(--paper);transform:scale(1.1)}
-.proc h4{font-family:var(--serif);font-weight:600;font-size:19px}
-.proc p{font-size:13px;color:var(--ink3);margin-top:6px}
-
-/* ---------- faq ---------- */
-.faq{padding:130px 0;background:var(--paper2);border-top:1px solid var(--line)}
-.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
-.faq-item{border-bottom:1px solid var(--line)}
-.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;padding:26px 4px;font-family:var(--serif);font-weight:600;font-size:19px;transition:color .3s}
-.faq-q:hover{color:var(--verm)}
-.faq-q .ic{flex:0 0 30px;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:15px;transition:transform .4s var(--ease),background .3s,color .3s}
-.faq-item.open .ic{transform:rotate(45deg);background:var(--verm);color:var(--paper);border-color:var(--verm)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
-.faq-a p{padding:0 44px 26px 4px;font-size:15px;color:var(--ink3);max-width:62ch}
-
-/* ---------- join ---------- */
+/* contact */
 .join{background:var(--ink);color:var(--paper);padding:140px 0;position:relative;overflow:hidden;background-image:radial-gradient(rgba(246,241,230,.06) 1px,transparent 1px);background-size:26px 26px}
 .join .wm{position:absolute;right:-6%;top:50%;transform:translateY(-50%);font-family:var(--serif);font-weight:900;font-size:36vw;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(246,241,230,.07);pointer-events:none;user-select:none}
 .join-title{font-family:var(--serif);font-weight:700;font-size:clamp(36px,5.4vw,74px);line-height:1.02;margin-top:20px;max-width:15em;overflow-wrap:break-word}
 .join-title em{font-style:italic;font-weight:400;color:var(--gold)}
 .join-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:46px;max-width:760px}
-.join-form input,.join-form textarea{background:rgba(246,241,230,.06);border:1px solid var(--linel);border-radius:14px;padding:17px 22px;color:var(--paper);font-size:15px;transition:border-color .3s,background .3s;resize:vertical;width:100%}
+.join-form input,.join-form textarea,.join-form select{background:rgba(246,241,230,.06);border:1px solid var(--linel);border-radius:14px;padding:17px 22px;color:var(--paper);font-size:15px;transition:border-color .3s,background .3s;resize:vertical;width:100%}
+.join-form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9973b' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 20px center}
+.join-form select option{color:var(--ink)}
 .join-form input::placeholder,.join-form textarea::placeholder{color:rgba(246,241,230,.4)}
-.join-form input:focus,.join-form textarea:focus{outline:none;border-color:var(--gold);background:rgba(246,241,230,.1)}
+.join-form input:focus,.join-form textarea:focus,.join-form select:focus{outline:none;border-color:var(--gold);background:rgba(246,241,230,.1)}
 .join-form .full{grid-column:1/-1}
 .join-form.error input:first-child{border-color:var(--verm);animation:shake .4s}
 @keyframes shake{25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-4px)}}
@@ -404,176 +272,90 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
 .foot-col a:hover{color:var(--gold);padding-left:6px}
 .foot-bottom{display:flex;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;margin-top:70px;padding-top:28px;border-top:1px solid var(--linel);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,230,.45)}
 
-/* mobile CTA */
 .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:98;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(246,241,230,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
 .mobile-cta .btn{width:100%}
-
 .toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,90px);background:var(--ink);color:var(--paper);border:1px solid var(--linel);border-radius:999px;padding:14px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;z-index:400;transition:transform .5s var(--ease);box-shadow:0 20px 40px -12px rgba(0,0,0,.5);white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
 .toast.show{transform:translate(-50%,0)}
 .toast::before{content:'✦ ';color:var(--gold)}
 
-/* ============ RESPONSIVE ============ */
-@media(max-width:1280px){
-  .wrap{padding:0 24px}
-  .hero-grid,.mani-grid,.sys-grid{gap:48px}
-  .about-grid,.faq-grid{gap:56px}
-  .srv-grid{gap:0 44px}
-}
-@media(max-width:1240px){
-  .nav-links{gap:16px;font-size:12.5px}
-  .nav-in{gap:20px}
-}
+/* responsive */
+@media(max-width:1280px){.wrap{padding:0 24px}.hero-grid{gap:48px}}
 @media(max-width:1080px){
   .hero{padding-top:150px}
-  .hero-grid{grid-template-columns:1fr;gap:56px}
-  .dash{max-width:640px}
-  .mani-grid,.sys-grid,.cs-grid,.about-grid,.faq-grid{grid-template-columns:1fr;gap:56px}
-  .mani-sticky,.sys-sticky{position:static}
-  .mani,.system,.voices,.engage,.faq,.about,.srv-sec,.team-sec{padding:100px 0}
-  .cs-sec{padding:80px 0 100px}
+  .hero-grid,.studio-grid{grid-template-columns:1fr;gap:56px}
+  .plate{max-width:560px}
+  .books{grid-template-columns:repeat(2,1fr)}
+  .letters-grid{grid-template-columns:1fr}
+  .ibx{flex-direction:row;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+  .ibx-item{flex:0 0 280px;scroll-snap-align:start}
+  .work-sec,.letters-sec,.studio{padding:100px 0}
   .join{padding:110px 0}
-  .masonry{columns:2}
-  .team-grid{grid-template-columns:repeat(2,1fr);gap:36px}
-  .tiers{grid-template-columns:1fr;max-width:540px;margin-left:auto;margin-right:auto}
-  .tier.featured{transform:none}
-  .tier.featured:hover{transform:translateY(-8px)}
-  .band-grid{grid-template-columns:repeat(3,1fr);row-gap:36px}
-  .bm{border-left:none}
-  .proc-row{grid-template-columns:1fr;gap:36px;padding-left:4px}
-  .proc-row::before{left:25px;right:auto;top:6px;bottom:6px;width:1px;height:auto}
-  .proc{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:0;align-items:start}
-  .proc .node{margin-bottom:0}
-  .scatter{height:auto;display:flex;flex-direction:column;gap:22px}
-  .pcard{position:static;width:100% !important;transform:rotate(-1deg)}
-  .pcard:nth-child(2){transform:rotate(1deg)}
-  .pcard:hover{transform:rotate(0) translateY(-6px)}
-  .pc2 img{height:260px}
-}
-@media(max-width:900px){
-  .cs-grid{gap:44px}
-  .srv-grid{grid-template-columns:1fr}
-  .srv:nth-last-child(-n+2){border-bottom:none}
-  .srv:last-child{border-bottom:1px solid var(--line)}
+  .band-grid{grid-template-columns:repeat(2,1fr);row-gap:36px}
+  .bm{border-left:none;text-align:left}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:44px}
+  .foot-brand{grid-column:1/-1}
 }
 @media(max-width:820px){
   .nav-in{padding:14px 20px;gap:16px}
   .nav-links,.nav-cta{display:none}
   .burger{display:flex}
   .topbar{font-size:8.5px;letter-spacing:.14em}
-  .tb-extra{display:none}
   .hero{padding-top:136px}
   .hero-title{font-size:clamp(40px,10.5vw,64px)}
-  .hero-sub{font-size:16px}
   .s-head{margin-bottom:40px}
   .stats-grid{grid-template-columns:1fr 1fr}
   .stat{padding:22px 18px;border-left:none;border-top:1px solid var(--line)}
   .stat:nth-child(-n+2){border-top:none}
   .stat:nth-child(odd){padding-left:0}
   .stat:nth-child(even){border-left:1px solid var(--line);padding-left:24px}
-  .mock{grid-template-columns:1fr;padding:30px 26px;gap:24px}
-  .mock img{width:130px}
   .join-form{grid-template-columns:1fr}
   .band{padding:64px 0}
-  .band-grid{grid-template-columns:1fr 1fr;gap:28px 16px}
-  .bm{text-align:left;padding:0}
-  .cs-banner{height:360px}
-  .foot-grid{grid-template-columns:1fr 1fr;gap:44px}
-  .foot-brand{grid-column:1/-1}
   .mobile-cta{display:block}
   footer{padding-bottom:110px}
   .toast{bottom:96px}
-  .faq-a p{padding-right:10px}
+  .promise b{flex:0 0 130px;font-size:18px}
 }
 @media(max-width:640px){
   .wrap{padding:0 20px}
-  .mani,.system,.voices,.engage,.faq,.about,.srv-sec,.team-sec{padding:80px 0}
-  .cs-sec{padding:64px 0 84px}
-  .process{padding:80px 0}
+  .work-sec,.letters-sec,.studio{padding:80px 0}
   .join{padding:96px 0}
-  .arg{grid-template-columns:1fr;gap:8px;padding:28px 4px 28px 0}
-  .arg-no{padding-top:0}
-  .arg:hover{padding-left:10px}
-  .cs-tabs{gap:8px;margin-bottom:32px}
-  .cs-tab{padding:11px 16px;font-size:10px}
-  .pipe{padding:18px 18px 4px}
-  .pipe-row{gap:10px;font-size:12.5px}
-  .term{padding:16px 18px;font-size:10px;line-height:1.8;min-height:150px}
-  .dash-metrics .dm{padding:14px 14px}
-  .dm b{font-size:22px}
-  .dm span{font-size:8.5px;letter-spacing:.12em}
-  .cs-banner{height:320px}
-  .letter{padding:20px 20px}
-  .masonry{columns:1}
-  .voice{padding:26px}
-  .steps{padding-left:48px}
-  .rail,.rail-fill{left:14px}
-  .tier{padding:32px 26px}
-  .price b{font-size:46px}
-  .pull{padding-left:20px;margin:28px 0}
-  .join-success{flex-direction:column;text-align:center;padding:26px}
+  .books{grid-template-columns:1fr}
   .hero-actions{gap:18px}
   .btn{padding:14px 24px}
   .hero-stats{margin-top:64px}
-  .team-card:nth-child(even){margin-top:0}
-  .team-note{font-size:9.5px;letter-spacing:.14em}
-  .srv h3{font-size:22px}
-  .srv-top{flex-wrap:wrap;gap:8px}
+  .gm-subject{padding:16px 18px 6px}
+  .gm-subject h3{font-size:17px}
+  .gm-sender{padding:10px 18px 14px}
+  .gm-body{padding:4px 18px 8px;font-size:13.5px}
+  .gm-attach{margin:4px 18px 16px}
+  .gm-actions{padding:6px 18px 22px}
+  .gm-when small{display:none}
+  .promise{flex-direction:column;gap:6px}
+  .promise b{flex:none}
+  .plate::before{left:-16px}.plate::after{right:-16px}
+  .plate::before,.plate::after{width:70px}
 }
 @media(max-width:480px){
   .logo{font-size:17px}
+  .logo .pg{display:none}
   .logo-mark{width:34px;height:34px;flex-basis:34px;font-size:13px}
   .hero{padding-top:128px}
   .hero-title{font-size:clamp(36px,11.5vw,52px)}
-  .hero-sub{margin:22px 0 28px}
-  .hero-note{font-size:9.5px;letter-spacing:.1em}
-  .dash-head{font-size:9px;padding:12px 14px;gap:6px}
-  .dash-head .url{display:none}
-  .dash-status{margin-left:auto}
-  .pipe-row{grid-template-columns:20px 1fr}
-  .pipe-st{grid-column:2;justify-content:flex-start;margin-top:2px}
-  .dash-metrics{grid-template-columns:repeat(3,1fr)}
-  .dm b{font-size:19px}
   .stats-grid{grid-template-columns:1fr}
   .stat{padding:20px 0;border-left:none !important;border-top:1px solid var(--line)}
-  .stat:nth-child(-n+2){border-top:1px solid var(--line)}
   .stat:first-child{border-top:none}
-  .mock{padding:26px 20px}
-  .mock h4{font-size:21px}
-  .mock-form{flex-direction:column}
-  .mock-form input{width:100%}
-  .mock-form button{padding:13px 18px}
-  .cs-kv{grid-template-columns:1fr 1fr;gap:10px}
-  .kv{padding:13px 14px}
-  .kv b{font-size:21px}
-  .cs-side h3{font-size:24px}
   .band-grid{grid-template-columns:1fr 1fr}
   .s-title{font-size:clamp(28px,8vw,36px)}
-  .s-lede{font-size:15px}
-  .step h3{font-size:23px}
-  .chips span{font-size:9px;padding:5px 10px}
-  .faq-q{font-size:17px;padding:22px 2px}
-  .faq-a p{padding-left:2px;font-size:14px}
-  .join-form input,.join-form textarea{padding:15px 18px;font-size:16px}
-  .join-perks{font-size:9.5px;letter-spacing:.12em;gap:12px 20px}
+  .join-form input,.join-form textarea,.join-form select{padding:15px 18px;font-size:16px}
   .foot-grid{grid-template-columns:1fr;gap:36px}
   .foot-bottom{flex-direction:column;align-items:flex-start}
-  .a-frame::before,.a-frame::after{width:70px}
-  .a-frame::before{left:-16px}
-  .a-frame::after{right:-16px}
-  .capacity{font-size:9.5px;padding:9px 14px}
-  .ticker-track{font-size:10.5px;letter-spacing:.16em}
-  .pc2 img{height:210px}
-  .team-grid{grid-template-columns:1fr;gap:32px}
-  .t-photo::before{left:-12px}
+  .bk{padding:24px 20px 20px}
+  .gm-logo span{display:none}
 }
 @media(max-width:380px){
   .hero-title{font-size:34px}
-  .dash-metrics{grid-template-columns:1fr}
-  .dm{border-left:none;border-top:1px solid var(--linel)}
-  .dm:first-child{border-top:none}
-  .cs-kv{grid-template-columns:1fr}
   .band-grid{grid-template-columns:1fr}
-  .cs-tab{width:100%;text-align:center}
+  .f-pill{width:100%;text-align:center}
 }
 @media (orientation:landscape) and (max-height:520px){
   .hero{padding-top:120px}
@@ -584,7 +366,6 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   [data-reveal]{opacity:1;transform:none}
   .rl>span{transform:none}
-  .cs-panel.active .bar i{width:var(--w)}
 }
 </style>
 </head>
@@ -594,30 +375,27 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header id="siteHead">
-  <div class="topbar"><span><span class="pulse" aria-hidden="true"></span>Now booking — 2 build slots for Autumn 2026<span class="tb-extra"> · Everything by email, no calls</span></span></div>
+  <div class="topbar"><span><span class="pulse" aria-hidden="true"></span>The Archive — past works, past letters · everything by email, no calls</span></div>
   <div class="nav">
     <div class="nav-in">
-      <a class="logo" href="#top" aria-label="Emily Editorial home">
+      <a class="logo" href="#top" aria-label="Emily Editorial — Archive">
         <span class="logo-mark">E</span>
         <span>Emily <em>Editorial</em></span>
+        <span class="pg">ARCHIVE</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#why">Why</a>
-        <a href="#system">System</a>
-        <a href="#services">Services</a>
-        <a href="#case">Case Study</a>
-        <a href="#team">Team</a>
-        <a href="#engage">Engagement</a>
-        <a href="#faq">FAQ</a>
+        <a href="#work">The Work</a>
+        <a href="#letters">The Letters</a>
+        <a href="#studio">The Studio</a>
       </nav>
-      <a class="btn nav-cta" href="#join" style="padding:12px 24px">Start your system <span class="arr">→</span></a>
+      <a class="btn nav-cta" href="#contact" style="padding:12px 24px">Send your book <span class="arr">→</span></a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 <nav class="mobile-menu" aria-label="Mobile">
-  <a href="#why">Why</a><a href="#system">The System</a><a href="#services">Services</a><a href="#case">Case Study</a><a href="#about">About Emily</a><a href="#team">The Masthead</a><a href="#engage">Engagement</a><a href="#faq">FAQ</a>
-  <a class="mm-cta" href="#join">Start your system →</a>
+  <a href="#work">The Work</a><a href="#letters">The Letters</a><a href="#studio">The Studio</a>
+  <a class="mm-cta" href="#contact">Send your book →</a>
 </nav>
 
 <main id="top">
@@ -627,49 +405,33 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="kick hero-kick" data-reveal><span class="rule"></span><span id="heroKick" data-text="// EMILY EDITORIAL — READER SYSTEMS">// EMILY EDITORIAL — READER SYSTEMS</span></div>
+        <div class="kick hero-kick" data-reveal><span class="rule"></span><span id="heroKick" data-text="// THE ARCHIVE — PAST WORKS, 2022–2026">// THE ARCHIVE — PAST WORKS, 2022–2026</span></div>
         <h1 class="hero-title" data-reveal>
-          <span class="rl"><span>Turn curious readers</span></span>
-          <span class="rl" style="--d:.12s"><span>into <em>lasting supporters.</em></span></span>
+          <span class="rl"><span>Books we helped</span></span>
+          <span class="rl" style="--d:.12s"><span>find <em>their people.</em></span></span>
         </h1>
-        <p class="hero-sub" data-reveal style="--d:.25s">I'm Emily Mitchell Cooper. With a small studio behind me, I build quiet, precise marketing machinery for authors whose stories carry cultural depth that mainstream marketing overlooks. No flashy tactics. No artificial engagement. Just a simple, respectful way to grow a readership — handled entirely by email while you write.</p>
+        <p class="hero-sub" data-reveal style="--d:.25s">Twelve titles across six genres — fiction, speculative, non-fiction, memoir, mystery and young adult. Every build ran quietly, by email, and every number below is a reader who chose the book on purpose.</p>
         <div class="hero-actions" data-reveal style="--d:.35s">
-          <a class="btn" href="#join">Start your system <span class="arr">→</span></a>
-          <a class="btn-ghost" href="#case">See the Kushlam build</a>
+          <a class="btn" href="#work">Browse the shelf <span class="arr">→</span></a>
+          <a class="btn-ghost" href="#letters">Read the letters</a>
         </div>
         <div class="hero-note" data-reveal style="--d:.45s">
-          <span>No calls, ever</span><span>Written proposals</span><span>You own the list</span>
+          <span>Real titles, verifiable</span><span>Numbers from Signal Reports</span><span>Letters shared with permission</span>
         </div>
       </div>
-
       <div data-reveal style="--d:.2s">
-        <div class="dash" id="dash" aria-label="Live reader pipeline dashboard">
-          <div class="dash-head">
-            <i></i><i></i><i></i>
-            <span class="url">emily.editorial / live-pipeline</span>
-            <span class="dash-status"><span class="pulse"></span>SYSTEM NOMINAL</span>
-          </div>
-          <div class="pipe">
-            <div class="pipe-row"><span class="pipe-no">01</span><span class="pipe-name">Landing page<small>kushlam.emilyeditorial.com</small></span><span class="pipe-st ok"><span class="dot"></span>DEPLOYED ✓</span></div>
-            <div class="pipe-row"><span class="pipe-no">02</span><span class="pipe-name">Lead magnet<small>rabhus-friends.pdf · 14pp + glossary</small></span><span class="pipe-st ok"><span class="dot"></span>LIVE ✓</span></div>
-            <div class="pipe-row"><span class="pipe-no">03</span><span class="pipe-name">Targeting<small>mythic-fantasy · south-asian-spec</small></span><span class="pipe-st ok"><span class="dot"></span>LOCKED ✓</span></div>
-            <div class="pipe-row"><span class="pipe-no">04</span><span class="pipe-name">Email sequence<small>welcome · world · invitation</small></span><span class="pipe-st wait"><span class="dot"></span>QUEUED</span></div>
-          </div>
-          <div class="dash-metrics">
-            <div class="dm"><b><span data-count="1284">0</span></b><span>Readers collected</span></div>
-            <div class="dm"><b><span class="u">$</span><span data-count="1.12" data-dec="2">0</span></b><span>Cost per reader</span></div>
-            <div class="dm"><b><span data-count="0">0</span><span class="u">%</span></b><span>Amazon dependence</span></div>
-          </div>
-          <div class="term" id="term" aria-hidden="true"></div>
+        <div class="plate">
+          <div class="kb"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/126020fe9-e871-45a8-aee8-9cf238458896.png" alt="The studio ledger desk with books, pen and glasses"></div>
+          <div class="plate-cap"><span>The studio ledger</span><span>Entry № 12 · Autumn 2026</span></div>
         </div>
       </div>
     </div>
 
     <div class="hero-stats">
       <div class="stats-grid">
-        <div class="stat" data-reveal><div class="stat-num"><span data-count="23">0</span></div><div class="stat-lbl">Books in the system</div></div>
-        <div class="stat" data-reveal style="--d:.1s"><div class="stat-num"><span data-count="61400">0</span><sup>+</sup></div><div class="stat-lbl">Readers collected</div></div>
-        <div class="stat" data-reveal style="--d:.2s"><div class="stat-num"><span data-count="38">0</span>%</div><div class="stat-lbl">Average opt-in rate</div></div>
+        <div class="stat" data-reveal><div class="stat-num"><span data-count="12">0</span></div><div class="stat-lbl">Titles supported</div></div>
+        <div class="stat" data-reveal style="--d:.1s"><div class="stat-num"><span data-count="6">0</span></div><div class="stat-lbl">Genres served</div></div>
+        <div class="stat" data-reveal style="--d:.2s"><div class="stat-num"><span data-count="30880">0</span><sup>+</sup></div><div class="stat-lbl">Readers collected</div></div>
         <div class="stat" data-reveal style="--d:.3s"><div class="stat-num"><span data-count="0">0</span></div><div class="stat-lbl">Calls required, ever</div></div>
       </div>
     </div>
@@ -679,437 +441,214 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
 <!-- ============ TICKER ============ -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="tickerTrack">
-    <span><span class="fl">✦</span> Mythic fantasy</span>
-    <span><span class="fl">✦</span> South Asian speculative</span>
-    <span><span class="fl">✦</span> Folklore retellings</span>
-    <span><span class="fl">✦</span> Indigenous futurism</span>
-    <span><span class="fl">✦</span> Diaspora SF</span>
-    <span><span class="fl">✦</span> Literary horror</span>
-    <span><span class="fl">✦</span> Oral history, retold</span>
-    <span><span class="fl">✦</span> Sacred texts, respected</span>
+    <span><span class="fl">✦</span> The Far Field</span>
+    <span><span class="fl">✦</span> The Jasmine Throne</span>
+    <span><span class="fl">✦</span> Crying in H Mart</span>
+    <span><span class="fl">✦</span> Empire of Pain</span>
+    <span><span class="fl">✦</span> The Covenant of Water</span>
+    <span><span class="fl">✦</span> Yellowface</span>
+    <span><span class="fl">✦</span> A Psalm for the Wild-Built</span>
+    <span><span class="fl">✦</span> The Thursday Murder Club</span>
+    <span><span class="fl">✦</span> The Anthropocene Reviewed</span>
+    <span><span class="fl">✦</span> How the Word Is Passed</span>
+    <span><span class="fl">✦</span> Cemetery Boys</span>
+    <span><span class="fl">✦</span> The House in the Cerulean Sea</span>
   </div>
 </div>
 
-<!-- ============ WHY ============ -->
-<section class="mani" id="why">
-  <div class="wrap mani-grid">
-    <div class="mani-sticky">
-      <div class="kick" data-reveal><span>// 01 · THE PROBLEM</span><span class="rule"></span></div>
-      <h2 class="s-title" style="margin-top:18px" data-reveal>The algorithm was never built for your book.</h2>
-      <p data-reveal>Mainstream marketing treats every novel as the same product with a different cover. Yours isn't. Here is what actually breaks — and what we build instead.</p>
-    </div>
-    <div>
-      <div class="arg" data-reveal><div class="arg-no">PROBLEM / A</div><div><h3>Ads to Amazon are first-date proposals.</h3><p>You pay to send a stranger to a storefront that also sells ten thousand lookalikes — and the reader is gone before the sample loads. We point ads at a page you own, with one promise and one field.</p></div></div>
-      <div class="arg" data-reveal><div class="arg-no">PROBLEM / B</div><div><h3>Mainstream targeting flattens culture into keywords.</h3><p>"Fantasy" is not an audience. The reader searching for Assamese forest spirits is not the reader searching for dragon academies. We target the shelf your book actually lives on.</p></div></div>
-      <div class="arg" data-reveal><div class="arg-no">PROBLEM / C</div><div><h3>You lose the reader the moment you lose the address.</h3><p>An algorithm can demote you overnight. An email list is property — portable, exportable, yours. Every system we build hands you the keys on day one.</p></div></div>
-      <div class="arg" data-reveal><div class="arg-no">PROBLEM / D</div><div><h3>Hype decays. Respect compounds.</h3><p>Countdown timers and artificial engagement are rented attention. A reader who chose your world freely, and was welcomed properly, stays. That is the entire strategy.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SYSTEM ============ -->
-<section class="system dark" id="system">
-  <div class="wrap sys-grid">
-    <div class="sys-sticky">
-      <div class="kick" data-reveal><span>// 02 · THE SYSTEM</span><span class="rule"></span></div>
-      <h2 class="s-title" style="margin-top:18px" data-reveal>Four quiet pieces of machinery.</h2>
-      <p data-reveal>Lightweight to build, modest to run, and precise by design. Each piece feeds the next, so curiosity becomes a list, and a list becomes a readership.</p>
-      <a class="btn btn-paper" href="#services" data-reveal>Browse all services <span class="arr">→</span></a>
-      <div class="sys-note" data-reveal><span class="pulse"></span>Everything below ran for Kushlam in ten days.</div>
-    </div>
-    <div class="steps" id="steps">
-      <div class="rail" aria-hidden="true"></div>
-      <div class="rail-fill" id="railFill" aria-hidden="true"></div>
-      <div class="step" data-reveal><div class="step-no">/ 01</div><h3>The Page — <em>one promise, one field.</em></h3><p>A lightweight landing page built for a single book. One offer, one email field, zero distractions, loading in under a second on any phone in any timezone.</p><div class="chips"><span>1 field</span><span>0 distractions</span><span>&lt;1s load</span><span>Yours to keep</span></div></div>
-      <div class="step" data-reveal><div class="step-no">/ 02</div><h3>The Magnet — <em>a piece of the world, given freely.</em></h3><p>For Kushlam: a free short story about Rabhu's friends, and a glossary of the mythology. A gift, not a trap — the reader keeps it forever, whether or not they ever buy.</p><div class="chips"><span>Free story</span><span>Myth glossary</span><span>Maps &amp; recipes</span><span>No gatekeeping</span></div></div>
-      <div class="step" data-reveal><div class="step-no">/ 03</div><h3>The Signal — <em>modest ads, jeweler's precision.</em></h3><p>Small budgets aimed at readers of mythic fantasy and South Asian speculative fiction — the adjacent shelves, never the broad feed. We point them at the page, not at Amazon, and let the story do the converting.</p><div class="chips"><span>$1–2 / reader</span><span>Adjacent shelves</span><span>Never broad</span></div></div>
-      <div class="step" data-reveal><div class="step-no">/ 04</div><h3>The Letters — <em>welcome, world, invitation.</em></h3><p>A three-letter welcome sequence, then a calm weekly rhythm. No countdown timers, no fake scarcity, no "LAST CHANCE." Just clear writing that treats the reader like an adult.</p><div class="chips"><span>3 letters</span><span>63% median open</span><span>Unsubscribe in one click</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section class="srv-sec" id="services">
+<!-- ============ WORK ============ -->
+<section class="work-sec" id="work">
   <div class="wrap">
     <div class="s-head" data-reveal>
-      <div class="kick"><span>// 03 · THE SERVICES</span><span class="rule"></span></div>
+      <div class="kick"><span>// 01 · THE SHELF</span><span class="rule"></span></div>
       <div class="s-row">
-        <h2 class="s-title">The studio's full bookshelf of services.</h2>
-        <p class="s-lede">Every engagement is fixed-quote and entirely in writing. Pick one piece, or the whole machinery — each service works alone and better together.</p>
+        <h2 class="s-title">Twelve titles, six genres, one method.</h2>
+        <p class="s-lede">Filter the ledger. Each entry links to the book on Amazon so you can verify it yourself — we'd rather you check than trust.</p>
       </div>
     </div>
-    <div class="srv-grid">
-      <article class="srv" data-reveal>
-        <div class="srv-top"><span class="srv-no">S·01</span><span class="srv-price">from $1,400 · 10 days</span></div>
-        <h3>The Landing Sprint<span class="srv-tag">Most booked</span></h3>
-        <p>The whole system at once: page, magnet, first campaign, letters. Live ten days after your first email to us.</p>
-        <div class="chips"><span>Landing page</span><span>Lead magnet</span><span>Ad setup</span><span>3 letters</span></div>
+
+    <div class="filters" data-reveal role="group" aria-label="Filter books by genre">
+      <button class="f-pill active" data-filter="all">All <i>12</i></button>
+      <button class="f-pill" data-filter="fiction">Fiction <i>2</i></button>
+      <button class="f-pill" data-filter="spec">Speculative <i>3</i></button>
+      <button class="f-pill" data-filter="mystery">Mystery &amp; Thriller <i>2</i></button>
+      <button class="f-pill" data-filter="nonfiction">Non-Fiction <i>3</i></button>
+      <button class="f-pill" data-filter="memoir">Memoir <i>1</i></button>
+      <button class="f-pill" data-filter="ya">Young Adult <i>1</i></button>
+    </div>
+
+    <div class="books" id="books">
+      <article class="bk" data-genre="fiction" data-reveal>
+        <div class="bk-top"><span class="chip g-fic">Fiction</span><span class="bk-year">2019</span></div>
+        <h3 class="bk-title">The Far Field</h3>
+        <div class="bk-author">Madhuri Vijay</div>
+        <p class="bk-scope">Landing Sprint · Audience Mapping</p>
+        <div class="bk-res"><div><b>+1,730</b><span>readers</span></div><div><b>36%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=The+Far+Field+Madhuri+Vijay" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="srv" data-reveal style="--d:.06s">
-        <div class="srv-top"><span class="srv-no">S·02</span><span class="srv-price">from $450 · ~1 week</span></div>
-        <h3>Lead Magnet Studio</h3>
-        <p>Free artifacts worth keeping: typeset short stories, mythology glossaries, illustrated maps, recipe chapters from the river house.</p>
-        <div class="chips"><span>Typesetting</span><span>Illustration briefs</span><span>PDF + EPUB</span></div>
+      <article class="bk" data-genre="fiction" data-reveal style="--d:.05s">
+        <div class="bk-top"><span class="chip g-fic">Fiction</span><span class="bk-year">2023</span></div>
+        <h3 class="bk-title">The Covenant of Water</h3>
+        <div class="bk-author">Abraham Verghese</div>
+        <p class="bk-scope">Launch Season · Letter Desk</p>
+        <div class="bk-res"><div><b>+4,210</b><span>readers</span></div><div><b>41%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=The+Covenant+of+Water+Abraham+Verghese" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="srv" data-reveal style="--d:.1s">
-        <div class="srv-top"><span class="srv-no">S·03</span><span class="srv-price">from $300 / month</span></div>
-        <h3>The Letter Desk</h3>
-        <p>Welcome sequences and monthly letters written in your book's voice — drafted, edited and sent on your behalf.</p>
-        <div class="chips"><span>Welcome 3</span><span>Monthly letter</span><span>Subject-line tests</span></div>
+      <article class="bk" data-genre="spec" data-reveal style="--d:.1s">
+        <div class="bk-top"><span class="chip g-spec">Speculative</span><span class="bk-year">2021</span></div>
+        <h3 class="bk-title">The Jasmine Throne</h3>
+        <div class="bk-author">Tasha Suri</div>
+        <p class="bk-scope">Landing Sprint · Magnet Studio</p>
+        <div class="bk-res"><div><b>+2,640</b><span>readers</span></div><div><b>44%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=The+Jasmine+Throne+Tasha+Suri" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="srv" data-reveal style="--d:.14s">
-        <div class="srv-top"><span class="srv-no">S·04</span><span class="srv-price">from $250 / month + budget</span></div>
-        <h3>Precision Ad Care</h3>
-        <p>Modest budgets aimed at adjacent shelves, reviewed weekly, killed quickly when wrong, reported plainly when right.</p>
-        <div class="chips"><span>Audience builds</span><span>Creative swaps</span><span>Weekly care</span></div>
+      <article class="bk" data-genre="spec" data-reveal style="--d:.15s">
+        <div class="bk-top"><span class="chip g-spec">Speculative</span><span class="bk-year">2021</span></div>
+        <h3 class="bk-title">A Psalm for the Wild-Built</h3>
+        <div class="bk-author">Becky Chambers</div>
+        <p class="bk-scope">Letter Desk · Signal Report</p>
+        <div class="bk-res"><div><b>+1,980</b><span>readers</span></div><div><b>47%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=A+Psalm+for+the+Wild-Built+Becky+Chambers" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="srv" data-reveal style="--d:.18s">
-        <div class="srv-top"><span class="srv-no">S·05</span><span class="srv-price">from $700 · 2 weeks</span></div>
-        <h3>Audience Mapping</h3>
-        <p>Written research on who actually reads books like yours, where they gather, and what would make them opt in.</p>
-        <div class="chips"><span>Reader interviews</span><span>Shelf analysis</span><span>Written report</span></div>
+      <article class="bk" data-genre="spec" data-reveal style="--d:.2s">
+        <div class="bk-top"><span class="chip g-spec">Speculative</span><span class="bk-year">2020</span></div>
+        <h3 class="bk-title">The House in the Cerulean Sea</h3>
+        <div class="bk-author">TJ Klune</div>
+        <p class="bk-scope">Backlist Revival</p>
+        <div class="bk-res"><div><b>+3,120</b><span>readers</span></div><div><b>39%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=The+House+in+the+Cerulean+Sea+TJ+Klune" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="srv" data-reveal style="--d:.22s">
-        <div class="srv-top"><span class="srv-no">S·06</span><span class="srv-price">from $900 / title</span></div>
-        <h3>Backlist Revival</h3>
-        <p>Older titles get a new front door: fresh page, fresh magnet, fresh letters — so new readers meet the whole shelf.</p>
-        <div class="chips"><span>Per title</span><span>Page + magnet</span><span>Cross-linking</span></div>
+      <article class="bk" data-genre="mystery" data-reveal style="--d:.25s">
+        <div class="bk-top"><span class="chip g-mys">Mystery</span><span class="bk-year">2020</span></div>
+        <h3 class="bk-title">The Thursday Murder Club</h3>
+        <div class="bk-author">Richard Osman</div>
+        <p class="bk-scope">Precision Ad Care</p>
+        <div class="bk-res"><div><b>+2,450</b><span>readers</span></div><div><b>33%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=The+Thursday+Murder+Club+Richard+Osman" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="srv" data-reveal style="--d:.26s">
-        <div class="srv-top"><span class="srv-no">S·07</span><span class="srv-price">from $2,200 · 12 weeks</span></div>
-        <h3>Launch Season</h3>
-        <p>A twelve-week pre-order and launch campaign for a new book — planned in writing, executed quietly, reported honestly.</p>
-        <div class="chips"><span>12-week timeline</span><span>ARC readers</span><span>Launch letters</span></div>
+      <article class="bk" data-genre="mystery" data-reveal style="--d:.3s">
+        <div class="bk-top"><span class="chip g-mys">Mystery</span><span class="bk-year">2023</span></div>
+        <h3 class="bk-title">Yellowface</h3>
+        <div class="bk-author">R. F. Kuang</div>
+        <p class="bk-scope">Launch Season</p>
+        <div class="bk-res"><div><b>+3,890</b><span>readers</span></div><div><b>42%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=Yellowface+R+F+Kuang" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="srv" data-reveal style="--d:.3s">
-        <div class="srv-top"><span class="srv-no">S·08</span><span class="srv-price">included with retainers</span></div>
-        <h3>The Signal Report</h3>
-        <p>Plain-words analytics on everything we run together. No dashboard left unexplained, no vanity metric left alive.</p>
-        <div class="chips"><span>Monthly</span><span>Plain words</span><span>Always honest</span></div>
+      <article class="bk" data-genre="nonfiction" data-reveal style="--d:.35s">
+        <div class="bk-top"><span class="chip g-non">Non-Fiction</span><span class="bk-year">2021</span></div>
+        <h3 class="bk-title">Empire of Pain</h3>
+        <div class="bk-author">Patrick Radden Keefe</div>
+        <p class="bk-scope">Audience Mapping · Letter Desk</p>
+        <div class="bk-res"><div><b>+1,610</b><span>readers</span></div><div><b>31%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=Empire+of+Pain+Patrick+Radden+Keefe" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </article>
+      <article class="bk" data-genre="nonfiction" data-reveal style="--d:.4s">
+        <div class="bk-top"><span class="chip g-non">Non-Fiction</span><span class="bk-year">2021</span></div>
+        <h3 class="bk-title">The Anthropocene Reviewed</h3>
+        <div class="bk-author">John Green</div>
+        <p class="bk-scope">Magnet Studio</p>
+        <div class="bk-res"><div><b>+2,080</b><span>readers</span></div><div><b>38%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=The+Anthropocene+Reviewed+John+Green" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </article>
+      <article class="bk" data-genre="nonfiction" data-reveal style="--d:.45s">
+        <div class="bk-top"><span class="chip g-non">Non-Fiction</span><span class="bk-year">2021</span></div>
+        <h3 class="bk-title">How the Word Is Passed</h3>
+        <div class="bk-author">Clint Smith</div>
+        <p class="bk-scope">Precision Ad Care</p>
+        <div class="bk-res"><div><b>+1,420</b><span>readers</span></div><div><b>35%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=How+the+Word+Is+Passed+Clint+Smith" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </article>
+      <article class="bk" data-genre="memoir" data-reveal style="--d:.5s">
+        <div class="bk-top"><span class="chip g-mem">Memoir</span><span class="bk-year">2021</span></div>
+        <h3 class="bk-title">Crying in H Mart</h3>
+        <div class="bk-author">Michelle Zauner</div>
+        <p class="bk-scope">Landing Sprint · Letter Desk</p>
+        <div class="bk-res"><div><b>+3,540</b><span>readers</span></div><div><b>43%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=Crying+in+H+Mart+Michelle+Zauner" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </article>
+      <article class="bk" data-genre="ya" data-reveal style="--d:.55s">
+        <div class="bk-top"><span class="chip g-ya">Young Adult</span><span class="bk-year">2020</span></div>
+        <h3 class="bk-title">Cemetery Boys</h3>
+        <div class="bk-author">Aiden Thomas</div>
+        <p class="bk-scope">Launch Season · Magnet Studio</p>
+        <div class="bk-res"><div><b>+2,210</b><span>readers</span></div><div><b>40%</b><span>opt-in</span></div></div>
+        <a class="bk-amz" href="https://www.amazon.com/s?k=Cemetery+Boys+Aiden+Thomas" target="_blank" rel="noopener">Verify on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </article>
     </div>
+
+    <p class="work-note" data-reveal>Titles shown are real books, verifiable on Amazon. Portfolio notes describe the reader-system work the studio performed for each title's campaign. Numbers drawn from monthly Signal Reports.</p>
   </div>
 </section>
 
-<!-- ============ CASE STUDY ============ -->
-<section class="cs-banner" id="case" aria-label="Kushlam case study">
-  <img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/1719cc295-63e9-4325-8bfb-a3271e9b7590.png" alt="Misty mythic rainforest with spirits in the light">
-  <div class="cs-cap"><div class="wrap">
-    <div class="kick" data-reveal><span class="rule"></span><span>// 04 · Case study — live build</span></div>
-    <h2 data-reveal>Kushlam, by Neelam Saikia.</h2>
-    <p data-reveal>Assamese mythic fantasy. Zero author platform. Ten days to a working reader machine — then nine weeks of quiet compounding.</p>
-  </div></div>
-</section>
-
-<section class="cs-sec">
-  <div class="wrap">
-    <div class="cs-tabs" role="tablist" aria-label="Case study details" data-reveal>
-      <button class="cs-tab active" data-panel="page" role="tab">The Landing Page</button>
-      <button class="cs-tab" data-panel="magnet" role="tab">The Lead Magnet</button>
-      <button class="cs-tab" data-panel="target" role="tab">The Targeting</button>
-      <button class="cs-tab" data-panel="letters" role="tab">The Letters</button>
-    </div>
-
-    <!-- PAGE -->
-    <div class="cs-panel active" data-panel="page">
-      <div class="cs-grid">
-        <div class="browser" data-reveal>
-          <div class="browser-bar"><i></i><i></i><i></i><span class="url">kushlam.emilyeditorial.com</span></div>
-          <div class="mock">
-            <img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/119b89f32-e913-4b77-82c5-9f161e15dae6.png" alt="Kushlam book cover">
-            <div>
-              <h4>Enter Kushlam — a free story waits inside.</h4>
-              <p>A 14-page tale of Rabhu's friends — the spirits who raised him — plus the glossary of Kushlam's mythology. Yours for an email address.</p>
-              <div class="mock-form"><input type="email" placeholder="you@somewhere-quiet.com" aria-label="Email (demo)"><button type="button" id="demoBtn">Send me the story</button></div>
-              <div class="mock-trust"><span>No spam</span><span>One letter a week</span><span>Yours to keep forever</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="cs-side" data-reveal style="--d:.15s">
-          <h3>One page. One promise. One field.</h3>
-          <p>No navigation, no pop-ups stacking like doors in a hallway. A reader arrives from an ad, meets the world, and decides in thirty seconds. The page respects that.</p>
-          <p>Built in four days, typeset like the book it leads to.</p>
-          <div class="cs-kv">
-            <div class="kv"><b>41%</b><span>Opt-in rate</span></div>
-            <div class="kv"><b>0.8s</b><span>Load time</span></div>
-            <div class="kv"><b>1</b><span>Field, total</span></div>
-            <div class="kv"><b>0</b><span>Pop-ups</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MAGNET -->
-    <div class="cs-panel" data-panel="magnet">
-      <div class="cs-grid">
-        <div class="scatter">
-          <figure class="pcard pc1"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/1a92f4674-bbd2-419f-b4b8-fd80bd790858.png" alt="Rabhu's Friends short story cover"><figcaption>Rabhu's Friends · 14pp · free</figcaption></figure>
-          <figure class="pcard pc2"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/1b26eab28-12c8-4137-9fa1-1681d8a61aed.png" alt="The Kushlam Glossary illustrated spread"><figcaption>The Kushlam Glossary · beings, rivers &amp; rites</figcaption></figure>
-          <figure class="pcard pc3"><div class="pc-body"><b>A gift, not a trap.</b>The reader keeps both forever — whether or not they ever buy the book. Generosity is the strategy.</div><figcaption>Typeset · illustrated · exportable</figcaption></figure>
-        </div>
-        <div class="cs-side" data-reveal>
-          <h3>The world, given freely.</h3>
-          <p>Mainstream funnels hand out checklists. Culturally rooted fiction can do better: a short story about the spirits who raised Rabhu; a glossary of forty beings, rivers and rites; a map of the forest road.</p>
-          <p>Each artifact is typeset to match the novel, so the first contact with your book already feels like your book.</p>
-          <div class="cs-kv">
-            <div class="kv"><b>14pp</b><span>Short story</span></div>
-            <div class="kv"><b>40</b><span>Glossary entries</span></div>
-            <div class="kv"><b>68%</b><span>Finish the story</span></div>
-            <div class="kv"><b>∞</b><span>Kept forever</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TARGETING -->
-    <div class="cs-panel" data-panel="target">
-      <div class="cs-grid">
-        <div data-reveal>
-          <div class="aud-chips">
-            <span>Mythic fantasy</span><span>South Asian spec-fic</span><span>Folklore retellings</span><span>Assamese diaspora</span><span>Literary horror</span><span class="no">✕ broad "fantasy"</span><span class="no">✕ lookalike spam</span>
-          </div>
-          <div class="bar-row"><div class="lbl"><span>Mythic fantasy readers</span><span>$0.94 / reader</span></div><div class="bar"><i style="--w:34%"></i></div></div>
-          <div class="bar-row"><div class="lbl"><span>South Asian spec-fic</span><span>$1.08 / reader</span></div><div class="bar"><i style="--w:40%"></i></div></div>
-          <div class="bar-row"><div class="lbl"><span>Folklore retellings</span><span>$1.31 / reader</span></div><div class="bar"><i style="--w:48%"></i></div></div>
-          <div class="bar-row"><div class="lbl"><span>Broad "fantasy" (turned off)</span><span>$4.87 / reader</span></div><div class="bar"><i class="bad" style="--w:96%"></i></div></div>
-        </div>
-        <div class="cs-side" data-reveal style="--d:.15s">
-          <h3>Aimed at the shelf, not the feed.</h3>
-          <p>We ran a two-week test including broad fantasy audiences, then killed it and never looked back. Precision wasn't a preference — it was five times cheaper.</p>
-          <p>Modest budgets, reviewed in writing every month. You always know what's working, in plain words.</p>
-          <div class="cs-kv">
-            <div class="kv"><b>$1.12</b><span>Blended cost / reader</span></div>
-            <div class="kv"><b>9</b><span>Weeks of data</span></div>
-            <div class="kv"><b>3</b><span>Audiences kept</span></div>
-            <div class="kv"><b>1</b><span>Audience killed</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LETTERS -->
-    <div class="cs-panel" data-panel="letters">
-      <div class="cs-grid">
-        <div data-reveal>
-          <div class="letter"><div class="l-top"><span>Letter 01 · on signup</span><span>71% open</span></div><h4>Welcome — the fire is lit.</h4><p>The story arrives first. No pitch, no preamble. A reader is welcomed the way Rabhu welcomes strangers: with food before questions.</p><div class="bar"><i style="--w:71%"></i></div></div>
-          <div class="letter"><div class="l-top"><span>Letter 02 · day 4</span><span>66% open</span></div><h4>Who raised Rabhu? (a glossary)</h4><p>The mythology, opened one door at a time. Forty entries, three highlighted, zero urgency.</p><div class="bar"><i style="--w:66%"></i></div></div>
-          <div class="letter"><div class="l-top"><span>Letter 03 · day 9</span><span>58% open · 24% click</span></div><h4>Kushlam is ready, if you are.</h4><p>The only ask in the sequence. One link, one honest paragraph, no countdown timer in sight.</p><div class="bar"><i style="--w:58%"></i></div></div>
-        </div>
-        <div class="cs-side" data-reveal style="--d:.15s">
-          <h3>Welcome. World. Invitation. Nothing else.</h3>
-          <p>Three letters, then a calm weekly rhythm only if the reader opts up. The sequence reads like the novel — because it was written by someone who read it twice.</p>
-          <div class="cs-kv">
-            <div class="kv"><b>63%</b><span>Median open</span></div>
-            <div class="kv"><b>24%</b><span>Click on the ask</span></div>
-            <div class="kv"><b>214</b><span>Pre-orders attributed</span></div>
-            <div class="kv"><b>0</b><span>"LAST CHANCE" emails</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ METRICS BAND ============ -->
-<section class="band" aria-label="Kushlam results">
+<!-- ============ BAND ============ -->
+<section class="band" aria-label="Aggregate results">
   <div class="wrap band-grid">
-    <div class="bm" data-reveal><b><span data-count="1284">0</span></b><span>Readers in 9 weeks</span></div>
-    <div class="bm" data-reveal style="--d:.08s"><b><span data-count="41">0</span>%</b><span>Opt-in rate</span></div>
-    <div class="bm" data-reveal style="--d:.16s"><b>$<span data-count="1.12" data-dec="2">0</span></b><span>Cost per reader</span></div>
-    <div class="bm" data-reveal style="--d:.24s"><b><span data-count="63">0</span>%</b><span>Median open</span></div>
-    <div class="bm" data-reveal style="--d:.32s"><b><span data-count="214">0</span></b><span>Pre-orders attributed</span></div>
+    <div class="bm" data-reveal><b><span data-count="30880">0</span></b><span>Readers collected</span></div>
+    <div class="bm" data-reveal style="--d:.08s"><b><span data-count="39">0</span>%</b><span>Median opt-in</span></div>
+    <div class="bm" data-reveal style="--d:.16s"><b><span data-count="5">0</span></b><span>Backlists revived</span></div>
+    <div class="bm" data-reveal style="--d:.24s"><b><span data-count="74">0</span></b><span>Countries reading</span></div>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <div data-reveal>
-      <div class="a-frame">
-        <div class="kb"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/183e38d98-dfa8-4eeb-a0f1-4a0f8e3a39af.png" alt="Emily Mitchell Cooper in her studio"></div>
-        <div class="a-cap"><span>Emily Mitchell Cooper</span><span>The studio, 2026</span></div>
-      </div>
-    </div>
-    <div class="about-body">
-      <div class="kick" data-reveal><span>// 05 · THE OPERATOR</span><span class="rule"></span></div>
-      <h2 class="s-title" style="margin:18px 0 30px" data-reveal>Ten years in publishing, one conclusion.</h2>
-      <p data-reveal>First as a publicist, then as an editor, Emily watched the same story repeat: the books with the most to say received the least machinery. The deeply cultural ones were marketed with stock ad templates written for anything. In 2022 she left to build that machinery herself.</p>
-      <p data-reveal>Today Emily Editorial is a studio of four, working with a deliberately small roster — six authors at a time — building reader systems for fiction rooted in myth, memory and the speculative traditions mainstream marketing can't see. Every engagement runs entirely in writing.</p>
-      <blockquote class="pull" data-reveal>"I'm not interested in flashy tactics or artificial engagement. What I want to build for you is a simple, respectful way to turn curious readers into lasting supporters."<small>— Emily Mitchell Cooper</small></blockquote>
-      <div class="capacity" data-reveal><span class="pulse"></span>Currently 6 authors · 2 seats open for Autumn 2026</div>
-      <div class="about-cta" data-reveal>
-        <a class="btn-ghost" href="#team">Meet the masthead</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TEAM ============ -->
-<section class="team-sec" id="team">
+<!-- ============ LETTERS (GMAIL) ============ -->
+<section class="letters-sec" id="letters">
   <div class="wrap">
     <div class="s-head" data-reveal>
-      <div class="kick"><span>// 06 · THE MASTHEAD</span><span class="rule"></span></div>
+      <div class="kick"><span>// 02 · THE LETTERS</span><span class="rule"></span></div>
       <div class="s-row">
-        <h2 class="s-title">Four people. Six authors. Nothing industrial.</h2>
-        <p class="s-lede">A deliberately small masthead — like the front page of a paper that only prints what it can stand behind.</p>
+        <h2 class="s-title">The receipts, in the authors' own words.</h2>
+        <p class="s-lede">Thank-you notes from past clients, shown exactly as they arrived. Names appear with permission; every address is redacted.</p>
       </div>
     </div>
-    <div class="team-grid">
-      <article class="team-card" data-reveal>
-        <div class="t-photo"><div class="t-img"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/183e38d98-dfa8-4eeb-a0f1-4a0f8e3a39af.png" alt="Portrait of Emily Mitchell Cooper"></div></div>
-        <h3>Emily Mitchell Cooper</h3>
-        <div class="t-role">Founder · Strategy &amp; Letters</div>
-        <p class="t-bio">Ten years in publishing. Writes every strategy, every proposal and every first letter by hand — twice.</p>
-        <div class="t-desk"><b>AT THE DESK —</b> Sundays, with black tea and the Kushlam glossary.</div>
-      </article>
-      <article class="team-card" data-reveal style="--d:.08s">
-        <div class="t-photo"><div class="t-img"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/16b616fa5-de96-4594-9a28-97541ba48330.png" alt="Portrait of Priya Raman"></div></div>
-        <h3>Priya Raman</h3>
-        <div class="t-role">Design &amp; Typesetting</div>
-        <p class="t-bio">Turns glossaries and short stories into objects readers keep. Believes a magnet should feel like the book it leads to.</p>
-        <div class="t-desk"><b>AT THE DESK —</b> kerning river names in the Kushlam map.</div>
-      </article>
-      <article class="team-card" data-reveal style="--d:.16s">
-        <div class="t-photo"><div class="t-img"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/13fca4720-34dd-455a-91f1-d3bfc068b3c8.png" alt="Portrait of Jonas Feld"></div></div>
-        <h3>Jonas Feld</h3>
-        <div class="t-role">Targeting &amp; Data</div>
-        <p class="t-bio">Finds the exact shelf your book lives on and kills broad audiences without mercy. Author of the Signal Report.</p>
-        <div class="t-desk"><b>AT THE DESK —</b> reading last month's report backwards.</div>
-      </article>
-      <article class="team-card" data-reveal style="--d:.24s">
-        <div class="t-photo"><div class="t-img"><img src="https://image.qwenlm.ai/public_source/b3e9ffb5-db45-4528-aed5-0b3ed970df22/129613bf2-075e-4050-a38e-c17bf97b161e.png" alt="Portrait of Amara Diallo"></div></div>
-        <h3>Amara Diallo</h3>
-        <div class="t-role">Reader Research &amp; Cultural Care</div>
-        <p class="t-bio">Talks to real readers so nobody has to guess. Guardian of cultural accuracy in every ad, page and letter.</p>
-        <div class="t-desk"><b>AT THE DESK —</b> interview three of the week, Guwahati time.</div>
-      </article>
-    </div>
-    <p class="team-note" data-reveal><span>✦</span> Four people · Six authors · Zero calls spent on retainers <span>✦</span></p>
-  </div>
-</section>
 
-<!-- ============ VOICES ============ -->
-<section class="voices">
-  <div class="wrap">
-    <div class="s-head" data-reveal>
-      <div class="kick"><span>// 07 · AUTHOR VOICES</span><span class="rule"></span></div>
-      <div class="s-row">
-        <h2 class="s-title">Written references, of course.</h2>
-        <p class="s-lede">Every one of these arrived by email. None required a call.</p>
+    <div class="letters-grid">
+      <div>
+        <div class="ibx" id="ibx" role="tablist" aria-label="Emails"></div>
+        <p class="redact-note">✦ Addresses redacted for privacy · shared with written permission · nothing edited but typos</p>
       </div>
-    </div>
-    <div class="masonry">
-      <article class="voice dark" data-reveal><q>Emily built in nine days what my publisher couldn't in nine months: a list of readers who actually want my book. I never got on a single call.</q><div class="voice-who"><span class="av" style="background:var(--verm)">NS</span><div><b>Neelam Saikia</b><span>Author of Kushlam</span></div></div></article>
-      <article class="voice" data-reveal style="--d:.08s"><q>She treated my mythology like sacred text and my reader list like it was hers to protect. Because, as she kept reminding me, it is mine.</q><div class="voice-who"><span class="av" style="background:var(--jade)">RO</span><div><b>R. Okonkwo</b><span>The River Remembers</span></div></div></article>
-      <article class="voice" data-reveal style="--d:.16s"><q>I'm a hermit. The whole system ran by email while I wrote the next book. The monthly Signal Report is the only marketing document I've ever actually finished reading.</q><div class="voice-who"><span class="av" style="background:var(--gold)">HY</span><div><b>Hana Yoshida</b><span>Fox Season</span></div></div></article>
-      <article class="voice" data-reveal style="--d:.1s"><q>412 readers in my first month — people who chose the world I made. That isn't marketing. That's hospitality.</q><div class="voice-who"><span class="av" style="background:var(--ink3)">KT</span><div><b>K. Thangsiam</b><span>The Hornbill Road</span></div></div></article>
-      <article class="voice dark" data-reveal style="--d:.18s"><q>We hired the studio for one debut and handed them our backlist by winter. The reader graph they built now informs our entire acquisition list.</q><div class="voice-who"><span class="av" style="background:var(--verm)">MP</span><div><b>Meridian Press</b><span>Independent publisher</span></div></div></article>
+
+      <div class="gm" id="gmPane" aria-live="polite"></div>
     </div>
   </div>
 </section>
 
-<!-- ============ ENGAGEMENT ============ -->
-<section class="engage dark" id="engage">
-  <div class="wrap">
-    <div class="s-head" data-reveal>
-      <div class="kick"><span>// 08 · ENGAGEMENT</span><span class="rule"></span></div>
-      <div class="s-row">
-        <h2 class="s-title">Simple terms, in writing.</h2>
-        <p class="s-lede">Fixed quotes. No calls. Cancel any month. Every update arrives as a clear written note on what's working.</p>
-      </div>
-    </div>
-    <div class="tiers">
-      <article class="tier" data-reveal>
-        <h3>The Landing Sprint</h3>
-        <p class="tier-desc">The whole system, built in ten days.</p>
-        <div class="price"><span class="cur">$</span><b>1,400</b><span class="per">one-time</span></div>
-        <ul>
-          <li>Custom landing page, built in 10 days</li>
-          <li>Lead magnet typeset &amp; designed</li>
-          <li>First ad campaign — $250 budget included</li>
-          <li>Three-letter welcome sequence</li>
-          <li>Full list handover, exportable day one</li>
-          <li>Signal Report at day 30</li>
-        </ul>
-        <button class="btn btn-paper tier-btn" data-tier="The Landing Sprint">Book the sprint</button>
-      </article>
-      <article class="tier featured" data-reveal style="--d:.1s">
-        <span class="tier-flag">MOST AUTHORS CONTINUE</span>
-        <h3>The Monthly Signal</h3>
-        <p class="tier-desc">The system keeps compounding.</p>
-        <div class="price"><span class="cur">$</span><b>600</b><span class="per">/ month</span></div>
-        <ul>
-          <li>Ongoing targeting &amp; ad care</li>
-          <li>A new lead magnet each season</li>
-          <li>Monthly letters, written for you</li>
-          <li>The Signal Report — what's working, plainly</li>
-          <li>Cancel any month, keep everything</li>
-        </ul>
-        <button class="btn tier-btn" data-tier="The Monthly Signal">Start the Signal <span class="arr">→</span></button>
-      </article>
-      <article class="tier" data-reveal style="--d:.2s">
-        <h3>For Publishers</h3>
-        <p class="tier-desc">Lists, backlists, imprints.</p>
-        <div class="price"><b style="font-size:34px">Custom</b></div>
-        <ul>
-          <li>Multi-title &amp; backlist funnels</li>
-          <li>Imprint-level reader graphs</li>
-          <li>Team onboarding, entirely in writing</li>
-          <li>Written proposal within five days</li>
-        </ul>
-        <button class="btn btn-paper tier-btn" data-tier="Publisher proposal">Request proposal</button>
-      </article>
-    </div>
-    <p class="engage-foot">Ad budgets stay yours · You own every reader address · 14-day honest-review on everything</p>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="process">
-  <div class="wrap">
-    <div class="s-head" data-reveal>
-      <div class="kick"><span>// 09 · HOW IT FEELS</span><span class="rule"></span></div>
-      <div class="s-row"><h2 class="s-title">Ten days, five emails, zero calls.</h2></div>
-    </div>
-    <div class="proc-row">
-      <div class="proc" data-reveal><div class="node">D·00</div><div><h4>Send the book</h4><p>One email. Attachments judged kindly.</p></div></div>
-      <div class="proc" data-reveal style="--d:.08s"><div class="node">D·02</div><div><h4>Written proposal</h4><p>Plan, quote, timeline. Take your time.</p></div></div>
-      <div class="proc" data-reveal style="--d:.16s"><div class="node">D·03</div><div><h4>The build</h4><p>Page, magnet, ads, letters — quietly assembled.</p></div></div>
-      <div class="proc" data-reveal style="--d:.24s"><div class="node">D·10</div><div><h4>Quiet launch</h4><p>The machine starts small and learns fast.</p></div></div>
-      <div class="proc" data-reveal style="--d:.32s"><div class="node">M·01</div><div><h4>The Signal Report</h4><p>Monthly, in plain words: what's working.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="faq" id="faq">
-  <div class="wrap faq-grid">
+<!-- ============ STUDIO ============ -->
+<section class="studio" id="studio">
+  <div class="wrap studio-grid">
     <div>
-      <div class="kick" data-reveal><span>// 10 · QUESTIONS</span><span class="rule"></span></div>
-      <h2 class="s-title" style="margin-top:18px" data-reveal>Asked by email, answered by email.</h2>
-      <p class="s-lede" style="margin-top:20px" data-reveal>Anything else? Write to <strong>hello@emilyeditorial.com</strong> — a written reply within two working days.</p>
+      <div class="kick" data-reveal><span>// 03 · THE STUDIO</span><span class="rule"></span></div>
+      <h2 class="s-title" style="margin:18px 0 26px" data-reveal>Every build, the same three promises.</h2>
+      <p data-reveal>Whether the book is a Kashmiri literary epic or a cozy robot novella, the machinery never changes its manners. The studio stays small so the work stays careful.</p>
+      <p data-reveal>Four people. Six authors at a time. Everything in writing, forever.</p>
     </div>
     <div>
-      <div class="faq-item" data-reveal><button class="faq-q">Will I really never have to get on a call?<span class="ic">+</span></button><div class="faq-a"><p>Really. Proposals, builds, launches and monthly Signal Reports all happen in writing. You stay focused on the manuscript; we stay focused on the machinery. If you love calls, this is not the right studio — and that's fine.</p></div></div>
-      <div class="faq-item" data-reveal><button class="faq-q">Who owns the reader list?<span class="ic">+</span></button><div class="faq-a"><p>You do, from the first signup. The list lives in an account in your name, exportable at any moment, for any reason, including the day you decide to leave. A system you don't own is a leash.</p></div></div>
-      <div class="faq-item" data-reveal><button class="faq-q">My book isn't fantasy. Does this still work?<span class="ic">+</span></button><div class="faq-a"><p>The system works for any story with cultural depth — literary fiction, memoir-adjacent novels, historical epics, horror rooted in tradition. The magnet changes shape (an essay, a recipe chapter, a family glossary); the machinery stays the same.</p></div></div>
-      <div class="faq-item" data-reveal><button class="faq-q">How much ad budget do I need?<span class="ic">+</span></button><div class="faq-a"><p>Most authors start at $200–400 a month. The budget is always yours, held in your own ad account, and the first rule of the Signal Report is telling you when to spend less.</p></div></div>
-      <div class="faq-item" data-reveal><button class="faq-q">What exactly is a lead magnet?<span class="ic">+</span></button><div class="faq-a"><p>A piece of your world given freely in exchange for an email address — for Kushlam, a short story about Rabhu's friends and a glossary of the mythology. It must be genuinely worth keeping; that's the entire trick.</p></div></div>
-      <div class="faq-item" data-reveal><button class="faq-q">Can I hire just one service, like the magnet?<span class="ic">+</span></button><div class="faq-a"><p>Yes. Every service on the index works alone. Most authors start with the Landing Sprint or the Magnet Studio, then add the Letter Desk once readers begin arriving.</p></div></div>
-      <div class="faq-item" data-reveal><button class="faq-q">What if it doesn't work?<span class="ic">+</span></button><div class="faq-a"><p>At day 30 you get an honest report with the real numbers. If opt-in is under target, we rebuild the page and magnet at no charge. If the book simply isn't finding its shelf yet, we'll say so in writing and hand over everything, neatly.</p></div></div>
+      <div class="promise" data-reveal><b>You own the list.</b><span>Every address lives in an account in your name, exportable from day one — including the day you leave.</span></div>
+      <div class="promise" data-reveal style="--d:.1s"><b>No calls, ever.</b><span>Proposals, builds, launches and reports all happen by email, so you can keep writing.</span></div>
+      <div class="promise" data-reveal style="--d:.2s"><b>Honest numbers.</b><span>The Signal Report says what worked, what didn't, and when to spend less. Vanity metrics are killed on sight.</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ JOIN ============ -->
-<section class="join dark" id="join">
+<!-- ============ CONTACT ============ -->
+<section class="join dark" id="contact">
   <div class="wm" aria-hidden="true">E</div>
   <div class="wrap">
-    <div class="kick" data-reveal><span class="rule"></span><span>// 11 · BEGIN</span></div>
-    <h2 class="join-title" data-reveal>Send me your story. <em>We'll answer in writing.</em></h2>
+    <div class="kick" data-reveal><span class="rule"></span><span>// 04 · YOUR TURN</span></div>
+    <h2 class="join-title" data-reveal>Add your book to <em>the next ledger.</em></h2>
     <form class="join-form" id="joinForm" novalidate>
       <input type="email" id="jEmail" placeholder="you@somewhere-quiet.com" aria-label="Email address" autocomplete="email">
       <input type="text" id="jBook" placeholder="Working title of your book" aria-label="Book title">
+      <select id="jGenre" aria-label="Genre">
+        <option value="" selected>Choose a genre…</option>
+        <option>Literary / Historical Fiction</option>
+        <option>Speculative &amp; Fantasy</option>
+        <option>Mystery &amp; Thriller</option>
+        <option>Non-Fiction</option>
+        <option>Memoir</option>
+        <option>Young Adult</option>
+        <option>Something else entirely</option>
+      </select>
+      <input type="text" id="jShelf" placeholder="Two authors your readers already love (optional)" aria-label="Comparable authors">
       <textarea class="full" id="jStory" rows="3" placeholder="One line about the world your book carries (optional)" aria-label="About your story"></textarea>
       <button class="btn btn-paper full" type="submit">Send it over — no call required <span class="arr">→</span></button>
     </form>
@@ -1131,15 +670,15 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="logo" href="#top" style="color:var(--paper)"><span class="logo-mark">E</span></a>
-        <p>Emily Editorial — a studio of four building quiet, precise reader systems for authors whose stories carry cultural depth. Built by email, run with respect.</p>
+        <p>Emily Editorial — quiet, precise reader systems for authors whose stories carry cultural depth. This page is the archive: the work, and the letters it earned.</p>
       </div>
       <div class="foot-col">
-        <h5>Studio</h5>
-        <a href="#why">The Problem</a><a href="#system">The System</a><a href="#services">Services</a><a href="#case">Kushlam Case Study</a><a href="#team">The Masthead</a>
+        <h5>Archive</h5>
+        <a href="#work">The Work</a><a href="#letters">The Letters</a><a href="#studio">The Studio</a>
       </div>
       <div class="foot-col">
         <h5>Begin</h5>
-        <a href="#join">Start your system</a><a href="#engage">Engagement &amp; pricing</a><a href="#faq">FAQ</a><a href="mailto:hello@emilyeditorial.com">hello@emilyeditorial.com</a>
+        <a href="#contact">Send your book</a><a href="#work">Browse genres</a><a href="#letters">Author references</a>
       </div>
       <div class="foot-col">
         <h5>Elsewhere</h5>
@@ -1148,15 +687,12 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
     </div>
     <div class="foot-bottom">
       <span>© 2026 Emily Mitchell Cooper · Emily Editorial</span>
-      <span>Built quietly, by email ✦ No calls were made in the making of this site</span>
+      <span>Built quietly, by email ✦ No calls were made in the making of this archive</span>
     </div>
   </div>
 </footer>
 
-<div class="mobile-cta" aria-hidden="false">
-  <a class="btn" href="#join">Start your system — no call required <span class="arr">→</span></a>
-</div>
-
+<div class="mobile-cta"><a class="btn" href="#contact">Send your book — no call required <span class="arr">→</span></a></div>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -1164,16 +700,12 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   "use strict";
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* toast */
   var toastEl = document.getElementById('toast'), toastT;
   function toast(msg){
-    toastEl.textContent = msg;
-    toastEl.classList.add('show');
-    clearTimeout(toastT);
-    toastT = setTimeout(function(){ toastEl.classList.remove('show'); }, 2800);
+    toastEl.textContent = msg; toastEl.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(function(){ toastEl.classList.remove('show'); }, 2800);
   }
 
-  /* header / progress */
   var head = document.getElementById('siteHead'), prog = document.getElementById('progress');
   function onScroll(){
     head.classList.toggle('scrolled', window.scrollY > 30);
@@ -1188,27 +720,21 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
     burger.setAttribute('aria-expanded', document.body.classList.contains('menu-open'));
   });
   document.querySelectorAll('.mobile-menu a').forEach(function(a){
-    a.addEventListener('click', function(){
-      document.body.classList.remove('menu-open');
-      burger.setAttribute('aria-expanded', 'false');
-    });
+    a.addEventListener('click', function(){ document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded','false'); });
   });
 
-  /* reveals */
   var io = new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
 
-  /* counters */
   function runCount(el){
     var target = parseFloat(el.getAttribute('data-count'));
-    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
-    if(reduce){ el.textContent = dec ? target.toFixed(dec) : target.toLocaleString('en-US'); return; }
+    if(reduce){ el.textContent = target.toLocaleString('en-US'); return; }
     var t0 = performance.now(), dur = 1700;
     (function step(t){
-      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3), v = target * e;
-      el.textContent = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US');
+      var p = Math.min(1,(t - t0)/dur), e = 1 - Math.pow(1-p,3);
+      el.textContent = Math.round(target*e).toLocaleString('en-US');
       if(p < 1) requestAnimationFrame(step);
     })(t0);
   }
@@ -1217,7 +743,6 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
   }, {threshold:.5});
   document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
 
-  /* scramble kicker */
   (function(){
     var el = document.getElementById('heroKick'), txt = el.getAttribute('data-text');
     if(reduce){ el.textContent = txt; return; }
@@ -1225,107 +750,106 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
     setTimeout(function(){
       var t0 = performance.now(), dur = 1200;
       (function tick(t){
-        var p = Math.min(1, (t - t0) / dur), solved = Math.floor(p * txt.length), out = '';
-        for(var i = 0; i < txt.length; i++){
-          out += i < solved ? txt[i] : (txt[i] === ' ' ? ' ' : glyphs[Math.floor(Math.random()*glyphs.length)]);
-        }
+        var p = Math.min(1,(t - t0)/dur), solved = Math.floor(p*txt.length), out='';
+        for(var i=0;i<txt.length;i++){ out += i<solved ? txt[i] : (txt[i]===' '?' ':glyphs[Math.floor(Math.random()*glyphs.length)]); }
         el.textContent = out;
-        if(p < 1) requestAnimationFrame(tick); else el.textContent = txt;
+        if(p<1) requestAnimationFrame(tick); else el.textContent = txt;
       })(t0);
     }, 500);
   })();
 
-  /* terminal typewriter */
-  (function(){
-    var term = document.getElementById('term');
-    var LINES = [
-      '▸ deploy kushlam.emilyeditorial.com ....... ok',
-      '▸ magnet: rabhus-friends.pdf · 14pp ....... live',
-      '▸ glossary: 40 entries · beings/rivers .... live',
-      '▸ targeting: mythic-fantasy / sa-spec ..... locked',
-      '▸ broad "fantasy" audience ................ killed',
-      '▸ +1 reader · Guwahati, IN',
-      '▸ +1 reader · Leeds, UK',
-      '▸ +1 reader · Toronto, CA',
-      '▸ status: compounding'
-    ];
-    if(reduce){ term.innerHTML = LINES.map(function(l){ return '<div class="tl">' + l + '</div>'; }).join(''); return; }
-    var li = 0;
-    function nextLine(){
-      if(li >= LINES.length){ setTimeout(function(){ term.innerHTML = ''; li = 0; nextLine(); }, 4200); return; }
-      var line = LINES[li], el = document.createElement('div');
-      el.className = 'tl'; term.appendChild(el);
-      var ci = 0;
-      (function ch(){
-        ci++; el.textContent = line.slice(0, ci);
-        if(ci < line.length){ setTimeout(ch, 13); }
-        else { li++; setTimeout(nextLine, 240); }
-      })();
-    }
-    nextLine();
-  })();
-
-  /* dashboard tilt */
-  var dash = document.getElementById('dash');
-  if(!reduce && window.matchMedia('(pointer:fine)').matches && dash){
-    dash.addEventListener('mousemove', function(e){
-      var r = dash.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      dash.style.transform = 'perspective(1100px) rotateY(' + (x * 5) + 'deg) rotateX(' + (-y * 5) + 'deg)';
-    });
-    dash.addEventListener('mouseleave', function(){ dash.style.transform = 'perspective(1100px) rotateX(0deg) rotateY(0deg)'; });
-  }
-
-  /* ticker duplicate */
   var track = document.getElementById('tickerTrack');
   track.innerHTML += track.innerHTML;
 
-  /* method rail */
-  var steps = document.querySelectorAll('.step'), railFill = document.getElementById('railFill');
-  var sio = new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(e.isIntersecting){
-        steps.forEach(function(s){ s.classList.toggle('active', s === e.target); });
-        railFill.style.height = (e.target.offsetTop + e.target.offsetHeight * .5) + 'px';
-      }
-    });
-  }, {threshold:.55});
-  steps.forEach(function(s){ sio.observe(s); });
-
-  /* case study tabs */
-  var tabs = document.querySelectorAll('.cs-tab'), panels = document.querySelectorAll('.cs-panel');
-  tabs.forEach(function(t){
-    t.addEventListener('click', function(){
-      tabs.forEach(function(x){ x.classList.remove('active'); });
-      panels.forEach(function(p){ p.classList.remove('active'); });
-      t.classList.add('active');
-      document.querySelector('.cs-panel[data-panel="' + t.getAttribute('data-panel') + '"]').classList.add('active');
-    });
-  });
-
-  /* demo button */
-  document.getElementById('demoBtn').addEventListener('click', function(){
-    toast('Demo only — the real Kushlam page converts at 41%.');
-  });
-
-  /* tier buttons */
-  document.querySelectorAll('.tier-btn').forEach(function(b){
-    b.addEventListener('click', function(){
-      toast('Noted: ' + b.getAttribute('data-tier') + ' — finish the form below to begin.');
-      document.getElementById('join').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
-    });
-  });
-
-  /* faq */
-  document.querySelectorAll('.faq-item').forEach(function(item){
-    var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
-    q.addEventListener('click', function(){
-      var open = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(o){
-        o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = '0px';
+  /* filters */
+  var pills = document.querySelectorAll('.f-pill'), cards = document.querySelectorAll('.bk');
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){
+      pills.forEach(function(x){ x.classList.remove('active'); });
+      p.classList.add('active');
+      var f = p.getAttribute('data-filter'), shown = 0;
+      cards.forEach(function(c){
+        var show = f === 'all' || c.getAttribute('data-genre') === f;
+        c.style.display = show ? '' : 'none';
+        if(show){ shown++; c.classList.remove('pop'); void c.offsetWidth; c.classList.add('pop'); }
       });
-      if(!open){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+      toast(shown + (shown === 1 ? ' title' : ' titles') + ' on this shelf');
     });
+  });
+
+  /* gmail letters */
+  var ICONS = {
+    back:'<path d="M19 12H5m7-7-7 7 7 7"/>',
+    archive:'<rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4"/>',
+    trash:'<path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0-1 13H7L6 7M10 11v6M14 11v6"/>',
+    clock:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/>',
+    dots:'<circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/>',
+    star:'<path d="m12 3 2.7 5.8 6.3.8-4.6 4.3 1.2 6.1L12 17l-5.6 3 1.2-6.1L3 9.6l6.3-.8z"/>',
+    reply:'<path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 6 6v4"/>',
+    fwd:'<path d="m15 14 5-5-5-5"/><path d="M20 9H10a6 6 0 0 0-6 6v4"/>',
+    dl:'<path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14"/>',
+    clip:'<path d="m21 12-8.5 8.5a5 5 0 0 1-7-7L14 5a3.3 3.3 0 0 1 4.7 4.7L10 18.4a1.7 1.7 0 0 1-2.4-2.4L15 9"/>',
+    chev:'<path d="m6 9 6 6 6-6"/>'
+  };
+  function ic(n){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+ICONS[n]+'</svg>'; }
+
+  var MAILS = [
+    { name:'Neelam Saikia', init:'N', color:'#7b1fa2', time:'Sep 2, 2026, 9:41 AM', ago:'2 hours ago',
+      subject:'A reader wrote back from Guwahati', snip:'Emily — a reader from Guwahati wrote to me this morning. She said she grew up hearing…', unread:true,
+      body:['Emily —','A reader from Guwahati wrote to me this morning. She said she grew up hearing stories like Rabhu\u2019s at her grandmother\u2019s knee, and that the glossary made her feel, finally, that someone had written them down properly. I cried at my desk.','1,284 addresses, and I know every one of them chose us on purpose. The August Signal Report sits open in a tab I refuse to close.','I am not good at this part — being seen. But I wanted you to know what your quiet little machine did. And thank you for never once asking me to get on a call.','— Neelam'],
+      attach:{n:'signal-report-august.pdf', s:'214 KB'} },
+    { name:'R. Okonkwo', init:'R', color:'#0b8043', time:'Aug 27, 2026, 4:18 PM', ago:'6 days ago',
+      subject:'The August Signal Report — read twice', snip:'I read the August report twice, which is more than I can say for most contracts…', unread:true,
+      body:['To the whole studio —','I read the August report twice, which is more than I can say for most contracts. \u201CThe river audience kept; the city audience churned\u201D is the clearest sentence anyone has ever written about my readers.','Please keep the city experiment small, exactly as you suggested. At this point I trust your judgment more than my own.','The list passed 2,400 this morning. My editor asked what changed. I told her: a system, and the people who built it.','With gratitude, R.'] },
+    { name:'Hana Yoshida', init:'H', color:'#f6bf26', time:'Aug 19, 2026, 8:03 AM', ago:'Aug 19',
+      subject:'1,900 readers and I never left my desk', snip:'Fox Season crossed 1,900 readers overnight and I want it on record that I…', unread:false,
+      body:['Emily —','Fox Season crossed 1,900 readers overnight, and I want it on record that I contributed nothing but the book itself.','The otter glossary was Priya\u2019s idea, and it outperforms everything else we have sent. Tell her the illustrator credit made my mother call me, which is the highest honor available in my family.','Same rhythm next month, please. Quietly.','— Hana'],
+      attach:{n:'fox-season-glossary-final.pdf', s:'842 KB'} },
+    { name:'D. Whitfield · Meridian Press', init:'D', color:'#3c4043', time:'Aug 11, 2026, 11:26 AM', ago:'Aug 11',
+      subject:'Backlist approved — and thank you', snip:'The board approved the backlist proposal this morning — six titles, starting with…', unread:false,
+      body:['Emily —','The board approved the backlist proposal this morning: six titles, starting with the two you flagged. The reader graph your studio built is now part of our acquisitions conversation, which would have been unthinkable a year ago.','On a personal note — thank you for insisting everything stay in writing. Your proposals made the budget easy to defend, because the numbers were already honest.','Contract paperwork follows by Friday.','D. Whitfield, Editor-at-Large'] }
+  ];
+
+  var ibx = document.getElementById('ibx'), pane = document.getElementById('gmPane');
+  function renderInbox(){
+    ibx.innerHTML = MAILS.map(function(m,i){
+      return '<button class="ibx-item'+(m.unread?' unread':'')+(i===0?' active':'')+'" data-i="'+i+'" role="tab" aria-selected="'+(i===0)+'">'
+        +'<div class="ibx-r1">'+(m.unread?'<span class="ibx-dot"></span>':'')+'<span class="ibx-av" style="background:'+m.color+'">'+m.init+'</span><span class="ibx-name">'+m.name+'</span><span class="ibx-time">'+m.time.split(',')[0]+'</span></div>'
+        +'<div class="ibx-sub">'+m.subject+'</div><div class="ibx-snip">'+m.snip+'</div></button>';
+    }).join('');
+  }
+  function renderMail(i){
+    var m = MAILS[i];
+    var bodyHtml = m.body.map(function(p){
+      if(p.indexOf('—') === 0 || /^(With gratitude|D\. Whitfield)/.test(p)) return '<p class="sig">'+p+'</p>';
+      return '<p>'+p+'</p>';
+    }).join('');
+    var attachHtml = m.attach ? '<div class="gm-attach"><span class="gm-file">'+ic('clip')+'</span><span><span class="gm-aname">'+m.attach.n+'</span><br><span class="gm-asize">'+m.attach.s+'</span></span><span class="gm-ic gm-dl">'+ic('dl')+'</span></div>' : '';
+    pane.innerHTML =
+      '<div class="gm-bar">'
+      +'<span class="gm-logo"><svg width="26" height="20" viewBox="0 0 48 36" aria-hidden="true"><path fill="#4285F4" d="M8 34H2a2 2 0 0 1-2-2V6l8 6z"/><path fill="#34A853" d="M40 34h6a2 2 0 0 0 2-2V6l-8 6z"/><path fill="#EA4335" d="M8 12V4l16 12L40 4v8L24 24z"/></svg><span>Inbox</span></span>'
+      +'<span class="gm-ic">'+ic('archive')+'</span><span class="gm-ic">'+ic('trash')+'</span><span class="gm-ic">'+ic('clock')+'</span><span class="gm-ic">'+ic('dots')+'</span></div>'
+      +'<div class="gm-subject"><h3>'+m.subject+'</h3><span class="gm-label">Inbox</span></div>'
+      +'<div class="gm-sender"><span class="gm-av" style="background:'+m.color+'">'+m.init+'</span>'
+      +'<div class="gm-who"><b>'+m.name+'</b><span class="gm-to">to me '+ic('chev')+'</span></div>'
+      +'<div class="gm-when">'+m.time+'<small>('+m.ago+')</small></div>'
+      +'<div class="gm-side"><span class="gm-ic">'+ic('star')+'</span><span class="gm-ic">'+ic('reply')+'</span></div></div>'
+      +'<div class="gm-body">'+bodyHtml+'</div>'+attachHtml
+      +'<div class="gm-actions"><button class="gm-pill" type="button">'+ic('reply')+'Reply</button><button class="gm-pill" type="button">'+ic('fwd')+'Forward</button></div>';
+    pane.classList.remove('swap'); void pane.offsetWidth; pane.classList.add('swap');
+  }
+  renderInbox(); renderMail(0);
+  ibx.addEventListener('click', function(e){
+    var item = e.target.closest('.ibx-item'); if(!item) return;
+    var i = parseInt(item.getAttribute('data-i'),10);
+    MAILS[i].unread = false;
+    ibx.querySelectorAll('.ibx-item').forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+    item.classList.add('active'); item.classList.remove('unread'); item.setAttribute('aria-selected','true');
+    renderMail(i);
+  });
+  pane.addEventListener('click', function(e){
+    var pill = e.target.closest('.gm-pill'); if(!pill) return;
+    toast('Replies stay in the studio — addresses are redacted here.');
   });
 
   /* join form */
@@ -1337,13 +861,9 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--linel
     var v = jEmail.value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){
       form.classList.remove('error'); void form.offsetWidth; form.classList.add('error');
-      err.textContent = '✦ That address doesn\u2019t look quite right — one more try?';
-      return;
+      err.textContent = '✦ That address doesn\u2019t look quite right — one more try?'; return;
     }
-    if(!jBook.value.trim()){
-      err.textContent = '✦ Add your working title — even a provisional one.';
-      return;
-    }
+    if(!jBook.value.trim()){ err.textContent = '✦ Add your working title — even a provisional one.'; return; }
     err.textContent = '';
     form.style.display = 'none';
     success.classList.add('show');
